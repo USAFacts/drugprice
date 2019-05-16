@@ -1,0 +1,95 @@
+---
+title: "drugprices"
+author: "Tyler"
+date: "May 15, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+rm(list=ls(all=T))
+
+library(tidyverse)
+library(tidyselect)
+library(viridis)
+library(ggthemes)
+```
+
+```{r}
+medicaid <- read_csv("medicaid.csv")
+partb <- read_csv("medicarepartb.csv")
+partd <- read_csv("medicarepartd.csv")
+```
+
+```{r datacleaning}
+partd <- partd %>%
+  mutate_at(c("Brand Name", "Generic Name", "Manufacturer", "Year"), as_factor) %>%
+  na.omit(.)
+
+colnames(partd)[6] <- "Total Claims"
+
+partb <- partb %>%
+  mutate_at(c("Medicare Billing Code (HCPCS Code)", "Brand Name", "Generic Name", "Year"), as_factor) %>%
+  na.omit(.)
+
+medicaid <- medicaid %>%
+  mutate_at(c("Brand Name", "Generic Name", "Manufacturer", "Year"), as_factor) %>%
+  na.omit(.)
+```
+
+```{r partd_eda}
+summary(partd)
+
+partd %>%
+  ggplot(aes(x = Year, y = `Total Spending`)) +
+  geom_boxplot() +
+  theme_minimal()
+
+partd %>%
+  ggplot(aes(x = Year, y = `Total Dosage Units`)) +
+  geom_boxplot() +
+  theme_minimal()
+
+partd %>%
+  ggplot(aes(x = Year, y = `Total Claims`)) +
+  geom_boxplot() +
+  theme_minimal()
+
+partd %>%
+  ggplot(aes(x = Year, y = `Total Beneficiaries`)) +
+  geom_boxplot() +
+  theme_minimal()
+
+partd %>%
+  mutate(logspend = log(`Total Spending`)) %>%
+  ggplot(aes(x = Year, y = logspend)) +
+  geom_boxplot() +
+  theme_minimal()
+
+partd %>%
+  mutate(logdose = log(`Total Dosage Units`)) %>%
+  ggplot(aes(x = Year, y = logdose)) +
+  geom_boxplot() +
+  theme_minimal()
+
+partd %>%
+  mutate(logclaim = log(`Total Claims`)) %>%
+  ggplot(aes(x = Year, y = logclaim)) +
+  geom_boxplot() +
+  theme_minimal()
+
+partd %>%
+  mutate(logben = log(`Total Beneficiaries`)) %>%
+  ggplot(aes(x = Year, y = logben)) +
+  geom_boxplot() +
+  theme_minimal()
+
+partd %>%
+  mutate(logavgclaim = log(`Average Spending Per Claim`)) %>%
+  ggplot(aes(x = Year, y = logavgclaim)) +
+  geom_boxplot() +
+  theme_minimal()
+```
