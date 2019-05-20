@@ -17,6 +17,8 @@ library(tidyselect)
 library(viridis)
 library(ggthemes)
 library(ggridges)
+library(gridExtra)
+library(knitr)
 ```
 
 ```{r}
@@ -45,7 +47,171 @@ medicaid <- medicaid %>%
 summary(partd)
 ```
 
-```{r}
+```{r partd_eda_univariate}
+partd %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  ggplot(aes(x = `Total Spending`, y = Year)) +
+  geom_density_ridges() +
+  theme_minimal(base_size = 14) + theme(axis.text.y = element_text(vjust = 0)) +
+  xlim(0, 1e7)
+
+partd %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  ggplot(aes(x = `Total Claims`, y = Year)) +
+  geom_density_ridges() +
+  theme_minimal(base_size = 14) + theme(axis.text.y = element_text(vjust = 0)) +
+  xlim(0, 1e5)
+
+partd %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  ggplot(aes(x = `Total Beneficiaries`, y = Year)) +
+  geom_density_ridges() +
+  theme_minimal(base_size = 14) + theme(axis.text.y = element_text(vjust = 0)) +
+  xlim(0, 1e5)
+```
+
+```{r partd_eda_univariate_log_spend}
+partd %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  group_by(`Brand Name`, Year) %>%
+  summarise(brandspend = sum(`Total Spending`), 
+            branddose = sum(`Total Dosage Units`), 
+            brandclaims = sum(`Total Claims`), 
+            brandbens = sum(`Total Beneficiaries`)) %>%
+  ungroup(.) %>%
+  mutate(logspend = log(brandspend)) %>%
+  ggplot(aes(x = logspend, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
+  stat_density_ridges(
+    geom = "density_ridges_gradient", calc_ecdf = TRUE,
+    quantiles = 4, quantile_lines = TRUE
+  ) +
+  scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
+  theme_minimal(base_size = 14) +
+  theme(axis.text.y = element_text(vjust = 0)) +
+  labs(x = "Log of Total Spend", y = "Year", title = "Total Spend of Medicare Part D on prescription drugs \n is shifting right on a per brand basis over time")
+```
+
+```{r partd_eda_univariate_log_claims}
+partd %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  group_by(`Brand Name`, Year) %>%
+  summarise(brandspend = sum(`Total Spending`), 
+            branddose = sum(`Total Dosage Units`), 
+            brandclaims = sum(`Total Claims`), 
+            brandbens = sum(`Total Beneficiaries`)) %>%
+  ungroup(.) %>%
+  mutate(logclaims = log(brandclaims)) %>%
+  ggplot(aes(x = logclaims, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
+  stat_density_ridges(
+    geom = "density_ridges_gradient", calc_ecdf = TRUE,
+    quantiles = 4, quantile_lines = TRUE
+  ) +
+  scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
+  theme_minimal(base_size = 14) +
+  theme(axis.text.y = element_text(vjust = 0))
+```
+
+```{r partd_eda_univariate_log_bens}
+partd %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  group_by(`Brand Name`, Year) %>%
+  summarise(brandspend = sum(`Total Spending`), 
+            branddose = sum(`Total Dosage Units`), 
+            brandclaims = sum(`Total Claims`), 
+            brandbens = sum(`Total Beneficiaries`)) %>%
+  ungroup(.) %>%
+  mutate(logbens = log(brandbens)) %>%
+  ggplot(aes(x = logbens, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
+  stat_density_ridges(
+    geom = "density_ridges_gradient", calc_ecdf = TRUE,
+    quantiles = 4, quantile_lines = TRUE
+  ) +
+  scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
+  theme_minimal(base_size = 14) +
+  theme(axis.text.y = element_text(vjust = 0))
+  
+```
+
+```{r partb_eda_univariate_log_spend}
+partb %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  mutate(logspend = log(`Total Spending`)) %>%
+  ggplot(aes(x = logspend, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
+  stat_density_ridges(
+    geom = "density_ridges_gradient", calc_ecdf = TRUE,
+    quantiles = 4, quantile_lines = TRUE
+  ) +
+  scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
+  theme_minimal(base_size = 14) +
+  theme(axis.text.y = element_text(vjust = 0))
+```
+
+```{r partb_eda_univariate_log_claims}
+partb %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  mutate(logclaims = log(`Total Claims`)) %>%
+  ggplot(aes(x = logclaims, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
+  stat_density_ridges(
+    geom = "density_ridges_gradient", calc_ecdf = TRUE,
+    quantiles = 4, quantile_lines = TRUE
+  ) +
+  scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
+  theme_minimal(base_size = 14) +
+  theme(axis.text.y = element_text(vjust = 0))
+```
+
+```{r partb_eda_univariate_log_bens}
+partb %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  mutate(logbens = log(`Total Beneficiaries`)) %>%
+  ggplot(aes(x = logbens, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
+  stat_density_ridges(
+    geom = "density_ridges_gradient", calc_ecdf = TRUE,
+    quantiles = 4, quantile_lines = TRUE
+  ) +
+  scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
+  theme_minimal(base_size = 14) +
+  theme(axis.text.y = element_text(vjust = 0))
+  
+```
+
+```{r partd_change}
 chngyr <- 2017 - 2013
 
 partdbrandchng <- partd %>%
@@ -80,9 +246,6 @@ partdbrandchng <- partd %>%
        perchngbens,
        .direction = "up")
 
-partdbrandchng <- partdbrandchng %>%
-  mutate()
-
 partdbrandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
@@ -93,62 +256,100 @@ partdbrandchng %>%
 partdbrandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
-  filter(perchngspend >= 1000) %>%
-  print(.)
+  ggplot(aes(x = perchngspend, y = perchngclaims)) +
+  geom_point(stat = "identity") +
+  theme_minimal()
   
 ```
 
-```{r partd_eda_univariate}
-partd %>%
-  ggplot(aes(x = Year, y = `Total Spending`)) +
-  geom_boxplot() +
+```{r partb_change}
+partbbrandchng <- partb %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partb, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  group_by(`Brand Name`, Year) %>%
+  summarise(brandspend = sum(`Total Spending`), 
+            branddose = sum(`Total Dosage Units`), 
+            brandclaims = sum(`Total Claims`), 
+            brandbens = sum(`Total Beneficiaries`)) %>%
+  ungroup(.) %>%
+  group_by(`Brand Name`) %>%
+  arrange(Year, .by_group = TRUE) %>%
+  mutate(nomchngspend = brandspend - lag(brandspend, n = chngyr), 
+         nomchngdose = branddose - lag(branddose, n = chngyr), 
+         nomchngclaims = brandclaims - lag(brandclaims, n = chngyr), 
+         nomchngbens = brandbens - lag(brandbens, n = chngyr),
+         perchngspend = (brandspend/lag(brandspend, n = chngyr)) - 1,
+         perchngdose = (branddose/lag(branddose, n = chngyr)) - 1,
+         perchngclaims = (brandclaims/lag(brandclaims, n = chngyr)) - 1,
+         perchngbens = (brandbens/lag(brandbens, n = chngyr)) - 1) %>%
+  fill(nomchngspend, 
+       nomchngdose, 
+       nomchngclaims, 
+       nomchngbens,
+       perchngspend,
+       perchngdose,
+       perchngclaims,
+       perchngbens,
+       .direction = "up")
+
+partbbrandchng %>%
+  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
+  distinct() %>%
+  ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
+  geom_point(stat = "identity") +
   theme_minimal()
 
-partd %>%
-  ggplot(aes(x = Year, y = `Total Dosage Units`)) +
-  geom_boxplot() +
-  theme_minimal()
-
-partd %>%
-  ggplot(aes(x = Year, y = `Total Claims`)) +
-  geom_boxplot() +
-  theme_minimal()
-
-partd %>%
-  ggplot(aes(x = Year, y = `Total Beneficiaries`)) +
-  geom_boxplot() +
+partbbrandchng %>%
+  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
+  distinct() %>%
+  ggplot(aes(x = perchngspend, y = perchngclaims)) +
+  geom_point(stat = "identity") +
   theme_minimal()
 ```
 
-```{r partd_eda_univariate_log}
-partd %>%
-  mutate(logspend = log(`Total Spending`)) %>%
-  ggplot(aes(x = Year, y = logspend)) +
-  geom_boxplot() +
+```{r medicaid_change}
+medicaidbrandchng <- medicaid %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(medicaid, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  group_by(`Brand Name`, Year) %>%
+  summarise(brandspend = sum(`Total Spending`), 
+            branddose = sum(`Total Dosage Units`), 
+            brandclaims = sum(`Total Claims`)) %>%
+  ungroup(.) %>%
+  group_by(`Brand Name`) %>%
+  arrange(Year, .by_group = TRUE) %>%
+  mutate(nomchngspend = brandspend - lag(brandspend, n = chngyr), 
+         nomchngdose = branddose - lag(branddose, n = chngyr), 
+         nomchngclaims = brandclaims - lag(brandclaims, n = chngyr),
+         perchngspend = (brandspend/lag(brandspend, n = chngyr)) - 1,
+         perchngdose = (branddose/lag(branddose, n = chngyr)) - 1,
+         perchngclaims = (brandclaims/lag(brandclaims, n = chngyr)) - 1) %>%
+  fill(nomchngspend, 
+       nomchngdose, 
+       nomchngclaims,
+       perchngspend,
+       perchngdose,
+       perchngclaims,
+       .direction = "up")
+
+medicaidbrandchng %>%
+  select(everything(), -Year, -brandspend, -branddose, -brandclaims) %>%
+  distinct() %>%
+  ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
+  geom_point(stat = "identity") +
   theme_minimal()
 
-partd %>%
-  mutate(logdose = log(`Total Dosage Units`)) %>%
-  ggplot(aes(x = Year, y = logdose)) +
-  geom_boxplot() +
-  theme_minimal()
-
-partd %>%
-  mutate(logclaim = log(`Total Claims`)) %>%
-  ggplot(aes(x = Year, y = logclaim)) +
-  geom_boxplot() +
-  theme_minimal()
-
-partd %>%
-  mutate(logben = log(`Total Beneficiaries`)) %>%
-  ggplot(aes(x = Year, y = logben)) +
-  geom_boxplot() +
-  theme_minimal()
-
-partd %>%
-  mutate(logavgclaim = log(`Average Spending Per Claim`)) %>%
-  ggplot(aes(x = Year, y = logavgclaim)) +
-  geom_boxplot() +
+medicaidbrandchng %>%
+  select(everything(), -Year, -brandspend, -branddose, -brandclaims) %>%
+  distinct() %>%
+  ggplot(aes(x = perchngspend, y = perchngclaims)) +
+  geom_point(stat = "identity") +
   theme_minimal()
 ```
 
@@ -176,5 +377,5 @@ partd %>%
   ggplot(aes(x = Year, y = manufacturercnt, fill = manufacturercnt)) +
   geom_bar(stat = "identity") +
   theme_minimal()
-
 ```
+
