@@ -1,7 +1,7 @@
 ---
-title: "drugprices"
-author: "Tyler"
-date: "May 15, 2019"
+title: "Prescription Drug Price EDA"
+author: "USAFacts: Tyler Mallon"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 
@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r packageload}
 rm(list=ls(all=T))
 
 library(tidyverse)
@@ -19,7 +19,17 @@ library(ggthemes)
 library(ggridges)
 ```
 
-```{r}
+## Introduction
+
+This document reflects my exploration of the datasets found at the [CMS Drug Spending](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Information-on-Prescription-Drugs/index.html) site. This document is broken up into three different sections with the following research questions driving each phase of data exploration:
+
+1. What is the relationship between spend and claims at a brand level and has that relationship changed over the past five years?
+2. Is there a material difference in the relationships discovered in Research Question 1 between the three programs for which CMS has provided data, namely Medicare Part B, Medicare Part D and Medicaid?
+3. Where there is manufacturer level information available, does the relationship between spend and claims vary by the manufacturer, and if so, are certain manufacturer's exhibiting higher costs generally across brands? 
+
+### Research Question 1
+
+```{r dataload}
 medicaid <- read_csv("medicaid.csv")
 partb <- read_csv("medicarepartb.csv")
 partd <- read_csv("medicarepartd.csv")
@@ -44,6 +54,27 @@ medicaid <- medicaid %>%
 ```{r partd_eda_summary}
 summary(partd)
 ```
+
+Looking at the summary for Medicare Part D, there are four things that jump out at me:
+
+1. The distance between the first two quartiles and then to the max value is heavily right skewed for each of the "Total" metrics. This likely implies there are some crazy outliers for each of the univariate distributions
+2. There are many more drugs on the market in 2017 than in 2013. The jump between 2016 and 2017 was especially large, at a 27% increase in one year.
+3. There top 6 manufacturers supplied 26% of all brands in this time frame, implying the market is characterized by several large players but also consists of many smaller and mid-level firms.
+4. The products with the most brand nad manufacturer combinations seem to be diabetic insulin needles.
+
+```{r partb_eda_summary}
+summary(partb)
+```
+
+Looking at the summary for Medicare Part B, there are three things that I want to call out:
+
+
+
+```{r medicaid_eda_summary}
+summary(medicaid)
+```
+
+
 
 ```{r partd_eda_univariate}
 partd %>%
@@ -404,22 +435,34 @@ medicaidbrandchng %>%
 ```
 
 ```{r partd_manufacturer}
-partd %>%
+partd_manufac <- partd %>%
   group_by(`Brand Name`, Year) %>%
-  summarise(avgspendperclaimbrand = sum(`Total Spending`)/sum(`Total Claims`)) %>%
-  right_join(partd, by = c("Brand Name" = "Brand Name", "Year" = "Year")) %>%
-  mutate(avgspendperclaimperdiff = ifelse((avgspendperclaimbrand/`Average Spending Per Claim`) > 1, "Above Average", ifelse((avgspendperclaimbrand/`Average Spending Per Claim`) < 1, "Below Average", "At Average"))) %>%
-  group_by(Manufacturer, Year, avgspendperclaimperdiff) %>%
-  tally() %>%
-  spread(avgspendperclaimperdiff, n) %>%
-  arrange(Year, desc(`Above Average`))
+  mutate(avg_spend_per_claim_brand = signif(sum(`Total Spending`)/sum(`Total Claims`), 3)) %>%
+  group_by(Manufacturer, add = TRUE) %>%
+  mutate(avg_spend_per_claim_manufac = sum(`Total Spending`)/sum(`Total Claims`)) %>%
+  mutate(avg_spend_per_claim_resid = signif(avg_spend_per_claim_manufac, 3) - signif(avg_spend_per_claim_brand, 3), 
+         avg_spend_per_claim_status = ifelse(avg_spend_per_claim_resid == 0, "at_average", ifelse(avg_spend_per_claim_resid < 0, "below_average", "above_average")), 
+         market_diff = avg_spend_per_claim_resid * `Total Claims`) %>%
+  ungroup(.) %>%
+  group_by(Manufacturer, Year, avg_spend_per_claim_status) %>%
+  summarise(manufacturer_diff = sum(market_diff), price_status_drugs = n()) 
 ```
 
 ```{r medicaid_manufacturer}
-
+medicaid_manufac <- medicaid %>%
+  group_by(`Brand Name`, Year) %>%
+  mutate(avg_spend_per_claim_brand = signif(sum(`Total Spending`)/sum(`Total Claims`), 3)) %>%
+  group_by(Manufacturer, add = TRUE) %>%
+  mutate(avg_spend_per_claim_manufac = sum(`Total Spending`)/sum(`Total Claims`)) %>%
+  mutate(avg_spend_per_claim_resid = signif(avg_spend_per_claim_manufac, 3) - signif(avg_spend_per_claim_brand, 3), 
+         avg_spend_per_claim_status = ifelse(avg_spend_per_claim_resid == 0, "at_average", ifelse(avg_spend_per_claim_resid < 0, "below_average", "above_average")), 
+         market_diff = avg_spend_per_claim_resid * `Total Claims`) %>%
+  ungroup(.) %>%
+  group_by(Manufacturer, Year, avg_spend_per_claim_status) %>%
+  summarise(manufacturer_diff = sum(market_diff), price_status_drugs = n()) 
 ```
 
-```{r}
+```{r insulin exploration}
 partd %>% 
   filter(str_detect(`Generic Name`, "Insulin")) %>%
   group_by(Year) %>%
@@ -433,14 +476,6 @@ partd %>%
   group_by(Year) %>%
   summarise(totalbens = sum(`Total Beneficiaries`)) %>%
   ggplot(aes(x = Year, y = totalbens, fill = totalbens)) +
-  geom_bar(stat = "identity") +
-  theme_minimal()
-
-partd %>% 
-  filter(str_detect(`Generic Name`, "Insulin")) %>%
-  group_by(Year, Manufacturer) %>%
-  summarise(manufacturercnt = n()) %>%
-  ggplot(aes(x = Year, y = manufacturercnt, fill = manufacturercnt)) +
   geom_bar(stat = "identity") +
   theme_minimal()
 ```
