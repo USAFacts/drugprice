@@ -17,8 +17,6 @@ library(tidyselect)
 library(viridis)
 library(ggthemes)
 library(ggridges)
-library(gridExtra)
-library(knitr)
 ```
 
 ```{r}
@@ -104,7 +102,7 @@ partd %>%
   scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
   theme_minimal(base_size = 14) +
   theme(axis.text.y = element_text(vjust = 0)) +
-  labs(x = "Log of Total Spend", y = "Year", title = "Total Spend of Medicare Part D on prescription drugs \n is shifting right on a per brand basis over time")
+  labs(x = "Log of Total Spend", y = "Year", title = "Total Spend of Medicare Part D on prescription drugs\nfor only brands available all five years")
 ```
 
 ```{r partd_eda_univariate_log_claims}
@@ -128,7 +126,8 @@ partd %>%
   ) +
   scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
   theme_minimal(base_size = 14) +
-  theme(axis.text.y = element_text(vjust = 0))
+  theme(axis.text.y = element_text(vjust = 0)) +
+  labs(x = "Log of Total Claims", y = "Year", title = "Total Claims of Medicare Part D on prescription drugs\nfor only brands available all five years")
 ```
 
 ```{r partd_eda_univariate_log_bens}
@@ -152,8 +151,8 @@ partd %>%
   ) +
   scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
   theme_minimal(base_size = 14) +
-  theme(axis.text.y = element_text(vjust = 0))
-  
+  theme(axis.text.y = element_text(vjust = 0)) +
+  labs(x = "Log of Total Beneficiaries", y = "Year", title = "Total Beneficiaries of Medicare Part D on prescription drugs\nfor only brands available all five years")
 ```
 
 ```{r partb_eda_univariate_log_spend}
@@ -161,7 +160,7 @@ partb %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
   ungroup(.) %>%
-  right_join(partd, by = "Brand Name") %>%
+  right_join(partb, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   mutate(logspend = log(`Total Spending`)) %>%
   ggplot(aes(x = logspend, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
@@ -171,7 +170,8 @@ partb %>%
   ) +
   scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
   theme_minimal(base_size = 14) +
-  theme(axis.text.y = element_text(vjust = 0))
+  theme(axis.text.y = element_text(vjust = 0)) +
+  labs(x = "Log of Total Spend", y = "Year", title = "Total Spend of Medicare Part B on prescription drugs\nfor only brands available all five years")
 ```
 
 ```{r partb_eda_univariate_log_claims}
@@ -179,7 +179,7 @@ partb %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
   ungroup(.) %>%
-  right_join(partd, by = "Brand Name") %>%
+  right_join(partb, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   mutate(logclaims = log(`Total Claims`)) %>%
   ggplot(aes(x = logclaims, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
@@ -189,7 +189,8 @@ partb %>%
   ) +
   scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
   theme_minimal(base_size = 14) +
-  theme(axis.text.y = element_text(vjust = 0))
+  theme(axis.text.y = element_text(vjust = 0)) +
+  labs(x = "Log of Total Claims", y = "Year", title = "Total Claims of Medicare Part B on prescription drugs\nfor only brands available all five years")
 ```
 
 ```{r partb_eda_univariate_log_bens}
@@ -197,7 +198,7 @@ partb %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
   ungroup(.) %>%
-  right_join(partd, by = "Brand Name") %>%
+  right_join(partb, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   mutate(logbens = log(`Total Beneficiaries`)) %>%
   ggplot(aes(x = logbens, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
@@ -207,8 +208,57 @@ partb %>%
   ) +
   scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
   theme_minimal(base_size = 14) +
-  theme(axis.text.y = element_text(vjust = 0))
-  
+  theme(axis.text.y = element_text(vjust = 0)) +
+  labs(x = "Log of Total Beneficiaries", y = "Year", title = "Total Beneficiaries of Medicare Part B on prescription drugs\nfor only brands available all five years")
+```
+
+```{r medicaid_eda_univariate_log_spend}
+medicaid %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(medicaid, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  group_by(`Brand Name`, Year) %>%
+  summarise(brandspend = sum(`Total Spending`), 
+            branddose = sum(`Total Dosage Units`), 
+            brandclaims = sum(`Total Claims`)) %>%
+  ungroup(.) %>%
+  mutate(logspend = log1p(brandspend)) %>%
+  ggplot(aes(x = logspend, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
+  stat_density_ridges(
+    geom = "density_ridges_gradient", calc_ecdf = TRUE,
+    quantiles = 4, quantile_lines = TRUE
+  ) +
+  scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
+  theme_minimal(base_size = 14) +
+  theme(axis.text.y = element_text(vjust = 0)) +
+  labs(x = "Log of Total Spend", y = "Year", title = "Total Spend of Medicaid on prescription drugs\nfor only brands available all five years")
+
+```
+
+```{r medicaid_eda_univariate_log_claims}
+medicaid %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(medicaid, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  group_by(`Brand Name`, Year) %>%
+  summarise(brandspend = sum(`Total Spending`), 
+            branddose = sum(`Total Dosage Units`), 
+            brandclaims = sum(`Total Claims`)) %>%
+  ungroup(.) %>%
+  mutate(logclaims = log1p(brandclaims)) %>%
+  ggplot(aes(x = logclaims, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
+  stat_density_ridges(
+    geom = "density_ridges_gradient", calc_ecdf = TRUE,
+    quantiles = 4, quantile_lines = TRUE
+  ) +
+  scale_fill_viridis(discrete = TRUE, name = "Quartiles", option = "E") +
+  theme_minimal(base_size = 14) +
+  theme(axis.text.y = element_text(vjust = 0)) +
+  labs(x = "Log of Total Claims", y = "Year", title = "Total Claims of Medicaid on prescription drugs\nfor only brands available all five years")
 ```
 
 ```{r partd_change}
@@ -232,10 +282,11 @@ partdbrandchng <- partd %>%
          nomchngdose = branddose - lag(branddose, n = chngyr), 
          nomchngclaims = brandclaims - lag(brandclaims, n = chngyr), 
          nomchngbens = brandbens - lag(brandbens, n = chngyr),
-         perchngspend = (brandspend/lag(brandspend, n = chngyr)) - 1,
-         perchngdose = (branddose/lag(branddose, n = chngyr)) - 1,
-         perchngclaims = (brandclaims/lag(brandclaims, n = chngyr)) - 1,
-         perchngbens = (brandbens/lag(brandbens, n = chngyr)) - 1) %>%
+         perchngspend = (brandspend-lag(brandspend, n = chngyr))/lag(brandspend, n = chngyr),
+         perchngdose = (branddose-lag(branddose, n = chngyr))/lag(branddose, n = chngyr),
+         perchngclaims = (brandclaims-lag(brandclaims, n = chngyr))/lag(brandclaims, n = chngyr),
+         perchngbens = (brandbens-lag(brandbens, n = chngyr))/lag(brandbens, n = chngyr)
+         ) %>%
   fill(nomchngspend, 
        nomchngdose, 
        nomchngclaims, 
@@ -250,16 +301,15 @@ partdbrandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
-  geom_point(stat = "identity") +
+  geom_point(stat = "identity", position = "jitter") +
   theme_minimal()
 
 partdbrandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = perchngspend, y = perchngclaims)) +
-  geom_point(stat = "identity") +
+  geom_point(stat = "identity", position = "jitter") +
   theme_minimal()
-  
 ```
 
 ```{r partb_change}
@@ -351,6 +401,22 @@ medicaidbrandchng %>%
   ggplot(aes(x = perchngspend, y = perchngclaims)) +
   geom_point(stat = "identity") +
   theme_minimal()
+```
+
+```{r partd_manufacturer}
+partd %>%
+  group_by(`Brand Name`, Year) %>%
+  summarise(avgspendperclaimbrand = sum(`Total Spending`)/sum(`Total Claims`)) %>%
+  right_join(partd, by = c("Brand Name" = "Brand Name", "Year" = "Year")) %>%
+  mutate(avgspendperclaimperdiff = ifelse((avgspendperclaimbrand/`Average Spending Per Claim`) > 1, "Above Average", ifelse((avgspendperclaimbrand/`Average Spending Per Claim`) < 1, "Below Average", "At Average"))) %>%
+  group_by(Manufacturer, Year, avgspendperclaimperdiff) %>%
+  tally() %>%
+  spread(avgspendperclaimperdiff, n) %>%
+  arrange(Year, desc(`Above Average`))
+```
+
+```{r medicaid_manufacturer}
+
 ```
 
 ```{r}
