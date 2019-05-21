@@ -55,7 +55,7 @@ medicaid <- medicaid %>%
 summary(partd)
 ```
 
-Looking at the summary for Medicare Part D, there are four things that jump out at me:
+Looking at the summary for Medicare Part D, there are four things that I want to highlight:
 
 1. The distance between the first two quartiles and then to the max value is heavily right skewed for each of the "Total" metrics. This likely implies there are some crazy outliers for each of the univariate distributions
 2. There are many more drugs on the market in 2017 than in 2013. The jump between 2016 and 2017 was especially large, at a 27% increase in one year.
@@ -66,14 +66,22 @@ Looking at the summary for Medicare Part D, there are four things that jump out 
 summary(partb)
 ```
 
-Looking at the summary for Medicare Part B, there are three things that I want to call out:
+Looking at the summary for Medicare Part B, there are three things that I want to highlight:
 
+1. There is no manufacturer level information for this particular dataset
+2. The Total metrics are again all heavily right skewed
+3. The introduction of drugs over each of the years has been much slower than Medicare Part D.
 
 
 ```{r medicaid_eda_summary}
 summary(medicaid)
 ```
 
+Looking at the summary for Medicaid, there are three things I want to highlight:
+
+1. 
+
+Just to visually confirm what I was seeing in the quartile summary, I want to look at a ridgeplot of each of the three primary metrics that I'm interested in: Total Spend, Total Claims, and Total Beneficiaries. 
 
 
 ```{r partd_eda_univariate}
