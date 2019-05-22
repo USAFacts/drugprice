@@ -1,13 +1,24 @@
 ---
 title: "Prescription Drug Price EDA"
-author: "USAFacts: Tyler Mallon"
+author: "USAFactsTyler"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: html_document
+output:
+  github_document:
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
+
+# Introduction
+
+This document reflects my exploration of the datasets found at the [CMS Drug Spending](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Information-on-Prescription-Drugs/index.html) site. This document is broken up into three different sections with the following research questions driving each phase of data exploration:
+
+1. What is the relationship between spend and claims at a brand level and has that relationship changed over the past five years?
+2. Is there a material difference in the relationships discovered in Research Question 1 between the three programs for which CMS has provided data, namely Medicare Part B, Medicare Part D and Medicaid?
+3. Where there is manufacturer level information available, does the relationship between spend and claims vary by the manufacturer, and if so, are certain manufacturer's exhibiting higher costs generally across brands? 
+
 
 ```{r packageload}
 rm(list=ls(all=T))
@@ -19,15 +30,8 @@ library(ggthemes)
 library(ggridges)
 ```
 
-## Introduction
 
-This document reflects my exploration of the datasets found at the [CMS Drug Spending](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Information-on-Prescription-Drugs/index.html) site. This document is broken up into three different sections with the following research questions driving each phase of data exploration:
-
-1. What is the relationship between spend and claims at a brand level and has that relationship changed over the past five years?
-2. Is there a material difference in the relationships discovered in Research Question 1 between the three programs for which CMS has provided data, namely Medicare Part B, Medicare Part D and Medicaid?
-3. Where there is manufacturer level information available, does the relationship between spend and claims vary by the manufacturer, and if so, are certain manufacturer's exhibiting higher costs generally across brands? 
-
-### Research Question 1
+## Research Question 1
 
 ```{r dataload}
 medicaid <- read_csv("medicaid.csv")
@@ -57,7 +61,7 @@ summary(partd)
 
 Looking at the summary for Medicare Part D, there are four things that I want to highlight:
 
-1. The distance between the first two quartiles and then to the max value is heavily right skewed for each of the "Total" metrics. This likely implies there are some crazy outliers for each of the univariate distributions
+1. The distance between the first two quartiles and the max value is heavily right skewed for each of the "Total" metrics. This likely implies there are some large outliers for each of the univariate distributions
 2. There are many more drugs on the market in 2017 than in 2013. The jump between 2016 and 2017 was especially large, at a 27% increase in one year.
 3. There top 6 manufacturers supplied 26% of all brands in this time frame, implying the market is characterized by several large players but also consists of many smaller and mid-level firms.
 4. The products with the most brand nad manufacturer combinations seem to be diabetic insulin needles.
@@ -79,7 +83,9 @@ summary(medicaid)
 
 Looking at the summary for Medicaid, there are three things I want to highlight:
 
-1. 
+1. Surprisingly, there does not appear to be any change in the number of drugs offered between 2016 and 2017. There is still
+2. The Total Metrics are again heavily right skewed
+3. The medicaid information doesn't contain benificiary information, but does contain manufacturer level data.
 
 Just to visually confirm what I was seeing in the quartile summary, I want to look at a ridgeplot of each of the three primary metrics that I'm interested in: Total Spend, Total Claims, and Total Beneficiaries. 
 
@@ -118,6 +124,8 @@ partd %>%
   theme_minimal(base_size = 14) + theme(axis.text.y = element_text(vjust = 0)) +
   xlim(0, 1e5)
 ```
+
+These metrics are so heavily right skewed that it's very difficult to assess if the distributions have shown any meaningful change over time. As such I want to look at the "total" metrics from a log-transformed univariate perspective across each of the three datasets. Ridgeplots are my preferred way to look at univariate distributions separated by a factor level so I'll continue to use them heavily through this part of the EDA. 
 
 ```{r partd_eda_univariate_log_spend}
 partd %>%
