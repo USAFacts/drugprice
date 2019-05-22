@@ -32,7 +32,7 @@ library(ggridges)
 ```
 
 ```{r dataload}
-medicaid <- read_csv("medicaid.csv")
+medicaid <- read_csv("medicaidsrc.csv")
 partb <- read_csv("medicarepartb.csv")
 partd <- read_csv("medicarepartd.csv")
 ```
@@ -125,7 +125,8 @@ partd %>%
 
 These metrics are so heavily right skewed that it's very difficult to assess if the distributions have shown any meaningful change over time. As such I want to look at the "total" metrics from a log-transformed univariate perspective across each of the three datasets. Ridgeplots are my preferred way to look at univariate distributions separated by a factor level so I'll continue to use them heavily through this part of the EDA. 
 
-## Research Question 1
+# Research Question 1
+
 
 ```{r partd_eda_univariate_log_spend}
 partd %>%
@@ -151,6 +152,8 @@ partd %>%
   theme(axis.text.y = element_text(vjust = 0)) +
   labs(x = "Log of Total Spend", y = "Year", title = "Total Spend of Medicare Part D on prescription drugs\nfor only brands available all five years")
 ```
+
+Looking at Medicare Part D's log transformed Total Spend variabile by year, it appears that the upper qua
 
 ```{r partd_eda_univariate_log_claims}
 partd %>%
@@ -311,7 +314,7 @@ medicaid %>%
 ```{r partd_change}
 chngyr <- 2017 - 2013
 
-partdbrandchng <- partd %>%
+partd_brandchng <- partd %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
   ungroup(.) %>%
@@ -344,7 +347,7 @@ partdbrandchng <- partd %>%
        perchngbens,
        .direction = "up")
 
-partdbrandchng %>%
+partd_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
@@ -360,7 +363,7 @@ partdbrandchng %>%
 ```
 
 ```{r partb_change}
-partbbrandchng <- partb %>%
+partb_brandchng <- partb %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
   ungroup(.) %>%
@@ -392,14 +395,14 @@ partbbrandchng <- partb %>%
        perchngbens,
        .direction = "up")
 
-partbbrandchng %>%
+partb_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
   geom_point(stat = "identity") +
   theme_minimal()
 
-partbbrandchng %>%
+partb_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = perchngspend, y = perchngclaims)) +
@@ -408,7 +411,7 @@ partbbrandchng %>%
 ```
 
 ```{r medicaid_change}
-medicaidbrandchng <- medicaid %>%
+medicaid_brandchng <- medicaid %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
   ungroup(.) %>%
@@ -435,14 +438,14 @@ medicaidbrandchng <- medicaid %>%
        perchngclaims,
        .direction = "up")
 
-medicaidbrandchng %>%
+medicaid_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
   geom_point(stat = "identity") +
   theme_minimal()
 
-medicaidbrandchng %>%
+medicaid_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims) %>%
   distinct() %>%
   ggplot(aes(x = perchngspend, y = perchngclaims)) +
@@ -479,20 +482,27 @@ medicaid_manufac <- medicaid %>%
 ```
 
 ```{r insulin exploration}
-partd %>% 
+partd_insulin <- partd %>% 
   filter(str_detect(`Generic Name`, "Insulin")) %>%
   group_by(Year) %>%
-  summarise(totalspend = sum(`Total Spending`)) %>%
+  mutate(totalspend = sum(`Total Spending`), totalbens = sum(`Total Beneficiaries`))
+
+partd_insulin %>%
   ggplot(aes(x = Year, y = totalspend, fill = totalspend)) +
   geom_bar(stat = "identity") +
   theme_minimal()
 
-partd %>% 
-  filter(str_detect(`Generic Name`, "Insulin")) %>%
-  group_by(Year) %>%
-  summarise(totalbens = sum(`Total Beneficiaries`)) %>%
+partd_insulin %>% 
   ggplot(aes(x = Year, y = totalbens, fill = totalbens)) +
   geom_bar(stat = "identity") +
   theme_minimal()
 ```
 
+```{r writecsv, include = FALSE, eval = FALSE}
+files <- mget(ls())
+files$chngyr <- NULL
+
+files %>%
+  names(.) %>%
+  map(~ write_csv(files[[.]], path = paste0(., ".csv"), append = FALSE))
+```
