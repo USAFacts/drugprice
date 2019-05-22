@@ -4,17 +4,8 @@ USAFactsTyler
 21 May, 2019
 
 -   [Introduction](#introduction)
+    -   [Preliminary Cleaning/Summary](#preliminary-cleaningsummary)
     -   [Research Question 1](#research-question-1)
-
-``` r
-rm(list=ls(all=T))
-
-library(tidyverse)
-library(tidyselect)
-library(viridis)
-library(ggthemes)
-library(ggridges)
-```
 
 Introduction
 ============
@@ -25,8 +16,18 @@ This document reflects my exploration of the datasets found at the [CMS Drug Spe
 2.  Is there a material difference in the relationships discovered in Research Question 1 between the three programs for which CMS has provided data, namely Medicare Part B, Medicare Part D and Medicaid?
 3.  Where there is manufacturer level information available, does the relationship between spend and claims vary by the manufacturer, and if so, are certain manufacturer's exhibiting higher costs generally across brands?
 
-Research Question 1
--------------------
+Preliminary Cleaning/Summary
+----------------------------
+
+``` r
+rm(list=ls(all=T))
+
+library(tidyverse)
+library(tidyselect)
+library(viridis)
+library(ggthemes)
+library(ggridges)
+```
 
 ``` r
 medicaid <- read_csv("medicaid.csv")
@@ -244,6 +245,9 @@ partd %>%
 ![](drugprice_eda_files/figure-markdown_github/partd_eda_univariate-3.png)
 
 These metrics are so heavily right skewed that it's very difficult to assess if the distributions have shown any meaningful change over time. As such I want to look at the "total" metrics from a log-transformed univariate perspective across each of the three datasets. Ridgeplots are my preferred way to look at univariate distributions separated by a factor level so I'll continue to use them heavily through this part of the EDA.
+
+Research Question 1
+-------------------
 
 ``` r
 partd %>%
