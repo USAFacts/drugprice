@@ -1,11 +1,24 @@
 Prescription Drug Price EDA
 ================
 USAFactsTyler
-21 May, 2019
+22 May, 2019
 
 -   [Introduction](#introduction)
     -   [Preliminary Cleaning/Summary](#preliminary-cleaningsummary)
-    -   [Research Question 1](#research-question-1)
+-   [Body](#body)
+    -   [Aggregate Trends](#aggregate-trends)
+        -   [Medicare Part D](#medicare-part-d)
+    -   [Univariatie Distribution Trends - Brand Level](#univariatie-distribution-trends---brand-level)
+        -   [Medicare Part D](#medicare-part-d-1)
+        -   [Medicare Part B](#medicare-part-b)
+        -   [Medicaid](#medicaid)
+    -   [Bivariate Change - Brand Level](#bivariate-change---brand-level)
+        -   [Medicare Part D](#medicare-part-d-2)
+        -   [Medicare Part B](#medicare-part-b-1)
+        -   [Medicaid](#medicaid-1)
+    -   [Manufacturer Level](#manufacturer-level)
+    -   [Insulin](#insulin)
+-   [Conclusion](#conclusion)
 
 Introduction
 ============
@@ -19,6 +32,11 @@ This document reflects my exploration of the datasets found at the [CMS Drug Spe
 Preliminary Cleaning/Summary
 ----------------------------
 
+Theree are two things that need to be done with these datasets before we can start exploring them:
+
+1.  General data cleaning tasks such as changing variable types to the appropriate values and omitting missing values.
+2.  Convert the total spend metrics across each of the three programs to be inflation adjusted. Given that we are generally interested in comparing how things have changed over time, I will be using the inflation adjusted spend values as a default.
+
 ``` r
 rm(list=ls(all=T))
 
@@ -30,25 +48,36 @@ library(ggridges)
 ```
 
 ``` r
-medicaid <- read_csv("medicaid.csv")
+medicaid <- read_csv("medicaidsrc.csv")
 partb <- read_csv("medicarepartb.csv")
 partd <- read_csv("medicarepartd.csv")
 ```
 
 ``` r
+infrate <- tibble(Year = as_factor(c(2013, 2014, 2015, 2016, 2017)), inf_rate = c(1.049922855, 1.033187717, 1.029987669, 1.020514977, 1))
+
 partd <- partd %>%
   mutate_at(c("Brand Name", "Generic Name", "Manufacturer", "Year"), as_factor) %>%
-  na.omit(.)
+  na.omit(.) %>%
+  left_join(infrate, by = "Year") %>%
+  mutate(`Inf Total Spend` = signif(`Total Spending` * inf_rate, 3)) %>%
+  select(-inf_rate)
 
 colnames(partd)[6] <- "Total Claims"
 
 partb <- partb %>%
   mutate_at(c("Medicare Billing Code (HCPCS Code)", "Brand Name", "Generic Name", "Year"), as_factor) %>%
-  na.omit(.)
+  na.omit(.) %>%
+  left_join(infrate, by = "Year") %>%
+  mutate(`Inf Total Spend` = signif(`Total Spending` * inf_rate, 3)) %>%
+  select(-inf_rate)
 
 medicaid <- medicaid %>%
   mutate_at(c("Brand Name", "Generic Name", "Manufacturer", "Year"), as_factor) %>%
-  na.omit(.)
+  na.omit(.) %>%
+  left_join(infrate, by = "Year") %>%
+  mutate(`Inf Total Spend` = signif(`Total Spending` * inf_rate, 3)) %>%
+  select(-inf_rate)
 ```
 
 ``` r
@@ -87,13 +116,13 @@ summary(partd)
     ##  3rd Qu.:    5.12                            3rd Qu.:   222.06         
     ##  Max.   :39026.76                            Max.   :119126.15         
     ##                                                                        
-    ##  Average Spending Per Beneficiary   Year     
-    ##  Min.   :      0.0                2013:4380  
-    ##  1st Qu.:     48.5                2014:5024  
-    ##  Median :    151.1                2015:5609  
-    ##  Mean   :   3298.0                2016:5621  
-    ##  3rd Qu.:    659.3                2017:7191  
-    ##  Max.   :1218965.3                           
+    ##  Average Spending Per Beneficiary   Year      Inf Total Spend    
+    ##  Min.   :      0.0                2013:4380   Min.   :5.200e+01  
+    ##  1st Qu.:     48.5                2014:5024   1st Qu.:1.100e+05  
+    ##  Median :    151.1                2015:5609   Median :1.190e+06  
+    ##  Mean   :   3298.0                2016:5621   Mean   :2.266e+07  
+    ##  3rd Qu.:    659.3                2017:7191   3rd Qu.:7.410e+06  
+    ##  Max.   :1218965.3                            Max.   :7.240e+09  
     ## 
 
 Looking at the summary for Medicare Part D, there are four things that I want to highlight:
@@ -146,6 +175,14 @@ summary(partb)
     ##  Mean   : 2635.10           Mean   : 19519.8                 2016:454  
     ##  3rd Qu.: 1992.93           3rd Qu.:  7374.7                 2017:455  
     ##  Max.   :58621.51           Max.   :792223.8                           
+    ##                                                                        
+    ##  Inf Total Spend    
+    ##  Min.   :1.200e+01  
+    ##  1st Qu.:1.190e+05  
+    ##  Median :1.300e+06  
+    ##  Mean   :5.681e+07  
+    ##  3rd Qu.:1.970e+07  
+    ##  Max.   :2.470e+09  
     ## 
 
 Looking at the summary for Medicare Part B, there are three things that I want to highlight:
@@ -182,13 +219,13 @@ summary(medicaid)
     ##  3rd Qu.:   37905   3rd Qu.:    7.32                           
     ##  Max.   :10036481   Max.   :33809.93                           
     ##                                                                
-    ##  Average Spending Per Claim   Year     
-    ##  Min.   :    0.00           2013:5555  
-    ##  1st Qu.:   17.20           2014:6292  
-    ##  Median :   52.26           2015:7066  
-    ##  Mean   :  596.73           2016:7760  
-    ##  3rd Qu.:  179.16           2017:7760  
-    ##  Max.   :99527.18                      
+    ##  Average Spending Per Claim   Year      Inf Total Spend    
+    ##  Min.   :    0.00           2013:5555   Min.   :0.000e+00  
+    ##  1st Qu.:   17.20           2014:6292   1st Qu.:6.110e+04  
+    ##  Median :   52.26           2015:7066   Median :4.380e+05  
+    ##  Mean   :  596.73           2016:7760   Mean   :7.859e+06  
+    ##  3rd Qu.:  179.16           2017:7760   3rd Qu.:2.470e+06  
+    ##  Max.   :99527.18                       Max.   :2.550e+09  
     ## 
 
 Looking at the summary for Medicaid, there are three things I want to highlight:
@@ -197,7 +234,29 @@ Looking at the summary for Medicaid, there are three things I want to highlight:
 2.  The Total Metrics are again heavily right skewed
 3.  The medicaid information doesn't contain benificiary information, but does contain manufacturer level data.
 
-Just to visually confirm what I was seeing in the quartile summary, I want to look at a ridgeplot of each of the three primary metrics that I'm interested in: Total Spend, Total Claims, and Total Beneficiaries.
+Body
+====
+
+Aggregate Trends
+----------------
+
+### Medicare Part D
+
+``` r
+partd %>%
+  group_by(Year) %>%
+  summarise(`Total Spend` = sum(`Inf Total Spend`), `Total Claims` = sum(`Total Claims`), `Total Beneficiaries` = sum(`Total Beneficiaries`)) %>%
+  gather(Metric, Value, -Year) %>% 
+  ggplot(aes(x = Year, y = Value, colour = Metric)) +
+    geom_line(aes(group=1)) +
+    facet_grid(Metric ~ ., scales = "free_y") +
+    scale_color_viridis(discrete = T, option = "D", end = 0.7) +
+    scale_y_continuous(labels = scales::comma) +
+    theme_minimal() +
+    theme(legend.position = "none", panel.spacing = unit(2, "lines"))
+```
+
+![](drugprice_eda_files/figure-markdown_github/partd_eda_agg_totalmetrics-1.png)
 
 ``` r
 partd %>%
@@ -206,7 +265,72 @@ partd %>%
   ungroup(.) %>%
   right_join(partd, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
-  ggplot(aes(x = `Total Spending`, y = Year)) +
+  group_by(Year) %>%
+  summarise(`Total Spend` = sum(`Inf Total Spend`), `Total Claims` = sum(`Total Claims`), `Total Beneficiaries` = sum(`Total Beneficiaries`)) %>%
+  gather(Metric, Value, -Year) %>% 
+  ggplot(aes(x = Year, y = Value, colour = Metric)) +
+    geom_line(aes(group=1)) +
+    facet_grid(Metric ~ ., scales = "free_y") +
+    scale_color_viridis(discrete = T, option = "D", end = 0.7) +
+    scale_y_continuous(labels = scales::comma) +
+    theme_minimal() +
+    theme(legend.position = "none", panel.spacing = unit(2, "lines"))
+```
+
+![](drugprice_eda_files/figure-markdown_github/partd_eda_agg_totalmetrics-2.png)
+
+``` r
+partd %>%
+  group_by(Year) %>%
+  summarise(`Average Spend Per Claim` = sum(`Inf Total Spend`)/sum(`Total Claims`), `Average Spend Per Beneficiary` = sum(`Inf Total Spend`)/sum(`Total Beneficiaries`)) %>%
+  gather(Metric, Value, -Year) %>% 
+  ggplot(aes(x = Year, y = Value, colour = Metric)) +
+    geom_line(aes(group=1)) +
+    facet_grid(Metric ~ ., scales = "free_y") +
+    scale_color_viridis(discrete = T, option = "D", end = 0.7) +
+    scale_y_continuous(labels = scales::comma) +
+    theme_minimal() +
+    theme(legend.position = "none", panel.spacing = unit(2, "lines"))
+```
+
+![](drugprice_eda_files/figure-markdown_github/partd_eda_agg_avgper-1.png)
+
+``` r
+partd %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  group_by(Year) %>%
+  summarise(`Average Spend Per Claim` = sum(`Inf Total Spend`)/sum(`Total Claims`), `Average Spend Per Beneficiary` = sum(`Inf Total Spend`)/sum(`Total Beneficiaries`)) %>%
+  gather(Metric, Value, -Year) %>% 
+  ggplot(aes(x = Year, y = Value, colour = Metric)) +
+    geom_line(aes(group=1)) +
+    facet_grid(Metric ~ ., scales = "free_y") +
+    scale_color_viridis(discrete = T, option = "D", end = 0.7) +
+    scale_y_continuous(labels = scales::comma) +
+    theme_minimal() +
+    theme(legend.position = "none", panel.spacing = unit(2, "lines"))
+```
+
+![](drugprice_eda_files/figure-markdown_github/partd_eda_agg_avgper-2.png)
+
+Univariatie Distribution Trends - Brand Level
+---------------------------------------------
+
+### Medicare Part D
+
+Just to visually confirm what I was seeing in the quartile summaries in the introduction, I want to look at a ridgeplot of each of the three primary metrics that I'm interested in: Total Spend, Total Claims, and Total Beneficiaries.
+
+``` r
+partd %>%
+  group_by(`Brand Name`) %>%
+  summarise(numyrs = n_distinct(Year)) %>%
+  ungroup(.) %>%
+  right_join(partd, by = "Brand Name") %>%
+  filter(numyrs == 5) %>%
+  ggplot(aes(x = `Inf Total Spend`, y = Year)) +
   geom_density_ridges() +
   theme_minimal(base_size = 14) + theme(axis.text.y = element_text(vjust = 0)) +
   xlim(0, 1e7)
@@ -244,10 +368,7 @@ partd %>%
 
 ![](drugprice_eda_files/figure-markdown_github/partd_eda_univariate-3.png)
 
-These metrics are so heavily right skewed that it's very difficult to assess if the distributions have shown any meaningful change over time. As such I want to look at the "total" metrics from a log-transformed univariate perspective across each of the three datasets. Ridgeplots are my preferred way to look at univariate distributions separated by a factor level so I'll continue to use them heavily through this part of the EDA.
-
-Research Question 1
--------------------
+These metrics are so heavily right skewed that it's not fruitful to analyze if the raw distributions have shown any meaningful change over time. As such I want to look at the "total" metrics from a log-transformed univariate perspective across each of the three datasets. Ridgeplots are my preferred way to look at univariate distributions separated by a factor level so I'll continue to use them heavily through this part of the EDA.
 
 ``` r
 partd %>%
@@ -257,7 +378,7 @@ partd %>%
   right_join(partd, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   group_by(`Brand Name`, Year) %>%
-  summarise(brandspend = sum(`Total Spending`), 
+  summarise(brandspend = sum(`Inf Total Spend`), 
             branddose = sum(`Total Dosage Units`), 
             brandclaims = sum(`Total Claims`), 
             brandbens = sum(`Total Beneficiaries`)) %>%
@@ -276,6 +397,8 @@ partd %>%
 
 ![](drugprice_eda_files/figure-markdown_github/partd_eda_univariate_log_spend-1.png)
 
+Looking at Medicare Part D's log transformed Total Spend variabile by year,
+
 ``` r
 partd %>%
   group_by(`Brand Name`) %>%
@@ -284,7 +407,7 @@ partd %>%
   right_join(partd, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   group_by(`Brand Name`, Year) %>%
-  summarise(brandspend = sum(`Total Spending`), 
+  summarise(brandspend = sum(`Inf Total Spend`), 
             branddose = sum(`Total Dosage Units`), 
             brandclaims = sum(`Total Claims`), 
             brandbens = sum(`Total Beneficiaries`)) %>%
@@ -311,7 +434,7 @@ partd %>%
   right_join(partd, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   group_by(`Brand Name`, Year) %>%
-  summarise(brandspend = sum(`Total Spending`), 
+  summarise(brandspend = sum(`Inf Total Spend`), 
             branddose = sum(`Total Dosage Units`), 
             brandclaims = sum(`Total Claims`), 
             brandbens = sum(`Total Beneficiaries`)) %>%
@@ -330,6 +453,8 @@ partd %>%
 
 ![](drugprice_eda_files/figure-markdown_github/partd_eda_univariate_log_bens-1.png)
 
+### Medicare Part B
+
 ``` r
 partb %>%
   group_by(`Brand Name`) %>%
@@ -337,7 +462,7 @@ partb %>%
   ungroup(.) %>%
   right_join(partb, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
-  mutate(logspend = log(`Total Spending`)) %>%
+  mutate(logspend = log(`Inf Total Spend`)) %>%
   ggplot(aes(x = logspend, y = fct_relevel(Year, rev), fill = factor(..quantile..))) +
   stat_density_ridges(
     geom = "density_ridges_gradient", calc_ecdf = TRUE,
@@ -393,6 +518,8 @@ partb %>%
 
 ![](drugprice_eda_files/figure-markdown_github/partb_eda_univariate_log_bens-1.png)
 
+### Medicaid
+
 ``` r
 medicaid %>%
   group_by(`Brand Name`) %>%
@@ -401,7 +528,7 @@ medicaid %>%
   right_join(medicaid, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   group_by(`Brand Name`, Year) %>%
-  summarise(brandspend = sum(`Total Spending`), 
+  summarise(brandspend = sum(`Inf Total Spend`), 
             branddose = sum(`Total Dosage Units`), 
             brandclaims = sum(`Total Claims`)) %>%
   ungroup(.) %>%
@@ -427,7 +554,7 @@ medicaid %>%
   right_join(medicaid, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   group_by(`Brand Name`, Year) %>%
-  summarise(brandspend = sum(`Total Spending`), 
+  summarise(brandspend = sum(`Inf Total Spend`), 
             branddose = sum(`Total Dosage Units`), 
             brandclaims = sum(`Total Claims`)) %>%
   ungroup(.) %>%
@@ -445,17 +572,22 @@ medicaid %>%
 
 ![](drugprice_eda_files/figure-markdown_github/medicaid_eda_univariate_log_claims-1.png)
 
+Bivariate Change - Brand Level
+------------------------------
+
+### Medicare Part D
+
 ``` r
 chngyr <- 2017 - 2013
 
-partdbrandchng <- partd %>%
+partd_brandchng <- partd %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
   ungroup(.) %>%
   right_join(partd, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   group_by(`Brand Name`, Year) %>%
-  summarise(brandspend = sum(`Total Spending`), 
+  summarise(brandspend = sum(`Inf Total Spend`), 
             branddose = sum(`Total Dosage Units`), 
             brandclaims = sum(`Total Claims`), 
             brandbens = sum(`Total Beneficiaries`)) %>%
@@ -481,7 +613,7 @@ partdbrandchng <- partd %>%
        perchngbens,
        .direction = "up")
 
-partdbrandchng %>%
+partd_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
@@ -492,7 +624,7 @@ partdbrandchng %>%
 ![](drugprice_eda_files/figure-markdown_github/partd_change-1.png)
 
 ``` r
-partdbrandchng %>%
+partd_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = perchngspend, y = perchngclaims)) +
@@ -502,15 +634,17 @@ partdbrandchng %>%
 
 ![](drugprice_eda_files/figure-markdown_github/partd_change-2.png)
 
+### Medicare Part B
+
 ``` r
-partbbrandchng <- partb %>%
+partb_brandchng <- partb %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
   ungroup(.) %>%
   right_join(partb, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   group_by(`Brand Name`, Year) %>%
-  summarise(brandspend = sum(`Total Spending`), 
+  summarise(brandspend = sum(`Inf Total Spend`), 
             branddose = sum(`Total Dosage Units`), 
             brandclaims = sum(`Total Claims`), 
             brandbens = sum(`Total Beneficiaries`)) %>%
@@ -535,7 +669,7 @@ partbbrandchng <- partb %>%
        perchngbens,
        .direction = "up")
 
-partbbrandchng %>%
+partb_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
@@ -546,7 +680,7 @@ partbbrandchng %>%
 ![](drugprice_eda_files/figure-markdown_github/partb_change-1.png)
 
 ``` r
-partbbrandchng %>%
+partb_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = perchngspend, y = perchngclaims)) +
@@ -556,15 +690,17 @@ partbbrandchng %>%
 
 ![](drugprice_eda_files/figure-markdown_github/partb_change-2.png)
 
+### Medicaid
+
 ``` r
-medicaidbrandchng <- medicaid %>%
+medicaid_brandchng <- medicaid %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
   ungroup(.) %>%
   right_join(medicaid, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
   group_by(`Brand Name`, Year) %>%
-  summarise(brandspend = sum(`Total Spending`), 
+  summarise(brandspend = sum(`Inf Total Spend`), 
             branddose = sum(`Total Dosage Units`), 
             brandclaims = sum(`Total Claims`)) %>%
   ungroup(.) %>%
@@ -584,7 +720,7 @@ medicaidbrandchng <- medicaid %>%
        perchngclaims,
        .direction = "up")
 
-medicaidbrandchng %>%
+medicaid_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
@@ -595,7 +731,7 @@ medicaidbrandchng %>%
 ![](drugprice_eda_files/figure-markdown_github/medicaid_change-1.png)
 
 ``` r
-medicaidbrandchng %>%
+medicaid_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims) %>%
   distinct() %>%
   ggplot(aes(x = perchngspend, y = perchngclaims)) +
@@ -605,12 +741,15 @@ medicaidbrandchng %>%
 
 ![](drugprice_eda_files/figure-markdown_github/medicaid_change-2.png)
 
+Manufacturer Level
+------------------
+
 ``` r
 partd_manufac <- partd %>%
   group_by(`Brand Name`, Year) %>%
-  mutate(avg_spend_per_claim_brand = signif(sum(`Total Spending`)/sum(`Total Claims`), 3)) %>%
+  mutate(avg_spend_per_claim_brand = signif(sum(`Inf Total Spend`)/sum(`Total Claims`), 3)) %>%
   group_by(Manufacturer, add = TRUE) %>%
-  mutate(avg_spend_per_claim_manufac = sum(`Total Spending`)/sum(`Total Claims`)) %>%
+  mutate(avg_spend_per_claim_manufac = sum(`Inf Total Spend`)/sum(`Total Claims`)) %>%
   mutate(avg_spend_per_claim_resid = signif(avg_spend_per_claim_manufac, 3) - signif(avg_spend_per_claim_brand, 3), 
          avg_spend_per_claim_status = ifelse(avg_spend_per_claim_resid == 0, "at_average", ifelse(avg_spend_per_claim_resid < 0, "below_average", "above_average")), 
          market_diff = avg_spend_per_claim_resid * `Total Claims`) %>%
@@ -622,9 +761,9 @@ partd_manufac <- partd %>%
 ``` r
 medicaid_manufac <- medicaid %>%
   group_by(`Brand Name`, Year) %>%
-  mutate(avg_spend_per_claim_brand = signif(sum(`Total Spending`)/sum(`Total Claims`), 3)) %>%
+  mutate(avg_spend_per_claim_brand = signif(sum(`Inf Total Spend`)/sum(`Total Claims`), 3)) %>%
   group_by(Manufacturer, add = TRUE) %>%
-  mutate(avg_spend_per_claim_manufac = sum(`Total Spending`)/sum(`Total Claims`)) %>%
+  mutate(avg_spend_per_claim_manufac = sum(`Inf Total Spend`)/sum(`Total Claims`)) %>%
   mutate(avg_spend_per_claim_resid = signif(avg_spend_per_claim_manufac, 3) - signif(avg_spend_per_claim_brand, 3), 
          avg_spend_per_claim_status = ifelse(avg_spend_per_claim_resid == 0, "at_average", ifelse(avg_spend_per_claim_resid < 0, "below_average", "above_average")), 
          market_diff = avg_spend_per_claim_resid * `Total Claims`) %>%
@@ -633,11 +772,16 @@ medicaid_manufac <- medicaid %>%
   summarise(manufacturer_diff = sum(market_diff), price_status_drugs = n()) 
 ```
 
+Insulin
+-------
+
 ``` r
-partd %>% 
+partd_insulin <- partd %>% 
   filter(str_detect(`Generic Name`, "Insulin")) %>%
   group_by(Year) %>%
-  summarise(totalspend = sum(`Total Spending`)) %>%
+  mutate(totalspend = sum(`Inf Total Spend`), totalbens = sum(`Total Beneficiaries`))
+
+partd_insulin %>%
   ggplot(aes(x = Year, y = totalspend, fill = totalspend)) +
   geom_bar(stat = "identity") +
   theme_minimal()
@@ -646,13 +790,13 @@ partd %>%
 ![](drugprice_eda_files/figure-markdown_github/insulin%20exploration-1.png)
 
 ``` r
-partd %>% 
-  filter(str_detect(`Generic Name`, "Insulin")) %>%
-  group_by(Year) %>%
-  summarise(totalbens = sum(`Total Beneficiaries`)) %>%
+partd_insulin %>% 
   ggplot(aes(x = Year, y = totalbens, fill = totalbens)) +
   geom_bar(stat = "identity") +
   theme_minimal()
 ```
 
 ![](drugprice_eda_files/figure-markdown_github/insulin%20exploration-2.png)
+
+Conclusion
+==========
