@@ -17,11 +17,21 @@ This document reflects my exploration of the datasets found at the [CMS Drug Spe
 
 1. What is the relationship between spend and claims at a brand level and has that relationship changed over the past five years?
 2. Is there a material difference in the relationships discovered in Research Question 1 between the three programs for which CMS has provided data, namely Medicare Part B, Medicare Part D and Medicaid?
-3. Where there is manufacturer level information available, does the relationship between spend and claims vary by the manufacturer, and if so, are certain manufacturer's exhibiting higher costs generally across brands? 
+3. Are there sub-categories of prescription drugs that exhibit noticeably higher growth in spend relative to claims? Conversely, are there sub categories of prescription drugs that exhibit noticeably lower growth in spend relative to claims?
 
 ## Background Definitions
 
-FIXME
+* Types of drugs covered by Medicare Part B - Medicare Part B covers prescription drugs that are either administered by a medical professional in a patient setting or in various outpatient settings
+
+* Types of drugs covered by Medicare Part D - Medicare Part D covers prescription drugs that can be self-administered and 
+
+* Total Spend Medicare Part B - Drug spending metrics for Part B drugs represent the full value of the product, including the Medicare payment and beneficiary liability. All Part B drug spending metrics are calculated at the Healthcare Common Procedure Coding System (HCPCS) level.
+
+* Total Spend Medicare Part D - Drug spending metrics for Part D drugs are based on the gross drug cost, which represents total spending for the prescription claim, including Medicare, plan, and beneficiary payments. The Part D spending metrics do not reflect any manufacturers’ rebates or other price concessions as CMS is prohibited from publicly disclosing such information.
+
+* Total Spend Medicaid - Drug spending metrics for Medicaid represent the total amount reimbursed by both Medicaid and non-Medicaid entities to pharmacies for the drug. Medicaid drug spending contains both the Federal and State Reimbursement and is inclusive of any applicable dispensing fees. In addition, this total is not reduced or affected by Medicaid rebates paid to the states.
+
+* Total Claims - Number of prescription fills for each drug. Includes original prescriptions and refills. 
 
 ## Preliminary Cleaning/Summary
 
@@ -39,7 +49,6 @@ library(viridis)
 library(ggthemes)
 library(ggridges)
 library(knitr)
-library(gridExtra)
 ```
 
 ```{r dataload, include = FALSE}
@@ -60,6 +69,7 @@ partd <- partd %>%
 colnames(partd)[6] <- "Total Claims"
 
 partb <- partb %>%
+  mutate(`Generic Name` = ifelse(is.na(`Generic Name`), "Not Supplied", `Generic Name`)) %>%
   mutate_at(c("Medicare Billing Code (HCPCS Code)", "Brand Name", "Generic Name"), as_factor) %>%
   na.omit(.) %>%
   left_join(inflation %>% filter(yeartype == "fiscal", baseyear == 2017), by = c("Year" = "year")) %>%
@@ -211,18 +221,33 @@ combined %>%
 As a point of reference, the portion of the total Medicare Part B spend that prescription drugs account for has only increased by about 1%. Even though the average spend per claim for this program has substantially increased over the past five years, the total effect on Medicare Part B's cost is not as significant.
 
 ```{r combined_aggregate_trends_4}
+# Average claims per beneficiary for medicare part b and part d
 combined %>%
   filter(numyrs == 5, Program != "Medicaid") %>%
   group_by(Program, Year) %>%
   summarise(`Average Claims Per Beneficiary` = sum(`Total Claims`)/sum(`Total Beneficiaries`)) %>%
   ggplot(aes(x = Year, y = `Average Claims Per Beneficiary`, colour = Program)) +
   geom_line(size = 1, aes(group=Program)) +
-  labs(y = "Average Claims per Beneficiary", title = "Test", caption = "*Only examining drugs that have been on market for all 5 years") +
+  labs(y = "Average Claims per Beneficiary", title = "Average claims per beneficiary have fallen since 2013\nfor both Medicare programs", caption = "*Only examining drugs that have been on market for all 5 years") +
   scale_color_viridis(option = "E", end = 0.8, discrete = TRUE) +
   theme_minimal()
 ```
 
-```{r combined_aggregate_trends_5}
+Another dynamic that I wanted to understand was the rate at which beneficiaries were making claims over time. Again I was only looking at drugs that have been available for all five years in the dataset as a controlling factor. For Medicare Part D, this rate has consistently declined at a fairly slow rate, while Medicare Part B shows a slightly different trend with a large drop between 2014 and 2015 which has slowly crept up in the two years following. As a baseline, Medicare Part D has a higher rate of claims per beneficiary than Medicare Part B, but I would guess this is due to the expected treatment cycles of the drugs that are covered by each program, as Medicare Part B covers things like vaccinations which are not expected to have a high claims per beneficiary ratio.
+
+```{r combined_aggregate_trends_5, include = FALSE, eval = FALSE}
+# n-rank
+combined %>%
+  group_by(Program, Year) %>%
+  summarise(`Program Spend` = sum(`Nom Total Spend`)) %>%
+  right_join(combined, by = c("Program","Year")) %>%
+  mutate(percent_program = `Nom Total Spend`/`Program Spend`) %>%
+  filter(percent_program >= 0.01) %>%
+  arrange(Program, Year, desc(percent_program))
+```
+
+
+```{r combined_aggregate_trends_6}
 # Count of drugs introduced each year 2014-2017
 combined %>% 
   group_by(Program, firstyear) %>%
@@ -235,81 +260,20 @@ combined %>%
   theme_minimal()
 ```
 
-For curiousity, I also wanted to see how many drugs have been introduced in each successive year and it appears that the rate of new drugs that are landing on the market is slowing down.
-
-### Medicare Part D
-
-```{r partd_eda_agg_totalmetrics_1}
-partd %>%
-  group_by(Year) %>%
-  summarise(`Total Spend` = sum(`Inf Total Spend`), `Total Claims` = sum(`Total Claims`), `Total Beneficiaries` = sum(`Total Beneficiaries`)) %>%
-  gather(Metric, Value, -Year) %>% 
-  ggplot(aes(x = Year, y = Value, colour = Metric)) +
-    geom_line(size = 1, aes(group=1)) +
-    facet_grid(Metric ~ ., scales = "free_y") +
-    scale_color_viridis(discrete = T, option = "E", end = 0.8) +
-    scale_y_continuous(labels = scales::comma) +
-    theme_minimal() +
-    theme(legend.position = "none", panel.spacing = unit(2, "lines"))
-
-partd %>%
-  group_by(`Brand Name`) %>%
-  summarise(numyrs = n_distinct(Year)) %>%
-  ungroup(.) %>%
-  right_join(partd, by = "Brand Name") %>%
-  filter(numyrs == 5) %>%
-  group_by(Year) %>%
-  summarise(`Total Spend` = sum(`Inf Total Spend`), `Total Claims` = sum(`Total Claims`), `Total Beneficiaries` = sum(`Total Beneficiaries`)) %>%
-  gather(Metric, Value, -Year) %>% 
-  ggplot(aes(x = Year, y = Value, colour = Metric)) +
-    geom_line(size = 1, aes(group=1)) +
-    facet_grid(Metric ~ ., scales = "free_y") +
-    scale_color_viridis(discrete = T, option = "E", end = 0.8) +
-    scale_y_continuous(labels = scales::comma) +
-    theme_minimal() +
-    theme(legend.position = "none", panel.spacing = unit(2, "lines"))
-```
-
-```{r partd_eda_agg_avgper_1}
-partd %>%
-  group_by(Year) %>%
-  summarise(`Average Spend Per Claim` = sum(`Inf Total Spend`)/sum(`Total Claims`), `Average Spend Per Beneficiary` = sum(`Inf Total Spend`)/sum(`Total Beneficiaries`)) %>%
-  gather(Metric, Value, -Year) %>% 
-  ggplot(aes(x = Year, y = Value, colour = Metric)) +
-    geom_line(size = 1, aes(group=1)) +
-    facet_grid(Metric ~ ., scales = "free_y") +
-    scale_color_viridis(discrete = T, option = "E", end = 0.8) +
-    scale_y_continuous(labels = scales::comma) +
-    theme_minimal() +
-    theme(legend.position = "none", panel.spacing = unit(2, "lines"))
-
-partd %>%
-  group_by(`Brand Name`) %>%
-  summarise(numyrs_onmarket = n_distinct(Year)) %>%
-  ungroup(.) %>%
-  right_join(partd, by = "Brand Name") %>%
-  filter(numyrs_onmarket == 5) %>%
-  group_by(Year, numyrs_onmarket) %>%
-  summarise(`Average Spend Per Claim` = sum(`Inf Total Spend`)/sum(`Total Claims`), `Average Spend Per Beneficiary` = sum(`Inf Total Spend`)/sum(`Total Beneficiaries`)) %>%
-  gather(Metric, Value, -Year, -numyrs_onmarket) %>% 
-  ggplot(aes(x = Year, y = Value, colour = Metric)) +
-    geom_line(size = 1, aes(group=1)) +
-    facet_grid(Metric ~ ., scales = "free_y") +
-    scale_color_viridis(discrete = T, option = "E", end = 0.8) +
-    scale_y_continuous(labels = scales::comma) +
-    theme_minimal() +
-    theme(legend.position = "none", panel.spacing = unit(2, "lines"))
-
-```
-
+Finally I also wanted to see how many drugs have been introduced in each successive year and it appears that the rate of new drugs that are landing on the market is slowing down, although Medicare Part D had a large increase in 2017. I suspect that over a larger period of time a seasonal component to this might be visible but it's too short to tell for now.
 
 ## Univariatie Distribution Trends - Brand Level
 
+Before diving deeper into these datasets, there are a few general notes I want to make:
+
+1. I am planning to just examine the subset of drugs that have been consistently avaiable all five years of the dataset.
+2. My suspicion (based on the summary quartiles in the introduction) is that all of these variables are close to a lognormal distribution, so I am planning on log-transforming the variables of interest and looking at their distributions then.
+3. All spend variables will be examined in terms of inflation adjusted spend.
+
 ### Medicare Part D
 
-Just to visually confirm what I was seeing in the quartile summaries in the introduction, I want to look at a ridgeplot of each of the three primary metrics that I'm interested in: Total Spend, Total Claims, and Total Beneficiaries. My suspicion is that all of these variables are going to be best approximated by a lognormal distribution
-
-```{r partd_eda_univariate}
+```{r partd_eda_univariate, include = FALSE, eval = FALSE}
+# Just to visually confirm what I was seeing in the quartile summaries in the introduction, I want to look at a ridgeplot of each of the three primary metrics that I'm interested in: Total Spend, Total Claims, and Total Beneficiaries. # Indeed, all of these metrics are heavily right skewed. As such, I want to look at the "total" metrics from a log-transformed univariate perspective across each of the three datasets.
 partd %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
@@ -344,8 +308,6 @@ partd %>%
   xlim(0, 1e5)
 ```
 
-These metrics are so heavily right skewed that it's not fruitful to analyze if the raw distributions have shown any meaningful change over time. As such I want to look at the "total" metrics from a log-transformed univariate perspective across each of the three datasets. Ridgeplots are my preferred way to look at univariate distributions separated by a factor level so I'll continue to use them heavily through this part of the EDA. 
-
 ```{r partd_eda_univariate_log_spend}
 partd %>%
   group_by(`Brand Name`) %>%
@@ -371,7 +333,7 @@ partd %>%
   labs(x = "Log of Total Spend", y = "Year", title = "Total Spend of Medicare Part D on prescription drugs\nfor only brands available all five years")
 ```
 
-Looking at Medicare Part D's log transformed Total Spend variabile by year, 
+Looking at Medicare Part D's log transformed Total Spend variabile by year, it appears that the distribution is becoming more spread out. Quartile 4 appears to be shifting right and the quartile 1 followed until 2015 but began to shift left afterwards. My quick thoughts are that these changes are a result of two separate market forces. First, since we are only looking at drugs that have been available for the past five years, there may be a set of brands that are winding down their product life cycle or have had a patent expire, thereby requiring them to either reduce prices or consumers are substituting to generic competitors. Second, there does appear to be a subset of drugs that are increasing in spend over time, which could be driven by either an increase of claims at a consistent price or a general price increase.
 
 ```{r partd_eda_univariate_log_claims}
 partd %>%
@@ -398,6 +360,8 @@ partd %>%
   labs(x = "Log of Total Claims", y = "Year", title = "Total Claims of Medicare Part D on prescription drugs\nfor only brands available all five years")
 ```
 
+Looking at Medicare Part D's log transformed Total Claims variabile by year, it appears that the distribution is starting to become bimodal. Quartile 1 is becoming more dense and has shifted left while quartile 4 has remained relatively constant since 2013 but is showing greater density right around the 75th percentile. As a result, the third quartile has grown in width. This seems to reinforce the notion that the distribution of drugs is representative of two sub-groups.
+
 ```{r partd_eda_univariate_log_bens}
 partd %>%
   group_by(`Brand Name`) %>%
@@ -423,6 +387,8 @@ partd %>%
   labs(x = "Log of Total Beneficiaries", y = "Year", title = "Total Beneficiaries of Medicare Part D on prescription drugs\nfor only brands available all five years")
 ```
 
+Looking at Medicare Part D's log transformed Total Beneficiaries variable by year, the lower half of the distribution appears to be shifting left while the upper half is becoming more spread out. In general, this means that there are more drugs that are serving less individuals.
+
 ### Medicare Part B
 
 ```{r partb_eda_univariate_log_spend}
@@ -444,6 +410,8 @@ partb %>%
   labs(x = "Log of Total Spend", y = "Year", title = "Total Spend of Medicare Part B on prescription drugs\nfor only brands available all five years")
 ```
 
+Looking at Medicare Part B's log transformed Total Spend variable, there was a noticeable density consolidation in the second quartile from 2013 to 2016 but in 2017 this trend has somewhat reversed. Relative to 2013, the largest difference between the two distributions is a more even density within the third quartile, implying a number of brands are now more expensive than they were in 2013.
+
 ```{r partb_eda_univariate_log_claims}
 partb %>%
   group_by(`Brand Name`) %>%
@@ -463,6 +431,8 @@ partb %>%
   labs(x = "Log of Total Claims", y = "Year", title = "Total Claims of Medicare Part B on prescription drugs\nfor only brands available all five years")
 ```
 
+Looking at Medicare Part B's log transformed Total Claims, it appears that the density of brands around the third and fourth quartile in 2013 has been gradually shifting solidly into the third quartile, while the first and second quartiles have been slightly shifting left. This implies that a number of brands are having fewer claims relative to 2013.
+
 ```{r partb_eda_univariate_log_bens}
 partb %>%
   group_by(`Brand Name`) %>%
@@ -481,6 +451,7 @@ partb %>%
   theme(axis.text.y = element_text(vjust = 0)) +
   labs(x = "Log of Total Beneficiaries", y = "Year", title = "Total Beneficiaries of Medicare Part B on prescription drugs\nfor only brands available all five years")
 ```
+Looking at Medicare Part B's log transformed Total Beneficiaries, the fourth quartile appears less dense with a longer tail in 2017 relative to 2013. There also seems to be a greater density appearing on the border between the first and second quartile as the distribution is becoming closer to bimodal. This implies that a number of brands are reaching less beneficiaries in 2017 relative to 2013.
 
 ### Medicaid
 
@@ -509,6 +480,8 @@ medicaid %>%
 
 ```
 
+Looking at Medicaid's log transformed Total Spend, the distribution is showing an increase of density in the fourth quartile as well as at the median point in 2017 relative to 2013. Additionally the fourth quartile was continually shifting left through 2016 but reversed trend in 2017.
+
 ```{r medicaid_eda_univariate_log_claims}
 medicaid %>%
   group_by(`Brand Name`) %>%
@@ -533,11 +506,11 @@ medicaid %>%
   labs(x = "Log of Total Claims", y = "Year", title = "Total Claims of Medicaid on prescription drugs\nfor only brands available all five years")
 ```
 
+Looking at Medicaid's log transformed Total Spend, the distribution appears to have a greater density of brands in the first quartile. This implies that there are less brands with a very small amount of claims being made against them. This makes sense as brands have spent more time on the market their exposure grows. It also appears that the distribution is skewing left, implying there is a general trend of brands receiving less claims.
+
 ## Bivariate Change - Brand Level
 
-### Medicare Part D
-
-```{r partd_change}
+```{r brandchng, include = FALSE}
 chngyr <- 2017 - 2013
 
 partd_brandchng <- partd %>%
@@ -578,39 +551,6 @@ partd_brandchng <- partd %>%
        perchngspendperclaim,
        .direction = "up")
 
-partd_brandchng %>%
-  filter(Year == 2017) %>%
-  select(`Brand Name`, nomchngspendperclaim, brandspend, brandclaims) %>%
-  distinct() %>%
-  arrange(desc(nomchngspendperclaim)) %>%
-  .[1:50,]
-
-partd_brandchng %>%
-  filter(Year == 2017) %>%
-  select(`Brand Name`, perchngspendperclaim, nomchngspendperclaim, brandspend2017 = brandspend, brandclaims2017 = brandclaims) %>%
-  distinct() %>%
-  arrange(desc(perchngspendperclaim)) %>%
-  .[1:50,]
-
-partd_brandchng %>%
-  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
-  distinct() %>%
-  ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
-  geom_point(stat = "identity", position = "jitter") +
-  theme_minimal()
-
-partd_brandchng %>%
-  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
-  distinct() %>%
-  ggplot(aes(x = perchngspend, y = perchngclaims)) +
-  geom_point(stat = "identity", position = "jitter") +
-  theme_minimal()
-  
-```
-
-### Medicare Part B
-
-```{r partb_change}
 partb_brandchng <- partb %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
@@ -648,38 +588,6 @@ partb_brandchng <- partb %>%
        perchngspendperclaim,
        .direction = "up")
 
-partb_brandchng %>%
-  filter(Year == 2017) %>%
-  select(`Brand Name`, nomchngspendperclaim,  brandspend2017 = brandspend, brandclaims2017 = brandclaims) %>%
-  distinct() %>%
-  arrange(desc(nomchngspendperclaim)) %>%
-  .[1:50,]
-
-partb_brandchng %>%
-  filter(Year == 2017) %>%
-  select(`Brand Name`, perchngspendperclaim, nomchngspendperclaim, brandspend2017 = brandspend, brandclaims2017 = brandclaims) %>%
-  distinct() %>%
-  arrange(desc(perchngspendperclaim)) %>%
-  .[1:50,]
-
-partb_brandchng %>%
-  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
-  distinct() %>%
-  ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
-  geom_point(stat = "identity") +
-  theme_minimal()
-
-partb_brandchng %>%
-  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
-  distinct() %>%
-  ggplot(aes(x = perchngspend, y = perchngclaims)) +
-  geom_point(stat = "identity") +
-  theme_minimal()
-```
-
-### Medicaid
-
-```{r medicaid_change}
 medicaid_brandchng <- medicaid %>%
   group_by(`Brand Name`) %>%
   summarise(numyrs = n_distinct(Year)) %>%
@@ -709,18 +617,95 @@ medicaid_brandchng <- medicaid %>%
        perchngdose,
        perchngclaims,
        .direction = "up")
+```
+
+### Medicare Part D
+
+```{r partd_scatterplots}
+partd_brandchng %>%
+  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
+  distinct() %>%
+  ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
+  geom_point(stat = "identity", position = "jitter") +
+  labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
+  theme_minimal()
+
+partd_brandchng %>%
+  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
+  distinct() %>%
+  ggplot(aes(x = perchngspend, y = perchngclaims)) +
+  geom_point(stat = "identity", position = "jitter") +
+  labs(x = "Percent Inflation Adj. Change in Spend", y = "Percent Change in Claims", title = "Bivariate relationship between Percent Change in Spend and Claims", subtitle ="Change between 2013 & 2017") +
+  theme_minimal()
+```
+
+```{r partd_top_change_table, include = FALSE, eval = FALSE}
+partd_brandchng %>%
+  filter(Year == 2017) %>%
+  select(`Brand Name`, nomchngspendperclaim, brandspend, brandclaims) %>%
+  distinct() %>%
+  arrange(desc(nomchngspendperclaim)) %>%
+  .[1:50,]
+
+partd_brandchng %>%
+  filter(Year == 2017) %>%
+  select(`Brand Name`, perchngspendperclaim, nomchngspendperclaim, brandspend2017 = brandspend, brandclaims2017 = brandclaims) %>%
+  distinct() %>%
+  arrange(desc(perchngspendperclaim)) %>%
+  .[1:50,]
+```
+
+### Medicare Part B
+
+```{r partb_scatterplots}
+partb_brandchng %>%
+  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
+  distinct() %>%
+  ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
+  geom_point(stat = "identity") +
+  labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
+  theme_minimal()
+
+partb_brandchng %>%
+  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
+  distinct() %>%
+  ggplot(aes(x = perchngspend, y = perchngclaims)) +
+  geom_point(stat = "identity") +
+  labs(x = "Percent Inflation Adj. Change in Spend", y = "Percent Change in Claims", title = "Bivariate relationship between Percent Change in Spend and Claims", subtitle ="Change between 2013 & 2017") +
+  theme_minimal()
+```
+
+```{r partb_top_change_table, include = FALSE, eval = FALSE}
+partb_brandchng %>%
+  filter(Year == 2017) %>%
+  select(`Brand Name`, nomchngspendperclaim,  brandspend2017 = brandspend, brandclaims2017 = brandclaims) %>%
+  distinct() %>%
+  arrange(desc(nomchngspendperclaim)) %>%
+  .[1:50,]
+
+partb_brandchng %>%
+  filter(Year == 2017) %>%
+  select(`Brand Name`, perchngspendperclaim, nomchngspendperclaim, brandspend2017 = brandspend, brandclaims2017 = brandclaims) %>%
+  distinct() %>%
+  arrange(desc(perchngspendperclaim)) %>%
+  .[1:50,]
 
 medicaid_brandchng %>%
   select(`Brand Name`, nomchngspendperclaim) %>%
   distinct() %>%
   arrange(desc(nomchngspendperclaim)) %>%
   .[1:50,]
+```
 
+### Medicaid
+
+```{r medicaid_change}
 medicaid_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
   geom_point(stat = "identity") +
+  labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
   theme_minimal()
 
 medicaid_brandchng %>%
@@ -728,12 +713,15 @@ medicaid_brandchng %>%
   distinct() %>%
   ggplot(aes(x = perchngspend, y = perchngclaims)) +
   geom_point(stat = "identity") +
+  labs(x = "Percent Inflation Adj. Change in Spend", y = "Percent Change in Claims", title = "Bivariate relationship between Percent Change in Spend and Claims", subtitle ="Change between 2013 & 2017") +
   theme_minimal()
 ```
 
 ## Manufacturer Level
 
-```{r partd_manufacturer}
+TODO
+
+```{r partd_manufacturer, include = FALSE}
 partd_manufac <- partd %>%
   group_by(`Brand Name`, Year) %>%
   mutate(avg_spend_per_claim_brand = signif(sum(`Inf Total Spend`)/sum(`Total Claims`), 3)) %>%
@@ -748,7 +736,7 @@ partd_manufac <- partd %>%
 
 ```
 
-```{r medicaid_manufacturer}
+```{r medicaid_manufacturer, inclue = FALSE}
 medicaid_manufac <- medicaid %>%
   group_by(`Brand Name`, Year) %>%
   mutate(avg_spend_per_claim_brand = signif(sum(`Inf Total Spend`)/sum(`Total Claims`), 3)) %>%
@@ -764,45 +752,28 @@ medicaid_manufac <- medicaid %>%
 
 ## Insulin
 
-```{r insulin exploration}
-partd_insulin <- partd %>% 
+Average spend per claim on Medicare Part D has gone up dramatically since 2013.
+
+```{r partd_insulin}
+partd %>% 
   filter(str_detect(`Generic Name`, "Insulin")) %>%
   group_by(Year) %>%
-  summarise(totalspend = sum(`Inf Total Spend`), totalclaims = sum(`Total Claims`), totalbens = sum(`Total Beneficiaries`)) %>%
-  mutate(avgspend_per_claim = totalspend/totalclaims, avgspend_per_ben = totalspend/totalbens)
-
-partd_insulin %>%
-  ggplot(aes(x = Year, y = totalspend, fill = totalspend)) +
-  geom_bar(stat = "identity") +
-  theme_minimal()
-
-partd_insulin %>% 
-  ggplot(aes(x = Year, y = totalbens, fill = totalbens)) +
-  geom_bar(stat = "identity") +
-  theme_minimal()
-```
-
-```{r}
-partd_brandchng %>%
-  group_by(Year) %>%
-  summarise(avgcostperben = sum(brandspend)/sum(brandbens))
-
-partd_brandchng %>%
-  group_by(Year) %>%
-  summarise(claimsperben = sum(brandclaims)/sum(brandbens))
-
-partb_brandchng %>%
-  group_by(Year) %>%
-  summarise(claimsperben = sum(brandclaims)/sum(brandbens))
-
-partb_brandchng %>%
-  group_by(Year) %>%
-  summarise(avgcostperben = sum(brandspend)/sum(brandbens))
+  summarise(totalspend = sum(`Inf Total Spend`), totalclaims = sum(`Total Claims`)) %>%
+  mutate(`Average Spend Per Claim` = totalspend/totalclaims) %>%
+  ggplot(aes(x=Year, y = `Average Spend Per Claim`, color = "foo")) +
+  geom_line(size = 1) +
+  scale_y_continuous(labels = function(x) paste0("$", x), limits = c(0,550)) +
+  scale_color_manual(values = "#00204DFF") +
+  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on Insulin related drugs\nhas grown by 78%, or $220") +
+  theme_minimal() +
+  theme(legend.position = "none") 
 ```
 
 # Conclusion
 
-```{r}
+TODO
+
+```{r writecsv_1, include = FALSE, eval = FALSE}
 partd_brandlvl <- partd %>%
   group_by(`Brand Name`, Year, `Generic Name`) %>%
   summarise(num_manufac = n_distinct(Manufacturer),
@@ -824,7 +795,7 @@ write_csv(partd_brandlvl, "partd_brandlvl.csv", append = FALSE)
 write_csv(medicaid_brandlvl, "medicaid_brandlvl.csv", append = FALSE)
 ```
 
-```{r writecsv, include = FALSE, eval = FALSE}
+```{r writecsv_2, include = FALSE, eval = FALSE}
 rm(infrate, chngyr)
 
 files <- mget(ls())
