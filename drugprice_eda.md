@@ -648,20 +648,6 @@ Manufacturer Level
 
 TODO
 
-``` r
-medicaid_manufac <- medicaid %>%
-  group_by(`Brand Name`, Year) %>%
-  mutate(avg_spend_per_claim_brand = signif(sum(`Inf Total Spend`)/sum(`Total Claims`), 3)) %>%
-  group_by(Manufacturer, add = TRUE) %>%
-  mutate(avg_spend_per_claim_manufac = sum(`Inf Total Spend`)/sum(`Total Claims`)) %>%
-  mutate(avg_spend_per_claim_resid = signif(avg_spend_per_claim_manufac, 3) - signif(avg_spend_per_claim_brand, 3), 
-         avg_spend_per_claim_status = ifelse(avg_spend_per_claim_resid == 0, "at_average", ifelse(avg_spend_per_claim_resid < 0, "below_average", "above_average")), 
-         market_diff = avg_spend_per_claim_resid * `Total Claims`) %>%
-  ungroup(.) %>%
-  group_by(Manufacturer, Year, avg_spend_per_claim_status) %>%
-  summarise(manufacturer_diff = sum(market_diff), price_status_drugs = n()) 
-```
-
 Insulin
 -------
 

@@ -736,7 +736,7 @@ partd_manufac <- partd %>%
 
 ```
 
-```{r medicaid_manufacturer, inclue = FALSE}
+```{r medicaid_manufacturer, include = FALSE}
 medicaid_manufac <- medicaid %>%
   group_by(`Brand Name`, Year) %>%
   mutate(avg_spend_per_claim_brand = signif(sum(`Inf Total Spend`)/sum(`Total Claims`), 3)) %>%
