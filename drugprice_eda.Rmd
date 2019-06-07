@@ -49,6 +49,7 @@ library(viridis)
 library(ggthemes)
 library(ggridges)
 library(knitr)
+library(kableExtra)
 ```
 
 ```{r dataload, include = FALSE}
@@ -176,7 +177,7 @@ combined %>%
   geom_line(size = 1, aes(group=Program)) +
   labs(y = "Average Spend per Claim", title = "Average spend per claim* for Medicare Part B has grown by\n63 dollars over 5 years in real terms", caption = "*Only examining drugs that have been on market for all 5 years") +
   scale_y_continuous(labels = function(x) paste0("$", x), limits = c(0,600)) +
-  scale_color_viridis(option = "E", end = 0.8, discrete = TRUE) +
+  scale_color_viridis(option = "E", discrete = TRUE) +
   theme_minimal()
 ```
 
@@ -229,21 +230,41 @@ combined %>%
   ggplot(aes(x = Year, y = `Average Claims Per Beneficiary`, colour = Program)) +
   geom_line(size = 1, aes(group=Program)) +
   labs(y = "Average Claims per Beneficiary", title = "Average claims per beneficiary have fallen since 2013\nfor both Medicare programs", caption = "*Only examining drugs that have been on market for all 5 years") +
-  scale_color_viridis(option = "E", end = 0.8, discrete = TRUE) +
+  scale_color_viridis(option = "E", discrete = TRUE) +
   theme_minimal()
 ```
 
 Another dynamic that I wanted to understand was the rate at which beneficiaries were making claims over time. Again I was only looking at drugs that have been available for all five years in the dataset as a controlling factor. For Medicare Part D, this rate has consistently declined at a fairly slow rate, while Medicare Part B shows a slightly different trend with a large drop between 2014 and 2015 which has slowly crept up in the two years following. As a baseline, Medicare Part D has a higher rate of claims per beneficiary than Medicare Part B, but I would guess this is due to the expected treatment cycles of the drugs that are covered by each program, as Medicare Part B covers things like vaccinations which are not expected to have a high claims per beneficiary ratio.
 
-```{r combined_aggregate_trends_5, include = FALSE, eval = FALSE}
-# n-rank
+```{r combined_aggregate_trends_5}
+# top-20 drugs spend percent of total spend by program by year
 combined %>%
   group_by(Program, Year) %>%
   summarise(`Program Spend` = sum(`Nom Total Spend`)) %>%
   right_join(combined, by = c("Program","Year")) %>%
-  mutate(percent_program = `Nom Total Spend`/`Program Spend`) %>%
-  filter(percent_program >= 0.01) %>%
-  arrange(Program, Year, desc(percent_program))
+  group_by(Program, Year) %>%
+  mutate(percent_program = `Nom Total Spend`/`Program Spend`, percent_program_rank = min_rank(desc(percent_program))) %>%
+  filter(percent_program_rank <= 20) %>%
+  arrange(Program, Year, percent_program_rank) %>%
+  summarise(top_20_perspend = sum(percent_program)) %>%
+  mutate(rest_perspend = 1 - top_20_perspend, ind = row_number()) %>%
+  rename("Top 20 Drugs" = top_20_perspend, "All Other Drugs" = rest_perspend) %>%
+  gather(drug_group, ind, -Program, -Year) %>%
+  filter(drug_group != "ind") %>%
+  rename("Percent" = ind) %>%
+  ggplot(aes(x = Year, y = Percent, fill = drug_group)) +
+  geom_bar(stat = "identity", position = "fill") +
+  scale_y_continuous(labels = function(x) paste0(x*100, "%")) +
+  scale_fill_viridis(option = "E", discrete = TRUE) +
+  facet_grid(. ~ Program) +
+  theme_minimal() +
+  labs(title = "The top 20 drugs as a percent of total spend each year are\ncomprising a smaller portion for Medicaid & Medicare Part D") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  guides(fill = guide_legend(title="Drug Spend Category"))
+```
+
+```{r}
+
 ```
 
 
@@ -255,7 +276,7 @@ combined %>%
   filter(firstyear != 2013) %>%
   ggplot(aes(x = firstyear, y = n, fill = Program)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
-  scale_fill_viridis(option = "E", end = 0.8, discrete = TRUE) +
+  scale_fill_viridis(option = "E", discrete = TRUE) +
   labs(x = "Year", y = "Count of new drugs on market", title = "The number of new drugs that government health programs\nare covering has slowed") +
   theme_minimal()
 ```
@@ -639,20 +660,18 @@ partd_brandchng %>%
   theme_minimal()
 ```
 
-```{r partd_top_change_table, include = FALSE, eval = FALSE}
+```{r}
 partd_brandchng %>%
-  filter(Year == 2017) %>%
-  select(`Brand Name`, nomchngspendperclaim, brandspend, brandclaims) %>%
+  ungroup(.) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim) %>%
   distinct() %>%
   arrange(desc(nomchngspendperclaim)) %>%
-  .[1:50,]
-
-partd_brandchng %>%
-  filter(Year == 2017) %>%
-  select(`Brand Name`, perchngspendperclaim, nomchngspendperclaim, brandspend2017 = brandspend, brandclaims2017 = brandclaims) %>%
-  distinct() %>%
-  arrange(desc(perchngspendperclaim)) %>%
-  .[1:50,]
+  top_n(20, wt = nomchngspendperclaim) %>%
+  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
+  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`) %>%
+  kable(format = "html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
 ### Medicare Part B
@@ -675,26 +694,8 @@ partb_brandchng %>%
   theme_minimal()
 ```
 
-```{r partb_top_change_table, include = FALSE, eval = FALSE}
-partb_brandchng %>%
-  filter(Year == 2017) %>%
-  select(`Brand Name`, nomchngspendperclaim,  brandspend2017 = brandspend, brandclaims2017 = brandclaims) %>%
-  distinct() %>%
-  arrange(desc(nomchngspendperclaim)) %>%
-  .[1:50,]
+```{r}
 
-partb_brandchng %>%
-  filter(Year == 2017) %>%
-  select(`Brand Name`, perchngspendperclaim, nomchngspendperclaim, brandspend2017 = brandspend, brandclaims2017 = brandclaims) %>%
-  distinct() %>%
-  arrange(desc(perchngspendperclaim)) %>%
-  .[1:50,]
-
-medicaid_brandchng %>%
-  select(`Brand Name`, nomchngspendperclaim) %>%
-  distinct() %>%
-  arrange(desc(nomchngspendperclaim)) %>%
-  .[1:50,]
 ```
 
 ### Medicaid
@@ -715,6 +716,10 @@ medicaid_brandchng %>%
   geom_point(stat = "identity") +
   labs(x = "Percent Inflation Adj. Change in Spend", y = "Percent Change in Claims", title = "Bivariate relationship between Percent Change in Spend and Claims", subtitle ="Change between 2013 & 2017") +
   theme_minimal()
+```
+
+```{r}
+
 ```
 
 ## Manufacturer Level
