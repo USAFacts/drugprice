@@ -263,6 +263,7 @@ combined %>%
   guides(fill = guide_legend(title="Drug Spend Category"))
 ```
 
+Test text
 
 ```{r combined_aggregate_trends_6}
 # Count of drugs introduced each year 2014-2017
