@@ -236,14 +236,30 @@ combined %>%
 Another dynamic that I wanted to understand was the rate at which beneficiaries were making claims over time. Again I was only looking at drugs that have been available for all five years in the dataset as a controlling factor. For Medicare Part D, this rate has consistently declined at a fairly slow rate, while Medicare Part B shows a slightly different trend with a large drop between 2014 and 2015 which has slowly crept up in the two years following. As a baseline, Medicare Part D has a higher rate of claims per beneficiary than Medicare Part B, but I would guess this is due to the expected treatment cycles of the drugs that are covered by each program, as Medicare Part B covers things like vaccinations which are not expected to have a high claims per beneficiary ratio.
 
 ```{r combined_aggregate_trends_5, include = FALSE, eval = FALSE}
-# n-rank
+# top-20 drugs spend percent of total spend by program by year
 combined %>%
   group_by(Program, Year) %>%
   summarise(`Program Spend` = sum(`Nom Total Spend`)) %>%
   right_join(combined, by = c("Program","Year")) %>%
-  mutate(percent_program = `Nom Total Spend`/`Program Spend`) %>%
-  filter(percent_program >= 0.01) %>%
-  arrange(Program, Year, desc(percent_program))
+  group_by(Program, Year) %>%
+  mutate(percent_program = `Nom Total Spend`/`Program Spend`, percent_program_rank = min_rank(desc(percent_program))) %>%
+  filter(percent_program_rank <= 20) %>%
+  arrange(Program, Year, percent_program_rank) %>%
+  summarise(top_20_perspend = sum(percent_program)) %>%
+  mutate(rest_perspend = 1 - top_20_perspend, ind = row_number()) %>%
+  rename("Top 20 Drugs" = top_20_perspend, "All Other Drugs" = rest_perspend) %>%
+  gather(drug_group, ind, -Program, -Year) %>%
+  filter(drug_group != "ind") %>%
+  rename("Percent" = ind) %>%
+  ggplot(aes(x = Year, y = Percent, fill = drug_group)) +
+  geom_bar(stat = "identity", position = "fill") +
+  scale_y_continuous(labels = function(x) paste0(x*100, "%")) +
+  scale_fill_viridis(option = "E", discrete = TRUE) +
+  facet_grid(. ~ Program) +
+  theme_minimal() +
+  labs(title = "The top 20 drugs as a percent of total spend each year are\ncomprising a smaller portion for Medicaid & Medicare Part D") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  guides(fill = guide_legend(title="Drug Spend Category"))
 ```
 
 
@@ -262,7 +278,7 @@ combined %>%
 
 Finally I also wanted to see how many drugs have been introduced in each successive year and it appears that the rate of new drugs that are landing on the market is slowing down, although Medicare Part D had a large increase in 2017. I suspect that over a larger period of time a seasonal component to this might be visible but it's too short to tell for now.
 
-## Univariatie Distribution Trends - Brand Level
+## Univariate Distribution Trends - Brand Level
 
 Before diving deeper into these datasets, there are a few general notes I want to make:
 
