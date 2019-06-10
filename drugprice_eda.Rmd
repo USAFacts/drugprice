@@ -258,12 +258,12 @@ combined %>%
   scale_fill_viridis(option = "E", discrete = TRUE) +
   facet_grid(. ~ Program) +
   theme_minimal() +
-  labs(title = "The top 20 drugs as a percent of total spend each year are\ncomprising a smaller portion for Medicaid & Medicare Part D") +
+  labs(title = "The top 20 drugs in terms of spend as a percent of total program spend", subtitle = "Medicaid & Medicare Part D drugs have become less concentrated in spend over time") +
   theme(axis.text.x = element_text(angle = 90)) +
   guides(fill = guide_legend(title="Drug Spend Category"))
 ```
 
-Test text
+Both Medicaid and Medicare Part D have had the top 20 drugs comprising a smaller portion of the total spend in 2017 relative to 2013. This seems to provide some evidence that the prescription drug markets are not becoming more concentrated over the past five years, but we can look to confirm this later on by looking at the distributions as a whole. 
 
 ```{r combined_aggregate_trends_6}
 # Count of drugs introduced each year 2014-2017
