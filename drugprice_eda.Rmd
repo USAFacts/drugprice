@@ -263,7 +263,7 @@ combined %>%
   guides(fill = guide_legend(title="Drug Spend Category"))
 ```
 
-Both Medicaid and Medicare Part D have had the top 20 drugs comprising a smaller portion of the total spend in 2017 relative to 2013. This seems to provide some evidence that the prescription drug markets are not becoming more concentrated over the past five years, but we can look to confirm this later on by looking at the distributions as a whole. 
+Both Medicaid and Medicare Part D have had the top 20 drugs comprising a smaller portion of the total spend in 2017 relative to 2013. This seems to provide some evidence that the prescription drug markets are not becoming more concentrated over the past five years, but we can look to confirm this later on by looking at full distributions.
 
 ```{r combined_aggregate_trends_6}
 # Count of drugs introduced each year 2014-2017
@@ -626,7 +626,8 @@ medicaid_brandchng <- medicaid %>%
          nomchngspendperclaim = avgspendperclaim - lag(avgspendperclaim, n = chngyr),
          perchngspend = (brandspend/lag(brandspend, n = chngyr)) - 1,
          perchngdose = (branddose/lag(branddose, n = chngyr)) - 1,
-         perchngclaims = (brandclaims/lag(brandclaims, n = chngyr)) - 1) %>%
+         perchngclaims = (brandclaims/lag(brandclaims, n = chngyr)) - 1,
+         perchngspendperclaim = (avgspendperclaim - lag(avgspendperclaim, n = chngyr))/lag(avgspendperclaim, n = chngyr)) %>%
   fill(nomchngspend, 
        nomchngdose, 
        nomchngclaims,
@@ -634,6 +635,7 @@ medicaid_brandchng <- medicaid %>%
        perchngspend,
        perchngdose,
        perchngclaims,
+       perchngspendperclaim,
        .direction = "up")
 ```
 
@@ -644,16 +646,8 @@ partd_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
-  geom_point(stat = "identity", position = "jitter") +
+  geom_point(stat = "identity", alpha = 0.05) +
   labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
-  theme_minimal()
-
-partd_brandchng %>%
-  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
-  distinct() %>%
-  ggplot(aes(x = perchngspend, y = perchngclaims)) +
-  geom_point(stat = "identity", position = "jitter") +
-  labs(x = "Percent Inflation Adj. Change in Spend", y = "Percent Change in Claims", title = "Bivariate relationship between Percent Change in Spend and Claims", subtitle ="Change between 2013 & 2017") +
   theme_minimal()
 ```
 
@@ -671,6 +665,23 @@ partd_brandchng %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
+```{r}
+partd_brandchng %>%
+  ungroup(.) %>%
+  group_by(`Brand Name`) %>%
+  mutate(claims_time = sum(`brandclaims`)) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, claims_time) %>%
+  distinct() %>%
+  arrange(desc(claims_time)) %>%
+  ungroup(.) %>%
+  top_n(20, wt = claims_time) %>%
+  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
+  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim, "Combined Claims 2013-2017" = claims_time) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Combined Claims 2013-2017`) %>%
+  kable(format = "html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
 ### Medicare Part B
 
 ```{r partb_scatterplots}
@@ -678,21 +689,40 @@ partb_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
-  geom_point(stat = "identity") +
+  geom_point(stat = "identity", alpha = 0.05) +
   labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
-  theme_minimal()
-
-partb_brandchng %>%
-  select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
-  distinct() %>%
-  ggplot(aes(x = perchngspend, y = perchngclaims)) +
-  geom_point(stat = "identity") +
-  labs(x = "Percent Inflation Adj. Change in Spend", y = "Percent Change in Claims", title = "Bivariate relationship between Percent Change in Spend and Claims", subtitle ="Change between 2013 & 2017") +
   theme_minimal()
 ```
 
 ```{r}
+partb_brandchng %>%
+  ungroup(.) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim) %>%
+  distinct() %>%
+  arrange(desc(nomchngspendperclaim)) %>%
+  top_n(20, wt = nomchngspendperclaim) %>%
+  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
+  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`) %>%
+  kable(format = "html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
 
+```{r}
+partb_brandchng %>%
+  ungroup(.) %>%
+  group_by(`Brand Name`) %>%
+  mutate(claims_time = sum(`brandclaims`)) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, claims_time) %>%
+  distinct() %>%
+  arrange(desc(claims_time)) %>%
+  ungroup(.) %>%
+  top_n(20, wt = claims_time) %>%
+  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
+  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim, "Combined Claims 2013-2017" = claims_time) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Combined Claims 2013-2017`) %>%
+  kable(format = "html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
 ### Medicaid
@@ -702,28 +732,45 @@ medicaid_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
-  geom_point(stat = "identity") +
+  geom_point(stat = "identity", alpha = 0.05) +
   labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
-  theme_minimal()
-
-medicaid_brandchng %>%
-  select(everything(), -Year, -brandspend, -branddose, -brandclaims) %>%
-  distinct() %>%
-  ggplot(aes(x = perchngspend, y = perchngclaims)) +
-  geom_point(stat = "identity") +
-  labs(x = "Percent Inflation Adj. Change in Spend", y = "Percent Change in Claims", title = "Bivariate relationship between Percent Change in Spend and Claims", subtitle ="Change between 2013 & 2017") +
   theme_minimal()
 ```
 
 ```{r}
-
+medicaid_brandchng %>%
+  ungroup(.) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim) %>%
+  distinct() %>%
+  arrange(desc(nomchngspendperclaim)) %>%
+  top_n(20, wt = nomchngspendperclaim) %>%
+  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
+  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`) %>%
+  kable(format = "html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
-## Manufacturer Level
-
-TODO
+```{r}
+medicaid_brandchng %>%
+  ungroup(.) %>%
+  group_by(`Brand Name`) %>%
+  mutate(claims_time = sum(`brandclaims`)) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, claims_time) %>%
+  distinct() %>%
+  arrange(desc(claims_time)) %>%
+  ungroup(.) %>%
+  top_n(20, wt = claims_time) %>%
+  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
+  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim, "Combined Claims 2013-2017" = claims_time) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Combined Claims 2013-2017`) %>%
+  kable(format = "html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
 
 ```{r partd_manufacturer, include = FALSE}
+#TODO Manufacturer Level
+
 partd_manufac <- partd %>%
   group_by(`Brand Name`, Year) %>%
   mutate(avg_spend_per_claim_brand = signif(sum(`Inf Total Spend`)/sum(`Total Claims`), 3)) %>%
@@ -739,6 +786,7 @@ partd_manufac <- partd %>%
 ```
 
 ```{r medicaid_manufacturer, include = FALSE}
+#TODO Manufacturer Level
 medicaid_manufac <- medicaid %>%
   group_by(`Brand Name`, Year) %>%
   mutate(avg_spend_per_claim_brand = signif(sum(`Inf Total Spend`)/sum(`Total Claims`), 3)) %>%
@@ -773,7 +821,7 @@ partd %>%
 
 # Conclusion
 
-TODO
+
 
 ```{r writecsv_1, include = FALSE, eval = FALSE}
 partd_brandlvl <- partd %>%
