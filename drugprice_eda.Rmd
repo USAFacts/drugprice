@@ -642,6 +642,13 @@ medicaid_brandchng <- medicaid %>%
 ### Medicare Part D
 
 ```{r partd_scatterplots}
+partd %>%
+  ggplot(aes(x = `Inf Total Spend`, y = `Total Claims`)) +
+  geom_point(stat = "identity", alpha = 0.10) +
+  facet_wrap(~ as_factor(Year)) +
+  labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
+  theme_minimal()
+
 partd_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
@@ -650,6 +657,10 @@ partd_brandchng %>%
   labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
   theme_minimal()
 ```
+
+There are several interesting things to note of the relationship of the change in spend and the change in claims for Medicare Part D between 2013 and 2017:
+
+1. There are several extreme observations that have either increased dramatically in the number of claims per drug or in the spend per drug, but not both. This 
 
 ```{r}
 partd_brandchng %>%
