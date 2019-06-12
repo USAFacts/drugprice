@@ -643,10 +643,15 @@ medicaid_brandchng <- medicaid %>%
 
 ```{r partd_scatterplots}
 partd %>%
-  ggplot(aes(x = `Inf Total Spend`, y = `Total Claims`)) +
-  geom_point(stat = "identity", alpha = 0.10) +
+  group_by(`Brand Name`, Year) %>%
+  summarise(brandspend = sum(`Inf Total Spend`), 
+            branddose = sum(`Total Dosage Units`), 
+            brandclaims = sum(`Total Claims`),
+            avgspendperclaim = brandspend/brandclaims) %>%
+  ggplot(aes(x = brandspend, y = brandclaims)) +
+  geom_point(stat = "identity", alpha = 0.2) +
   facet_wrap(~ as_factor(Year)) +
-  labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
+  labs(x = "Inflation Adj. Spend", y = "Total Claims", title = "Bivariate relationship between Total Spend and Total Claims") +
   theme_minimal()
 
 partd_brandchng %>%
@@ -656,11 +661,14 @@ partd_brandchng %>%
   geom_point(stat = "identity", alpha = 0.05) +
   labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
   theme_minimal()
+
+
 ```
 
-There are several interesting things to note of the relationship of the change in spend and the change in claims for Medicare Part D between 2013 and 2017:
+There are several interesting things to note of the bivariate relationship of spend and claims:
 
-1. There are several extreme observations that have either increased dramatically in the number of claims per drug or in the spend per drug, but not both. This 
+1. There seems to be a greater density of brands residing closer to either the x or y axis in recent years.
+2. There are several extreme observations that have either increased dramatically in the number of claims per drug or in the spend per drug, but very rarely both.
 
 ```{r}
 partd_brandchng %>%
