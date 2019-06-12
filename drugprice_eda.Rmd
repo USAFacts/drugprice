@@ -2,9 +2,14 @@
 title: "Prescription Drug Price EDA"
 author: "USAFactsTyler"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output:
-  github_document:
-    toc: true
+output: 
+  html_document:
+    code_folding: hide
+    keep_md: TRUE
+    toc: TRUE
+    toc_float:
+      collapsed: TRUE
+      smooth_scroll: TRUE
 ---
 
 ```{r setup, include=FALSE}
@@ -50,6 +55,7 @@ library(ggthemes)
 library(ggridges)
 library(knitr)
 library(kableExtra)
+library(scales)
 ```
 
 ```{r dataload, include = FALSE}
@@ -111,7 +117,8 @@ combined <- combined %>%
   group_by(`Brand Name`, Program) %>%
   mutate(Yearnum = as.numeric(Year), 
          complete = ifelse(Yearnum - firstyear + 1 == numyrs, "Complete", "Incomplete"),
-         complete = ifelse(any(complete == "Complete"), "Complete", "Incomplete"))
+         complete = ifelse(any(complete == "Complete"), "Complete", "Incomplete")) %>%
+  ungroup(.)
 
 inflation_wide <- inflation %>%
   spread(baseyear, inf_rate) %>%
@@ -567,7 +574,9 @@ partd_brandchng <- partd %>%
        perchngclaims,
        perchngbens,
        perchngspendperclaim,
-       .direction = "up")
+       .direction = "up") %>%
+  left_join(partd %>% select(`Brand Name`, Description), by = "Brand Name") %>%
+  distinct()
 
 partb_brandchng <- partb %>%
   group_by(`Brand Name`) %>%
@@ -604,7 +613,9 @@ partb_brandchng <- partb %>%
        perchngclaims,
        perchngbens,
        perchngspendperclaim,
-       .direction = "up")
+       .direction = "up") %>%
+  left_join(partb %>% select(`Brand Name`, Description), by = "Brand Name") %>%
+  distinct()
 
 medicaid_brandchng <- medicaid %>%
   group_by(`Brand Name`) %>%
@@ -636,7 +647,9 @@ medicaid_brandchng <- medicaid %>%
        perchngdose,
        perchngclaims,
        perchngspendperclaim,
-       .direction = "up")
+       .direction = "up") %>%
+  left_join(medicaid %>% select(`Brand Name`, Description), by = "Brand Name") %>%
+  distinct()
 ```
 
 ### Medicare Part D
@@ -651,7 +664,13 @@ partd %>%
   ggplot(aes(x = brandspend, y = brandclaims)) +
   geom_point(stat = "identity", alpha = 0.2) +
   facet_wrap(~ as_factor(Year)) +
-  labs(x = "Inflation Adj. Spend", y = "Total Claims", title = "Bivariate relationship between Total Spend and Total Claims") +
+  scale_x_continuous(trans = log2_trans(),
+    breaks = trans_breaks("log2", function(x) 2^x),
+    labels = trans_format("log2", math_format(2^.x))) +
+  scale_y_continuous(trans = log2_trans(),
+    breaks = trans_breaks("log2", function(x) 2^x),
+    labels = trans_format("log2", math_format(2^.x))) +
+  labs(x = "Inflation Adj. Spend", y = "Total Claims", title = "Bivariate relationship between Total Spend and Total Claims", subtitle = "Plotted on log scaling") +
   theme_minimal()
 
 partd_brandchng %>%
@@ -659,133 +678,245 @@ partd_brandchng %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
   geom_point(stat = "identity", alpha = 0.05) +
-  labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
+  labs(x = "Inflation Adj. Change in Spend", y = "Change in Claims", title = "Bivariate relationship between spend delta and claims delta", subtitle = "Change deltas are between 2013 & 2017") +
   theme_minimal()
-
-
 ```
 
-There are several interesting things to note of the bivariate relationship of spend and claims:
+There are several things to note of the bivariate relationship of spend and claims for Medicare Part D:
 
-1. There seems to be a greater density of brands residing closer to either the x or y axis in recent years.
-2. There are several extreme observations that have either increased dramatically in the number of claims per drug or in the spend per drug, but very rarely both.
+1. When plotting spend and claims on a log axis, there is a clear positive linear relationship between the two. This is expected but good to confirm.
+2. There are several observations that have either increased dramatically in the number of claims per drug or in the spend per drug, but very rarely both.
+3. These graphs together indicate that the drugs could potentially be clustered into several subcategories that each exhibit a single more consistent relationship.
 
-```{r}
+Below are the top 20 drugs in terms of the change from 2013 to 2017 of their average spend per claim. The change in average spend per claim for these drugs is quite large, but many of these drugs serve very niche populations, with only 3 drugs serving over 1000 individuals and none over 3200. 
+
+```{r partd_top_20_spendperclaim}
 partd_brandchng %>%
   ungroup(.) %>%
-  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim) %>%
+  group_by(`Brand Name`) %>%
+  mutate(bens_max = max(`brandbens`)) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, Description, bens_max) %>%
   distinct() %>%
   arrange(desc(nomchngspendperclaim)) %>%
+  ungroup(.) %>%
   top_n(20, wt = nomchngspendperclaim) %>%
-  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
-  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim) %>%
-  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`) %>%
+  mutate(Rank = row_number(), 
+         perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%"), 
+         nomchngspendperclaim = ifelse(nomchngspendperclaim < 0, 
+                                       paste0("($", abs(round(nomchngspendperclaim, 2)), ")"),
+                                       paste0("$", round(nomchngspendperclaim, 2))
+                                       )
+         ) %>%
+  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim, "Maximum Beneficiaries Between 2013-2017" = bens_max) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Maximum Beneficiaries Between 2013-2017`, Description) %>%
   kable(format = "html") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width = "100%", height = "600px")
 ```
 
-```{r}
+Below are the top 20 drugs in terms of the cumulative amount of claims between 2013 to 2017. Of note, there are only two brands that had their average spend per claim increase in that time period, and both of these drugs had a real change of less than \$10.
+
+```{r partd_top_20_totalclaims}
 partd_brandchng %>%
   ungroup(.) %>%
   group_by(`Brand Name`) %>%
   mutate(claims_time = sum(`brandclaims`)) %>%
-  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, claims_time) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, claims_time, Description) %>%
   distinct() %>%
   arrange(desc(claims_time)) %>%
   ungroup(.) %>%
   top_n(20, wt = claims_time) %>%
-  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
+  mutate(Rank = row_number(), 
+         perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%"), 
+         nomchngspendperclaim = ifelse(nomchngspendperclaim < 0, 
+                                       paste0("($", abs(round(nomchngspendperclaim, 2)), ")"),
+                                       paste0("$", round(nomchngspendperclaim, 2))
+                                       )
+         ) %>%
   rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim, "Combined Claims 2013-2017" = claims_time) %>%
-  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Combined Claims 2013-2017`) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Combined Claims 2013-2017`, Description) %>%
   kable(format = "html") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width = "100%", height = "600px")
 ```
 
 ### Medicare Part B
 
 ```{r partb_scatterplots}
+partb %>%
+  group_by(`Brand Name`, Year) %>%
+  summarise(brandspend = sum(`Inf Total Spend`), 
+            branddose = sum(`Total Dosage Units`), 
+            brandclaims = sum(`Total Claims`),
+            avgspendperclaim = brandspend/brandclaims) %>%
+  ggplot(aes(x = brandspend, y = brandclaims)) +
+  geom_point(stat = "identity", alpha = 0.2) +
+  facet_wrap(~ as_factor(Year)) +
+  scale_x_continuous(trans = log2_trans(),
+    breaks = trans_breaks("log2", function(x) 2^x),
+    labels = trans_format("log2", math_format(2^.x))) +
+  scale_y_continuous(trans = log2_trans(),
+    breaks = trans_breaks("log2", function(x) 2^x),
+    labels = trans_format("log2", math_format(2^.x))) +
+  labs(x = "Inflation Adj. Spend", y = "Total Claims", title = "Bivariate relationship between Total Spend and Total Claims", subtitle = "Plotted on log scaling") +
+  theme_minimal()
+
 partb_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims, -brandbens) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
   geom_point(stat = "identity", alpha = 0.05) +
-  labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
+  labs(x = "Inflation Adj. Change in Spend", y = "Change in Claims", title = "Bivariate relationship between spend delta and claims delta", subtitle = "Change deltas are between 2013 & 2017") +
   theme_minimal()
 ```
 
-```{r}
+There are several things to note of the bivariate relationship of spend and claims for Medicare Part B:
+
+1. When plotting spend and claims on a log axis, there still appears to be a somewhat positive linear relationship, but this relationship seems much less consistent than Medicare Part D. However, it's also important to note that there are also far fewer drugs that are offered under Medicare Part B relative to both Part D and Medicaid, and thus this variance could just be resulting from fewer observations.
+2. Again, unlike Medicare Part D, there are not as many drugs that have increased as dramatically in claims while remaining relatively constant in spend. There are however still a number of drugs that dramatically increased in spend without much variation in claims. 
+3. Overall this helps explain why the average cost per claim in aggregate for Medicare Part B has been increasing. 
+
+Below are the top 20 drugs in terms of the change from 2013 to 2017 of their average spend per claim. Similar to Medicare Part D, the change in average spend per claim for these drugs is quite large, but drug number 20, Orencia*, did have a more substantial reach, serving over 20k beneficiaries in one year between 2013 and 2017. 
+
+```{r partb_top_20_spendperclaim}
 partb_brandchng %>%
   ungroup(.) %>%
-  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim) %>%
+  group_by(`Brand Name`) %>%
+  mutate(bens_max = max(`brandbens`)) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, Description, bens_max) %>%
   distinct() %>%
   arrange(desc(nomchngspendperclaim)) %>%
+  ungroup(.) %>%
   top_n(20, wt = nomchngspendperclaim) %>%
-  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
-  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim) %>%
-  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`) %>%
+  mutate(Rank = row_number(), 
+         perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%"), 
+         nomchngspendperclaim = ifelse(nomchngspendperclaim < 0, 
+                                       paste0("($", abs(round(nomchngspendperclaim, 2)), ")"),
+                                       paste0("$", round(nomchngspendperclaim, 2))
+                                       )
+         ) %>%
+  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim, "Maximum Beneficiaries Between 2013-2017" = bens_max) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Maximum Beneficiaries Between 2013-2017`, Description) %>%
   kable(format = "html") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width = "100%", height = "600px")
 ```
 
-```{r}
+Below are the top 20 drugs in terms of the cumulative amount of claims between 2013 to 2017. Again in contrast to Medicare Part D, half of the top 20 most claimed had their average spend per claim increase in that time period, with the second most claimed drug (Prevnar 13) having its average spend per claim increase by \$35.27 in real terms.
+
+```{r partb_top_20_totalclaims}
 partb_brandchng %>%
   ungroup(.) %>%
   group_by(`Brand Name`) %>%
   mutate(claims_time = sum(`brandclaims`)) %>%
-  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, claims_time) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, claims_time, Description) %>%
   distinct() %>%
   arrange(desc(claims_time)) %>%
   ungroup(.) %>%
   top_n(20, wt = claims_time) %>%
-  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
+  mutate(Rank = row_number(), 
+         perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%"), 
+         nomchngspendperclaim = ifelse(nomchngspendperclaim < 0, 
+                                       paste0("($", abs(round(nomchngspendperclaim, 2)), ")"),
+                                       paste0("$", round(nomchngspendperclaim, 2))
+                                       )
+         ) %>%
   rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim, "Combined Claims 2013-2017" = claims_time) %>%
-  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Combined Claims 2013-2017`) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Combined Claims 2013-2017`, Description) %>%
   kable(format = "html") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width = "100%", height = "600px")
 ```
 
 ### Medicaid
 
 ```{r medicaid_change}
+medicaid %>%
+  group_by(`Brand Name`, Year) %>%
+  summarise(brandspend = sum(`Inf Total Spend`), 
+            branddose = sum(`Total Dosage Units`), 
+            brandclaims = sum(`Total Claims`),
+            avgspendperclaim = brandspend/brandclaims) %>%
+  filter(brandspend >= 1) %>%
+  ggplot(aes(x = brandspend, y = brandclaims)) +
+  geom_point(stat = "identity", alpha = 0.2) +
+  facet_wrap(~ as_factor(Year)) +
+  scale_x_continuous(trans = log2_trans(),
+    breaks = trans_breaks("log2", function(x) 2^x),
+    labels = trans_format("log2", math_format(2^.x))) +
+  scale_y_continuous(trans = log2_trans(),
+    breaks = trans_breaks("log2", function(x) 2^x),
+    labels = trans_format("log2", math_format(2^.x))) +
+  labs(x = "Inflation Adj. Spend", y = "Total Claims", title = "Bivariate relationship between Total Spend and Total Claims", subtitle = "Plotted on log scaling") +
+  theme_minimal()
+
 medicaid_brandchng %>%
   select(everything(), -Year, -brandspend, -branddose, -brandclaims) %>%
   distinct() %>%
   ggplot(aes(x = nomchngspend, y = nomchngclaims)) +
   geom_point(stat = "identity", alpha = 0.05) +
-  labs(x = "Nominal Inflation Adj. Change in Spend", y = "Nominal Change in Claims", title = "Bivariate relationship between Change in Spend and Claims", subtitle = "Change between 2013 & 2017") +
+  labs(x = "Inflation Adj. Change in Spend", y = "Change in Claims", title = "Bivariate relationship between spend delta and claims delta", subtitle = "Change deltas are between 2013 & 2017") +
   theme_minimal()
 ```
 
-```{r}
+
+There are two things to note of the bivariate relationship of spend and claims for Medicaid:
+
+1. When plotting spend and claims on a log axis, there appears to be a stronger linear relationship that more closely resembles the relationship exhibited in Medicare Part D.
+2. Medicaid spending and claims in general looks more similar to Medicare Part D than it does Part B. Again there seems to be two distinct clusters of drugs that are either have increased heavily in claims but not spend or vice versa but have not increased in both.
+
+Below are the top 20 drugs in terms of the change from 2013 to 2017 of their average spend per claim. The Medicaid dataset didn't provide beneficiary information, so I'm looking at the maximum claims in a given year as a proxy measure of reach instead. Similar to Medicare Part D, the change in average spend per claim for these drugs is again quite large, but most of these drugs also have had a small reach. 
+
+```{r medicaid_top_20_spendperclaim}
 medicaid_brandchng %>%
   ungroup(.) %>%
-  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim) %>%
+  group_by(`Brand Name`) %>%
+  mutate(claims_max = max(`brandclaims`)) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, Description, claims_max) %>%
   distinct() %>%
   arrange(desc(nomchngspendperclaim)) %>%
+  ungroup(.) %>%
   top_n(20, wt = nomchngspendperclaim) %>%
-  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
-  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim) %>%
-  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`) %>%
+  mutate(Rank = row_number(), 
+         perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%"), 
+         nomchngspendperclaim = ifelse(nomchngspendperclaim < 0, 
+                                       paste0("($", abs(round(nomchngspendperclaim, 2)), ")"),
+                                       paste0("$", round(nomchngspendperclaim, 2))
+                                       )
+         ) %>%
+  rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim, "Maximum Claims Between 2013-2017" = claims_max) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Maximum Claims Between 2013-2017`, Description) %>%
   kable(format = "html") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width = "100%", height = "600px")
 ```
 
-```{r}
+Below are the top 20 drugs in terms of the cumulative amount of claims between 2013 to 2017. More similar to Medicare Part D, only 4 of the top 20 most claimed had their average spend per claim increase in that time period, with the eighteenth most claimed drug (Proair HFA) showing the largest increase in average spend per claim, at \$11.45 in real terms.
+
+```{r medicaid_top_20_totalclaims}
 medicaid_brandchng %>%
   ungroup(.) %>%
   group_by(`Brand Name`) %>%
   mutate(claims_time = sum(`brandclaims`)) %>%
-  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, claims_time) %>%
+  select(`Brand Name`, nomchngspendperclaim, perchngspendperclaim, claims_time, Description) %>%
   distinct() %>%
   arrange(desc(claims_time)) %>%
   ungroup(.) %>%
   top_n(20, wt = claims_time) %>%
-  mutate(Rank = row_number(), perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%")) %>%
+  mutate(Rank = row_number(), 
+         perchngspendperclaim = paste0(round(perchngspendperclaim*100, 2), "%"), 
+         nomchngspendperclaim = ifelse(nomchngspendperclaim < 0, 
+                                       paste0("($", abs(round(nomchngspendperclaim, 2)), ")"),
+                                       paste0("$", round(nomchngspendperclaim, 2))
+                                       )
+         ) %>%
   rename("Nominal Average Spend per Claim Delta" = nomchngspendperclaim, "Percentage Average Spend per Claim Delta" = perchngspendperclaim, "Combined Claims 2013-2017" = claims_time) %>%
-  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Combined Claims 2013-2017`) %>%
+  select(Rank, `Brand Name`, `Nominal Average Spend per Claim Delta`, `Percentage Average Spend per Claim Delta`, `Combined Claims 2013-2017`, Description) %>%
   kable(format = "html") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  scroll_box(width = "100%", height = "600px")
 ```
+
 
 ```{r partd_manufacturer, include = FALSE}
 #TODO Manufacturer Level
@@ -821,7 +952,7 @@ medicaid_manufac <- medicaid %>%
 
 ## Insulin
 
-Average spend per claim on Medicare Part D has gone up dramatically since 2013.
+Inspired by some of the news coverage over the past six months, I wanted to validate whether Insulin products have been becoming more expensive. Indeed, average spend per claim on Insulin related drugs in Medicare Part D has risen $220.02 since 2013.
 
 ```{r partd_insulin}
 partd %>% 
@@ -838,8 +969,10 @@ partd %>%
   theme(legend.position = "none") 
 ```
 
-# Conclusion
+# Open Areas of Inquiry
 
+1. Is there a trend that can be indentified among manufacturers across the various drugs that they produce?
+2. Beyond Insulin, are there certain categories of drugs that are changing more dramatically than others?
 
 
 ```{r writecsv_1, include = FALSE, eval = FALSE}
