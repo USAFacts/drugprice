@@ -918,7 +918,7 @@ medicaid_brandchng %>%
 ```
 
 
-```{r partd_manufacturer, include = FALSE}
+```{r partd_manufacturer, include = FALSE, eval = FALSE}
 #TODO Manufacturer Level
 
 partd_manufac <- partd %>%
@@ -935,7 +935,7 @@ partd_manufac <- partd %>%
 
 ```
 
-```{r medicaid_manufacturer, include = FALSE}
+```{r medicaid_manufacturer, include = FALSE, eval = FALSE}
 #TODO Manufacturer Level
 medicaid_manufac <- medicaid %>%
   group_by(`Brand Name`, Year) %>%
@@ -973,7 +973,6 @@ partd %>%
 
 1. Is there a trend that can be indentified among manufacturers across the various drugs that they produce?
 2. Beyond Insulin, are there certain categories of drugs that are changing more dramatically than others?
-
 
 ```{r writecsv_1, include = FALSE, eval = FALSE}
 partd_brandlvl <- partd %>%
