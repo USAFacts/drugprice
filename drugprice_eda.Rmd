@@ -991,17 +991,14 @@ medicaid_brandlvl <- medicaid %>%
             `Total Spending` = sum(`Total Spending`),
             `Total Dosage Units` = sum(`Total Dosage Units`),
             `Total Claims` = sum(`Total Claims`))
-
-write_csv(partd_brandlvl, "partd_brandlvl.csv", append = FALSE)
-write_csv(medicaid_brandlvl, "medicaid_brandlvl.csv", append = FALSE)
 ```
 
 ```{r writecsv_2, include = FALSE, eval = FALSE}
-rm(infrate, chngyr)
+rm(inflation, chngyr)
 
 files <- mget(ls())
 
 files %>%
   names(.) %>%
-  map(~ write_csv(files[[.]], path = paste0(., ".csv"), append = FALSE))
+  map(~ write_csv(files[[.]], path = paste0("./datacuts/",., ".csv"), append = FALSE))
 ```
