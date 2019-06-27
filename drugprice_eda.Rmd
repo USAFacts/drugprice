@@ -544,14 +544,14 @@ partd_brandchng <- partd %>%
   ungroup(.) %>%
   right_join(partd, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
-  group_by(`Brand Name`, Year) %>%
+  group_by(`Brand Name`, Year, Category) %>%
   summarise(brandspend = sum(`Inf Total Spend`), 
             branddose = sum(`Total Dosage Units`), 
             brandclaims = sum(`Total Claims`), 
             brandbens = sum(`Total Beneficiaries`),
             avgspendperclaim = brandspend/brandclaims) %>%
   ungroup(.) %>%
-  group_by(`Brand Name`) %>%
+  group_by(`Brand Name`, Category) %>%
   arrange(Year, .by_group = TRUE) %>%
   mutate(nomchngspend = brandspend - lag(brandspend, n = chngyr), 
          nomchngdose = branddose - lag(branddose, n = chngyr), 
@@ -623,13 +623,13 @@ medicaid_brandchng <- medicaid %>%
   ungroup(.) %>%
   right_join(medicaid, by = "Brand Name") %>%
   filter(numyrs == 5) %>%
-  group_by(`Brand Name`, Year) %>%
+  group_by(`Brand Name`, Year, Category) %>%
   summarise(brandspend = sum(`Inf Total Spend`), 
             branddose = sum(`Total Dosage Units`), 
             brandclaims = sum(`Total Claims`),
             avgspendperclaim = brandspend/brandclaims) %>%
   ungroup(.) %>%
-  group_by(`Brand Name`) %>%
+  group_by(`Brand Name`, Category) %>%
   arrange(Year, .by_group = TRUE) %>%
   mutate(nomchngspend = brandspend - lag(brandspend, n = chngyr), 
          nomchngdose = branddose - lag(branddose, n = chngyr), 
@@ -922,7 +922,7 @@ medicaid_brandchng %>%
 #TODO Manufacturer Level
 
 partd_manufac <- partd %>%
-  group_by(`Brand Name`, Year) %>%
+  group_by(`Brand Name`, Year, Category) %>%
   mutate(avg_spend_per_claim_brand = signif(sum(`Inf Total Spend`)/sum(`Total Claims`), 3)) %>%
   group_by(Manufacturer, add = TRUE) %>%
   mutate(avg_spend_per_claim_manufac = sum(`Inf Total Spend`)/sum(`Total Claims`)) %>%
@@ -938,7 +938,7 @@ partd_manufac <- partd %>%
 ```{r medicaid_manufacturer, include = FALSE, eval = FALSE}
 #TODO Manufacturer Level
 medicaid_manufac <- medicaid %>%
-  group_by(`Brand Name`, Year) %>%
+  group_by(`Brand Name`, Year, Category) %>%
   mutate(avg_spend_per_claim_brand = signif(sum(`Inf Total Spend`)/sum(`Total Claims`), 3)) %>%
   group_by(Manufacturer, add = TRUE) %>%
   mutate(avg_spend_per_claim_manufac = sum(`Inf Total Spend`)/sum(`Total Claims`)) %>%
@@ -969,6 +969,16 @@ partd %>%
   theme(legend.position = "none") 
 ```
 
+```{r}
+
+partd %>%
+  select(`Brand Name`, Year, Category) %>%
+  distinct() %>%
+  group_by(Category) %>%
+  summarise(num_drugs = n_distinct(`Brand Name`))
+
+```
+
 # Open Areas of Inquiry
 
 1. Is there a trend that can be indentified among manufacturers across the various drugs that they produce?
@@ -976,7 +986,7 @@ partd %>%
 
 ```{r writecsv_1, include = FALSE, eval = FALSE}
 partd_brandlvl <- partd %>%
-  group_by(`Brand Name`, Year, `Generic Name`) %>%
+  group_by(`Brand Name`, Year, `Generic Name`, Category) %>%
   summarise(num_manufac = n_distinct(Manufacturer),
             `Inf Total Spend` = sum(`Inf Total Spend`),
             `Total Spending` = sum(`Total Spending`),
@@ -985,7 +995,7 @@ partd_brandlvl <- partd %>%
             `Total Beneficiaries` = sum(`Total Beneficiaries`))
 
 medicaid_brandlvl <- medicaid %>%
-  group_by(`Brand Name`, Year, `Generic Name`) %>%
+  group_by(`Brand Name`, Year, `Generic Name`, Category) %>%
   summarise(num_manufac = n_distinct(Manufacturer),
             `Inf Total Spend` = sum(`Inf Total Spend`),
             `Total Spending` = sum(`Total Spending`),
