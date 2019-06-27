@@ -44,17 +44,6 @@ Aurobindo Pharm,2016,below_average,-58103078.789999984,66
 Aurobindo Pharm,2017,above_average,41336678.85,46
 Aurobindo Pharm,2017,at_average,0,1
 Aurobindo Pharm,2017,below_average,-53958914.54,79
-Camber Pharmace,2013,above_average,16959955.65,12
-Camber Pharmace,2013,below_average,-34991946.699999996,18
-Camber Pharmace,2014,above_average,9467102.52,8
-Camber Pharmace,2014,below_average,-33073917.360000003,31
-Camber Pharmace,2015,above_average,32782993.82,18
-Camber Pharmace,2015,below_average,-38881393.970000006,31
-Camber Pharmace,2016,above_average,49412926.19,19
-Camber Pharmace,2016,below_average,-32872912.80000001,30
-Camber Pharmace,2017,above_average,23126652.419999983,15
-Camber Pharmace,2017,at_average,0,1
-Camber Pharmace,2017,below_average,-22299852.299999997,47
 Mylan,2013,above_average,179729522.26,115
 Mylan,2013,at_average,0,34
 Mylan,2013,below_average,-89748357.18000004,96
@@ -70,36 +59,6 @@ Mylan,2016,below_average,-104094135.1,121
 Mylan,2017,above_average,203484944.04999998,123
 Mylan,2017,at_average,0,35
 Mylan,2017,below_average,-277901941.39,149
-Prasco Labs,2013,above_average,31119070.2,13
-Prasco Labs,2013,at_average,0,1
-Prasco Labs,2013,below_average,-1871279.2000000004,6
-Prasco Labs,2014,above_average,19590450.6,15
-Prasco Labs,2014,at_average,0,2
-Prasco Labs,2014,below_average,-9168582.4,13
-Prasco Labs,2015,above_average,36220236.6,21
-Prasco Labs,2015,at_average,0,1
-Prasco Labs,2015,below_average,-21030985.2,16
-Prasco Labs,2016,above_average,33713252.9,20
-Prasco Labs,2016,at_average,0,1
-Prasco Labs,2016,below_average,-25217943.5,17
-Prasco Labs,2017,above_average,23075304.099999998,19
-Prasco Labs,2017,at_average,0,1
-Prasco Labs,2017,below_average,-17548213.59,22
-Teva USA,2013,above_average,184401096.74,75
-Teva USA,2013,at_average,0,40
-Teva USA,2013,below_average,-174558258.38,83
-Teva USA,2014,above_average,149999241.54999998,81
-Teva USA,2014,at_average,0,40
-Teva USA,2014,below_average,-166527191.85000002,90
-Teva USA,2015,above_average,162398473.79999998,93
-Teva USA,2015,at_average,0,42
-Teva USA,2015,below_average,-165564961.6,90
-Teva USA,2016,above_average,116346339.48000002,82
-Teva USA,2016,at_average,0,40
-Teva USA,2016,below_average,-175318866.76000002,103
-Teva USA,2017,above_average,124684123.28999999,108
-Teva USA,2017,at_average,0,42
-Teva USA,2017,below_average,-243807530.92,119
 Lupin Pharmaceu,2013,above_average,118009333.5,32
 Lupin Pharmaceu,2013,at_average,0,13
 Lupin Pharmaceu,2013,below_average,-15373264.539999997,10
@@ -115,7 +74,6 @@ Lupin Pharmaceu,2016,below_average,-17956203.85,26
 Lupin Pharmaceu,2017,above_average,263351184.54000002,49
 Lupin Pharmaceu,2017,at_average,0,18
 Lupin Pharmaceu,2017,below_average,-19736171.530000005,25
-Sigma-Tau/Leadi,2017,at_average,0,5
 Otsuka America,2013,at_average,0,3
 Otsuka America,2014,at_average,0,3
 Otsuka America,2015,at_average,0,4
@@ -156,21 +114,6 @@ Glenmark Pharma,2016,below_average,-32004608.769999996,30
 Glenmark Pharma,2017,above_average,116431807.64,40
 Glenmark Pharma,2017,at_average,0,7
 Glenmark Pharma,2017,below_average,-46625705.48,39
-Mylan Instituti,2013,above_average,602976.73,12
-Mylan Instituti,2013,at_average,0,3
-Mylan Instituti,2013,below_average,-14138730.629999999,115
-Mylan Instituti,2014,above_average,1521927.2700000003,19
-Mylan Instituti,2014,at_average,0,4
-Mylan Instituti,2014,below_average,-16362306.89,124
-Mylan Instituti,2015,above_average,2650171.1799999997,29
-Mylan Instituti,2015,at_average,0,3
-Mylan Instituti,2015,below_average,-22441734.15,129
-Mylan Instituti,2016,above_average,1593577.83,25
-Mylan Instituti,2016,at_average,0,4
-Mylan Instituti,2016,below_average,-23608378.88,133
-Mylan Instituti,2017,above_average,995286.6400000001,30
-Mylan Instituti,2017,at_average,0,4
-Mylan Instituti,2017,below_average,-15452335.43,136
 Valeant,2013,above_average,10558205.100000001,12
 Valeant,2013,at_average,0,57
 Valeant,2013,below_average,-27477055.099999998,14
@@ -186,16 +129,6 @@ Valeant,2016,below_average,-45815172.6,12
 Valeant,2017,above_average,14934605.200000001,15
 Valeant,2017,at_average,0,71
 Valeant,2017,below_average,-37419904.6,16
-Actavis Pharma/,2013,above_average,3972314.5,2
-Actavis Pharma/,2013,below_average,-846328,1
-Actavis Pharma/,2014,above_average,2286694.8,2
-Actavis Pharma/,2014,below_average,-740850.4000000004,1
-Actavis Pharma/,2015,above_average,2439065,2
-Actavis Pharma/,2015,below_average,-986346.4000000005,1
-Actavis Pharma/,2016,above_average,1660745.399999999,3
-Actavis Pharma/,2017,above_average,162673874.18,78
-Actavis Pharma/,2017,at_average,0,39
-Actavis Pharma/,2017,below_average,-144190723.21,114
 Alvogen Inc,2013,above_average,35944686.5,7
 Alvogen Inc,2013,below_average,-2554568.500000002,5
 Alvogen Inc,2014,above_average,57897464.5,9
@@ -225,8 +158,6 @@ Global Pharm,2016,below_average,-2959560.6,9
 Global Pharm,2017,above_average,42980902.699999996,14
 Global Pharm,2017,at_average,0,4
 Global Pharm,2017,below_average,-6268013.0000000065,15
-Global/Impax,2017,above_average,9185.4,1
-Global/Impax,2017,below_average,-45067.2,2
 Heritage Pharma,2013,above_average,8517463.220000003,20
 Heritage Pharma,2013,at_average,0,5
 Heritage Pharma,2013,below_average,-8194814.760000002,12
@@ -257,39 +188,6 @@ Roxane/West-War,2016,below_average,-23424306.450000003,24
 Roxane/West-War,2017,above_average,18748560.48,43
 Roxane/West-War,2017,at_average,0,7
 Roxane/West-War,2017,below_average,-11516639.430000002,29
-Strides Pharma,2014,above_average,4729.6,1
-Strides Pharma,2014,at_average,0,1
-Strides Pharma,2014,below_average,-91415.20000000001,5
-Strides Pharma,2015,above_average,978238.8,5
-Strides Pharma,2015,at_average,0,1
-Strides Pharma,2015,below_average,-562726.2,6
-Strides Pharma,2016,above_average,11825063.9,5
-Strides Pharma,2016,below_average,-1300570.36,7
-Strides Pharma,2017,above_average,5228463.800000001,5
-Strides Pharma,2017,below_average,-4955929.340000002,9
-Virtus Pharmace,2013,above_average,1880.9999999999995,1
-Virtus Pharmace,2013,below_average,-276237.2199999999,3
-Virtus Pharmace,2014,above_average,2862184.2,3
-Virtus Pharmace,2014,below_average,-2439654.94,8
-Virtus Pharmace,2015,above_average,8006230.1,3
-Virtus Pharmace,2015,at_average,0,2
-Virtus Pharmace,2015,below_average,-4415727.53,7
-Virtus Pharmace,2016,above_average,8062116.4,3
-Virtus Pharmace,2016,at_average,0,1
-Virtus Pharmace,2016,below_average,-2552272.1499999994,8
-Virtus Pharmace,2017,above_average,2149543.8999999994,5
-Virtus Pharmace,2017,at_average,0,6
-Virtus Pharmace,2017,below_average,-2681288.0100000002,9
-Par Pharmaceuti,2013,at_average,0,6
-Par Pharmaceuti,2013,below_average,-13251,1
-Par Pharmaceuti,2014,at_average,0,7
-Par Pharmaceuti,2014,below_average,-5700,1
-Par Pharmaceuti,2015,at_average,0,7
-Par Pharmaceuti,2015,below_average,-4952,1
-Par Pharmaceuti,2016,at_average,0,8
-Par Pharmaceuti,2016,below_average,-3315,1
-Par Pharmaceuti,2017,at_average,0,8
-Par Pharmaceuti,2017,below_average,-5058,1
 Pfizer US Pharm,2013,above_average,190085.19999999995,2
 Pfizer US Pharm,2013,at_average,0,64
 Pfizer US Pharm,2013,below_average,-979.6999999999995,1
@@ -320,17 +218,6 @@ Amneal Pharmace,2016,below_average,-213373593.54999998,29
 Amneal Pharmace,2017,above_average,100346969.84,39
 Amneal Pharmace,2017,at_average,0,6
 Amneal Pharmace,2017,below_average,-188252990.24,34
-Xspire Pharma,2013,above_average,1339.32,1
-Xspire Pharma,2014,above_average,128395.89,1
-Xspire Pharma,2014,at_average,0,1
-Xspire Pharma,2015,above_average,346793.6,1
-Xspire Pharma,2015,at_average,0,1
-Xspire Pharma,2015,below_average,-3630,1
-Xspire Pharma,2016,above_average,382506.4600000001,2
-Xspire Pharma,2016,at_average,0,1
-Xspire Pharma,2017,above_average,446892,1
-Xspire Pharma,2017,at_average,0,2
-Xspire Pharma,2017,below_average,-13920,1
 AHP,2013,above_average,1130545.28,17
 AHP,2013,at_average,0,1
 AHP,2013,below_average,-2411156.42,94
@@ -401,6 +288,21 @@ Morton Grove Ph,2016,below_average,-10365942.09,17
 Morton Grove Ph,2017,above_average,2981937.48,13
 Morton Grove Ph,2017,at_average,0,3
 Morton Grove Ph,2017,below_average,-8513659.2,14
+Mylan Instituti,2013,above_average,602976.73,12
+Mylan Instituti,2013,at_average,0,3
+Mylan Instituti,2013,below_average,-14138730.629999999,115
+Mylan Instituti,2014,above_average,1521927.2700000003,19
+Mylan Instituti,2014,at_average,0,4
+Mylan Instituti,2014,below_average,-16362306.89,124
+Mylan Instituti,2015,above_average,2650171.1799999997,29
+Mylan Instituti,2015,at_average,0,3
+Mylan Instituti,2015,below_average,-22441734.15,129
+Mylan Instituti,2016,above_average,1593577.83,25
+Mylan Instituti,2016,at_average,0,4
+Mylan Instituti,2016,below_average,-23608378.88,133
+Mylan Instituti,2017,above_average,995286.6400000001,30
+Mylan Instituti,2017,at_average,0,4
+Mylan Instituti,2017,below_average,-15452335.43,136
 Pharmaceutical,2013,above_average,1501469.85,10
 Pharmaceutical,2013,at_average,0,1
 Pharmaceutical,2013,below_average,-870968.9000000003,8
@@ -416,9 +318,6 @@ Pharmaceutical,2016,below_average,-1221797.94,8
 Pharmaceutical,2017,above_average,4284569.86,10
 Pharmaceutical,2017,at_average,0,2
 Pharmaceutical,2017,below_average,-1627603.5000000002,10
-Qualitest/Par P,2017,above_average,144323129.89000002,42
-Qualitest/Par P,2017,at_average,0,14
-Qualitest/Par P,2017,below_average,-33794043,48
 Ranbaxy Pharmac,2013,above_average,3560393.8,3
 Ranbaxy Pharmac,2013,below_average,-7525682.560000002,10
 Ranbaxy Pharmac,2014,above_average,4090.999999999999,2
@@ -429,6 +328,21 @@ Ranbaxy Pharmac,2016,above_average,663.2400000000001,2
 Ranbaxy Pharmac,2016,below_average,-323184.70999999996,11
 Ranbaxy Pharmac,2017,above_average,690.18,2
 Ranbaxy Pharmac,2017,below_average,-90974.4,11
+Teva USA,2013,above_average,184401096.74,75
+Teva USA,2013,at_average,0,40
+Teva USA,2013,below_average,-174558258.38,83
+Teva USA,2014,above_average,149999241.54999998,81
+Teva USA,2014,at_average,0,40
+Teva USA,2014,below_average,-166527191.85000002,90
+Teva USA,2015,above_average,162398473.79999998,93
+Teva USA,2015,at_average,0,42
+Teva USA,2015,below_average,-165564961.6,90
+Teva USA,2016,above_average,116346339.48000002,82
+Teva USA,2016,at_average,0,40
+Teva USA,2016,below_average,-175318866.76000002,103
+Teva USA,2017,above_average,124684123.28999999,108
+Teva USA,2017,at_average,0,42
+Teva USA,2017,below_average,-243807530.92,119
 Actavis/Allerga,2013,at_average,0,24
 Actavis/Allerga,2014,at_average,0,26
 Actavis/Allerga,2015,at_average,0,27
@@ -450,12 +364,6 @@ Lannett Co. Inc,2016,below_average,-2517545.36,12
 Lannett Co. Inc,2017,above_average,42572734.400000006,19
 Lannett Co. Inc,2017,at_average,0,1
 Lannett Co. Inc,2017,below_average,-3093361.599999999,14
-Nostrum Laborat,2013,below_average,-76467.9,1
-Nostrum Laborat,2014,below_average,-23484.839999999997,1
-Nostrum Laborat,2015,below_average,-7621.5199999999995,1
-Nostrum Laborat,2016,below_average,-5271.54,1
-Nostrum Laborat,2017,above_average,325315.00000000023,4
-Nostrum Laborat,2017,below_average,-210470.54,3
 Taro Pharm USA,2013,above_average,18934533.80000001,20
 Taro Pharm USA,2013,at_average,0,3
 Taro Pharm USA,2013,below_average,-28291815.340000004,29
@@ -513,9 +421,6 @@ Baxter Healthca,2016,below_average,-82309.5,1
 Baxter Healthca,2017,above_average,2793491.500000001,16
 Baxter Healthca,2017,at_average,0,23
 Baxter Healthca,2017,below_average,-116042.99999999988,7
-Hospira/Icu Med,2017,above_average,120954.99999999996,7
-Hospira/Icu Med,2017,at_average,0,1
-Hospira/Icu Med,2017,below_average,-146981.19999999995,7
 Amer. Regent,2013,above_average,7358.000000000004,1
 Amer. Regent,2013,at_average,0,2
 Amer. Regent,2013,below_average,-359231.79,4
@@ -538,9 +443,6 @@ App/Fresenius K*,2015,below_average,-16017853.2,2
 App/Fresenius K*,2016,below_average,-8621108.4,3
 App/Fresenius K*,2017,at_average,0,1
 App/Fresenius K*,2017,below_average,-6158241.1,3
-Hospira/Pfizer,2017,above_average,1035141.12,15
-Hospira/Pfizer,2017,at_average,0,15
-Hospira/Pfizer,2017,below_average,-33144161.220000003,37
 Perrigo Co.,2013,above_average,32155053.34,25
 Perrigo Co.,2013,at_average,0,13
 Perrigo Co.,2013,below_average,-25302304.900000002,28
@@ -561,47 +463,31 @@ Eisai Inc.,2014,at_average,0,9
 Eisai Inc.,2015,at_average,0,11
 Eisai Inc.,2016,at_average,0,11
 Eisai Inc.,2017,at_average,0,11
-Avadel Pharmace,2017,above_average,20789.699999999997,1
-Avadel Pharmace,2017,at_average,0,2
-Actavis/Impax G,2013,at_average,0,1
-Actavis/Impax G,2013,below_average,-7210582.039999999,2
-Actavis/Impax G,2014,above_average,267657.65,2
-Actavis/Impax G,2014,below_average,-6475945.8,2
-Actavis/Impax G,2015,above_average,746166,2
-Actavis/Impax G,2015,below_average,-4508846.299999999,4
-Actavis/Impax G,2016,below_average,-3812292.0200000005,6
-Actavis/Impax G,2017,above_average,1630186.5000000002,2
-Actavis/Impax G,2017,below_average,-2445216.35,12
-Sigmapharm Labo,2013,at_average,0,2
-Sigmapharm Labo,2013,below_average,-148355.49999999997,1
-Sigmapharm Labo,2014,at_average,0,2
-Sigmapharm Labo,2014,below_average,-100191.60000000024,1
-Sigmapharm Labo,2015,at_average,0,2
-Sigmapharm Labo,2015,below_average,-35322.30000000032,2
-Sigmapharm Labo,2016,at_average,0,3
-Sigmapharm Labo,2016,below_average,-68100,1
-Sigmapharm Labo,2017,above_average,503578.5999999996,2
-Sigmapharm Labo,2017,at_average,0,2
+Prasco Labs,2013,above_average,31119070.2,13
+Prasco Labs,2013,at_average,0,1
+Prasco Labs,2013,below_average,-1871279.2000000004,6
+Prasco Labs,2014,above_average,19590450.6,15
+Prasco Labs,2014,at_average,0,2
+Prasco Labs,2014,below_average,-9168582.4,13
+Prasco Labs,2015,above_average,36220236.6,21
+Prasco Labs,2015,at_average,0,1
+Prasco Labs,2015,below_average,-21030985.2,16
+Prasco Labs,2016,above_average,33713252.9,20
+Prasco Labs,2016,at_average,0,1
+Prasco Labs,2016,below_average,-25217943.5,17
+Prasco Labs,2017,above_average,23075304.099999998,19
+Prasco Labs,2017,at_average,0,1
+Prasco Labs,2017,below_average,-17548213.59,22
 "Genentech, Inc.*",2013,at_average,0,1
 "Genentech, Inc.*",2014,at_average,0,1
 "Genentech, Inc.*",2015,at_average,0,1
 "Genentech, Inc.*",2016,at_average,0,1
 "Genentech, Inc.*",2017,at_average,0,1
-Sanofi-Pasteur,2013,at_average,0,8
-Sanofi-Pasteur,2014,at_average,0,8
-Sanofi-Pasteur,2015,at_average,0,8
-Sanofi-Pasteur,2016,at_average,0,9
-Sanofi-Pasteur,2017,at_average,0,11
 Horizon Pharma,2013,at_average,0,3
 Horizon Pharma,2014,at_average,0,4
 Horizon Pharma,2015,at_average,0,6
 Horizon Pharma,2016,at_average,0,6
 Horizon Pharma,2017,at_average,0,7
-Gemini Laborato,2014,at_average,0,1
-Gemini Laborato,2015,at_average,0,1
-Gemini Laborato,2016,at_average,0,1
-Gemini Laborato,2017,above_average,688864,1
-Gemini Laborato,2017,at_average,0,3
 Takeda Pharmace,2013,at_average,0,15
 Takeda Pharmace,2014,at_average,0,16
 Takeda Pharmace,2015,at_average,0,16
@@ -628,18 +514,6 @@ App/Fresenius K,2016,below_average,-6418829.44,21
 App/Fresenius K,2017,above_average,9792068.81,36
 App/Fresenius K,2017,at_average,0,10
 App/Fresenius K,2017,below_average,-7471250.210000001,22
-Auromedics Phar,2013,above_average,182342.7,7
-Auromedics Phar,2013,below_average,-81898,2
-Auromedics Phar,2014,above_average,313291.2,4
-Auromedics Phar,2014,below_average,-306469.10000000003,7
-Auromedics Phar,2015,above_average,537713,8
-Auromedics Phar,2015,below_average,-142514.2,4
-Auromedics Phar,2016,above_average,1386008.8,7
-Auromedics Phar,2016,below_average,-145456,5
-Auromedics Phar,2017,above_average,1322237.82,12
-Auromedics Phar,2017,below_average,-419653.75999999995,5
-Actavis Pharma/*,2017,above_average,4706146.9,1
-Actavis Pharma/*,2017,below_average,-5490072,1
 Avpak,2013,below_average,-6728.2,4
 Avpak,2014,above_average,3065.4,4
 Avpak,2014,below_average,-6362.06,5
@@ -660,42 +534,17 @@ Carlsbad Tech,2016,below_average,-16827886.38,10
 Carlsbad Tech,2017,above_average,10982.200000000012,2
 Carlsbad Tech,2017,at_average,0,1
 Carlsbad Tech,2017,below_average,-25875500.36,10
-Major Pharmaceu,2013,above_average,489838.3,4
-Major Pharmaceu,2013,at_average,0,1
-Major Pharmaceu,2013,below_average,-2046329.1099999999,51
-Major Pharmaceu,2014,above_average,422327.82000000007,11
-Major Pharmaceu,2014,at_average,0,1
-Major Pharmaceu,2014,below_average,-2215931.11,59
-Major Pharmaceu,2015,above_average,305758.29999999993,10
-Major Pharmaceu,2015,at_average,0,3
-Major Pharmaceu,2015,below_average,-3155697.3800000004,71
-Major Pharmaceu,2016,above_average,208028.49000000002,10
-Major Pharmaceu,2016,at_average,0,1
-Major Pharmaceu,2016,below_average,-3149690.2899999996,74
-Major Pharmaceu,2017,above_average,233014.90999999995,12
-Major Pharmaceu,2017,at_average,0,1
-Major Pharmaceu,2017,below_average,-2663545.1999999997,84
 Mylan*,2013,above_average,20643387.9,3
 Mylan*,2014,above_average,31238992.6,3
 Mylan*,2015,above_average,28405085.1,3
 Mylan*,2016,above_average,20003351.2,2
 Mylan*,2016,below_average,-1974410,1
 Mylan*,2017,above_average,19697777.400000002,3
-Quinn Pharmaceu,2017,above_average,10248.899999999903,1
-Quinn Pharmaceu,2017,below_average,-548531.7,2
-Renaissance/Myl,2013,above_average,58590,1
-Renaissance/Myl,2014,above_average,1455429,3
-Renaissance/Myl,2014,at_average,0,1
-Renaissance/Myl,2014,below_average,-61993.19999999995,1
-Renaissance/Myl,2015,above_average,4427980.6,4
-Renaissance/Myl,2015,at_average,0,2
-Renaissance/Myl,2015,below_average,-97321,1
-Renaissance/Myl,2016,above_average,3508025.8,4
-Renaissance/Myl,2016,at_average,0,2
-Renaissance/Myl,2016,below_average,-241356,1
-Renaissance/Myl,2017,above_average,212391117.3,5
-Renaissance/Myl,2017,at_average,0,1
-Renaissance/Myl,2017,below_average,-160433.20000000004,2
+Sanofi-Pasteur,2013,at_average,0,8
+Sanofi-Pasteur,2014,at_average,0,8
+Sanofi-Pasteur,2015,at_average,0,8
+Sanofi-Pasteur,2016,at_average,0,9
+Sanofi-Pasteur,2017,at_average,0,11
 "Bayer,Pharmaceu",2013,at_average,0,1
 "Bayer,Pharmaceu",2014,at_average,0,1
 "Bayer,Pharmaceu",2015,at_average,0,1
@@ -716,21 +565,6 @@ Fougera/Sandoz,2016,below_average,-50024235.75,16
 Fougera/Sandoz,2017,above_average,46209873.300000004,20
 Fougera/Sandoz,2017,at_average,0,1
 Fougera/Sandoz,2017,below_average,-20533500.3,14
-Sandoz,2013,above_average,129786295.47000001,74
-Sandoz,2013,at_average,0,28
-Sandoz,2013,below_average,-144495751.28,112
-Sandoz,2014,above_average,128206526.44,73
-Sandoz,2014,at_average,0,32
-Sandoz,2014,below_average,-179656353.89,126
-Sandoz,2015,above_average,136829174.16000003,80
-Sandoz,2015,at_average,0,32
-Sandoz,2015,below_average,-218367736.8,131
-Sandoz,2016,above_average,123990942.66999999,71
-Sandoz,2016,at_average,0,31
-Sandoz,2016,below_average,-198609256.37000003,141
-Sandoz,2017,above_average,160320465.44,86
-Sandoz,2017,at_average,0,30
-Sandoz,2017,below_average,-208869222.10999998,145
 Eli Lilly & Co.,2013,at_average,0,27
 Eli Lilly & Co.,2014,at_average,0,31
 Eli Lilly & Co.,2015,at_average,0,32
@@ -741,6 +575,16 @@ Shire US Inc.,2014,at_average,0,10
 Shire US Inc.,2015,at_average,0,11
 Shire US Inc.,2016,at_average,0,11
 Shire US Inc.,2017,at_average,0,12
+Sigmapharm Labo,2013,at_average,0,2
+Sigmapharm Labo,2013,below_average,-148355.49999999997,1
+Sigmapharm Labo,2014,at_average,0,2
+Sigmapharm Labo,2014,below_average,-100191.60000000024,1
+Sigmapharm Labo,2015,at_average,0,2
+Sigmapharm Labo,2015,below_average,-35322.30000000032,2
+Sigmapharm Labo,2016,at_average,0,3
+Sigmapharm Labo,2016,below_average,-68100,1
+Sigmapharm Labo,2017,above_average,503578.5999999996,2
+Sigmapharm Labo,2017,at_average,0,2
 "Bayer,Pharm Div",2013,at_average,0,19
 "Bayer,Pharm Div",2014,at_average,0,20
 "Bayer,Pharm Div",2015,at_average,0,20
@@ -757,15 +601,12 @@ Diabetic Supply,2014,at_average,0,4
 Diabetic Supply,2015,at_average,0,4
 Diabetic Supply,2016,at_average,0,4
 Diabetic Supply,2017,at_average,0,4
-Neos Therapeuti,2017,at_average,0,1
-Meda/Mylan Spec,2017,at_average,0,20
 Novartis,2013,at_average,0,41
 Novartis,2014,at_average,0,42
 Novartis,2015,at_average,0,51
 Novartis,2016,at_average,0,51
 Novartis,2017,above_average,1066700,2
 Novartis,2017,at_average,0,56
-Mannkind Corpor,2017,at_average,0,1
 Boehringer Ing.,2013,at_average,0,22
 Boehringer Ing.,2014,at_average,0,26
 Boehringer Ing.,2015,at_average,0,29
@@ -836,16 +677,21 @@ Ritedose Pharma,2016,above_average,17358.39999999994,1
 Ritedose Pharma,2016,below_average,-2465120.7,2
 Ritedose Pharma,2017,above_average,97345.59999999982,1
 Ritedose Pharma,2017,below_average,-2777549.4,3
-Vistapharm,2013,above_average,4479411.5,7
-Vistapharm,2013,below_average,-394.1000000000056,1
-Vistapharm,2014,above_average,4612719.7,7
-Vistapharm,2014,below_average,-22378.5,1
-Vistapharm,2015,above_average,3920195.8000000003,7
-Vistapharm,2015,below_average,-96436.79999999994,1
-Vistapharm,2016,above_average,2391577.4,7
-Vistapharm,2016,below_average,-37391.5,1
-Vistapharm,2017,above_average,3467795.3,10
-Vistapharm,2017,below_average,-22609.2,1
+Sandoz,2013,above_average,129786295.47000001,74
+Sandoz,2013,at_average,0,28
+Sandoz,2013,below_average,-144495751.28,112
+Sandoz,2014,above_average,128206526.44,73
+Sandoz,2014,at_average,0,32
+Sandoz,2014,below_average,-179656353.89,126
+Sandoz,2015,above_average,136829174.16000003,80
+Sandoz,2015,at_average,0,32
+Sandoz,2015,below_average,-218367736.8,131
+Sandoz,2016,above_average,123990942.66999999,71
+Sandoz,2016,at_average,0,31
+Sandoz,2016,below_average,-198609256.37000003,141
+Sandoz,2017,above_average,160320465.44,86
+Sandoz,2017,at_average,0,30
+Sandoz,2017,below_average,-208869222.10999998,145
 Global Diabetic,2013,above_average,195022.1,4
 Global Diabetic,2013,below_average,-3704.7999999999997,1
 Global Diabetic,2014,above_average,393622.5000000001,4
@@ -870,21 +716,12 @@ Home Aide Diagn,2016,below_average,-94892.40000000001,1
 Home Aide Diagn,2017,above_average,189207.89999999886,1
 Home Aide Diagn,2017,at_average,0,4
 Home Aide Diagn,2017,below_average,-118622.59999999999,1
-CVS,2013,below_average,-5011.44,1
-CVS,2014,below_average,-5869.150000000002,1
-CVS,2015,below_average,-7888.799999999999,1
-CVS,2016,below_average,-5309.999999999999,1
-CVS,2017,below_average,-293488.11000000004,2
 Chain Drug Cons,2013,below_average,-85360.40000000001,7
 Chain Drug Cons,2014,below_average,-109212.15,7
 Chain Drug Cons,2015,below_average,-186263.88,7
 Chain Drug Cons,2016,below_average,-133912.33000000002,7
 Chain Drug Cons,2017,above_average,5670,1
 Chain Drug Cons,2017,below_average,-110116.17000000001,6
-Kroger/Medline,2014,below_average,-543.5,1
-Kroger/Medline,2015,below_average,-6769.07,1
-Kroger/Medline,2016,below_average,-8885.550000000001,1
-Kroger/Medline,2017,below_average,-12028.499999999998,1
 Leader,2013,above_average,47166.19999999998,2
 Leader,2013,below_average,-486290.41,2
 Leader,2014,above_average,3342.8000000000006,1
@@ -895,6 +732,21 @@ Leader,2016,above_average,5912.999999999999,1
 Leader,2016,below_average,-796864.1000000001,3
 Leader,2017,above_average,19584.600000000006,2
 Leader,2017,below_average,-542771.7000000001,2
+Major Pharmaceu,2013,above_average,489838.3,4
+Major Pharmaceu,2013,at_average,0,1
+Major Pharmaceu,2013,below_average,-2046329.1099999999,51
+Major Pharmaceu,2014,above_average,422327.82000000007,11
+Major Pharmaceu,2014,at_average,0,1
+Major Pharmaceu,2014,below_average,-2215931.11,59
+Major Pharmaceu,2015,above_average,305758.29999999993,10
+Major Pharmaceu,2015,at_average,0,3
+Major Pharmaceu,2015,below_average,-3155697.3800000004,71
+Major Pharmaceu,2016,above_average,208028.49000000002,10
+Major Pharmaceu,2016,at_average,0,1
+Major Pharmaceu,2016,below_average,-3149690.2899999996,74
+Major Pharmaceu,2017,above_average,233014.90999999995,12
+Major Pharmaceu,2017,at_average,0,1
+Major Pharmaceu,2017,below_average,-2663545.1999999997,84
 Mckesson Drug,2013,above_average,276.56999999999994,1
 Mckesson Drug,2013,below_average,-1069.53,1
 Mckesson Drug,2014,above_average,357,1
@@ -925,10 +777,6 @@ One Pharmaceuti,2016,at_average,0,5
 One Pharmaceuti,2016,below_average,-23062.2,1
 One Pharmaceuti,2017,at_average,0,5
 One Pharmaceuti,2017,below_average,-30901.5,1
-Phoenix Healthc,2014,above_average,1111265.2,1
-Phoenix Healthc,2015,above_average,3842636.000000001,1
-Phoenix Healthc,2016,above_average,1876860,1
-Phoenix Healthc,2017,above_average,2730926.4000000013,1
 Rugby,2013,above_average,2433.5999999999963,1
 Rugby,2013,below_average,-76316.56,2
 Rugby,2014,above_average,3694.5,1
@@ -967,16 +815,6 @@ Sunmark,2016,at_average,0,1
 Sunmark,2016,below_average,-2009748.5,1
 Sunmark,2017,at_average,0,1
 Sunmark,2017,below_average,-2287948,1
-Walgreen Co.,2013,above_average,5653.5,1
-Walgreen Co.,2013,below_average,-3118641.8900000006,4
-Walgreen Co.,2014,above_average,8449.149999999992,2
-Walgreen Co.,2014,below_average,-3218222.699999999,4
-Walgreen Co.,2015,above_average,12253.389999999998,2
-Walgreen Co.,2015,below_average,-3460369.76,4
-Walgreen Co.,2016,above_average,16820.310000000005,1
-Walgreen Co.,2016,below_average,-2824932,5
-Walgreen Co.,2017,above_average,13856.339999999998,2
-Walgreen Co.,2017,below_average,-2978781.179999999,4
 Amerisourceberg,2013,at_average,0,1
 Amerisourceberg,2013,below_average,-287.64000000000027,1
 Amerisourceberg,2014,above_average,190.03999999999596,1
@@ -992,6 +830,11 @@ Good Neighbor,2014,below_average,-29765.89999999999,7
 Good Neighbor,2015,below_average,-21030.56,7
 Good Neighbor,2016,below_average,-10525.45,7
 Good Neighbor,2017,below_average,-12131.96,7
+CVS,2013,below_average,-5011.44,1
+CVS,2014,below_average,-5869.150000000002,1
+CVS,2015,below_average,-7888.799999999999,1
+CVS,2016,below_average,-5309.999999999999,1
+CVS,2017,below_average,-293488.11000000004,2
 Chain Drug,2013,above_average,91.83999999999979,1
 Chain Drug,2013,below_average,-53.5,1
 Chain Drug,2014,below_average,-290.22000000000094,2
@@ -1000,16 +843,6 @@ Chain Drug,2015,below_average,-768.8099999999996,1
 Chain Drug,2016,above_average,595,1
 Chain Drug,2016,below_average,-1037.27,1
 Chain Drug,2017,below_average,-792.8799999999999,2
-Perrigo Diabete,2013,at_average,0,4
-Perrigo Diabete,2013,below_average,-548002.3000000004,8
-Perrigo Diabete,2014,at_average,0,4
-Perrigo Diabete,2014,below_average,-469360.80000000016,8
-Perrigo Diabete,2015,at_average,0,4
-Perrigo Diabete,2015,below_average,-689447.7999999998,9
-Perrigo Diabete,2016,at_average,0,4
-Perrigo Diabete,2016,below_average,-965462.7599999997,9
-Perrigo Diabete,2017,at_average,0,5
-Perrigo Diabete,2017,below_average,-764892.2999999999,9
 Rite Aid Corp.,2013,above_average,54949.449999999975,2
 Rite Aid Corp.,2013,below_average,-322.8899999999986,2
 Rite Aid Corp.,2014,above_average,50697.509999999944,2
@@ -1025,54 +858,21 @@ Target Corp,2014,below_average,-1265.5800000000002,1
 Target Corp,2015,below_average,-869.4000000000002,1
 Target Corp,2016,below_average,-507.60000000000014,1
 Target Corp,2017,below_average,-185.02,1
-Ultimed Inc,2013,at_average,0,7
-Ultimed Inc,2013,below_average,-1210088.4999999998,3
-Ultimed Inc,2014,at_average,0,7
-Ultimed Inc,2014,below_average,-362960.3999999999,3
-Ultimed Inc,2015,at_average,0,7
-Ultimed Inc,2015,below_average,-403831.1999999998,3
-Ultimed Inc,2016,at_average,0,7
-Ultimed Inc,2016,below_average,-317258,3
-Ultimed Inc,2017,above_average,58.20000000000005,1
-Ultimed Inc,2017,at_average,0,10
-Ultimed Inc,2017,below_average,-450192,3
-Wal-Mart Stores,2013,below_average,-2393641.8000000003,3
-Wal-Mart Stores,2014,below_average,-2593556.28,4
-Wal-Mart Stores,2015,below_average,-2777069.61,4
-Wal-Mart Stores,2016,below_average,-2592947.2,4
-Wal-Mart Stores,2017,below_average,-2293942.2499999995,4
+Walgreen Co.,2013,above_average,5653.5,1
+Walgreen Co.,2013,below_average,-3118641.8900000006,4
+Walgreen Co.,2014,above_average,8449.149999999992,2
+Walgreen Co.,2014,below_average,-3218222.699999999,4
+Walgreen Co.,2015,above_average,12253.389999999998,2
+Walgreen Co.,2015,below_average,-3460369.76,4
+Walgreen Co.,2016,above_average,16820.310000000005,1
+Walgreen Co.,2016,below_average,-2824932,5
+Walgreen Co.,2017,above_average,13856.339999999998,2
+Walgreen Co.,2017,below_average,-2978781.179999999,4
 Medicine Shop,2013,below_average,-10294.80000000001,2
 Medicine Shop,2014,below_average,-9952.130000000003,2
 Medicine Shop,2015,below_average,-5774.000000000002,2
 Medicine Shop,2016,below_average,-3968.4399999999964,2
 Medicine Shop,2017,below_average,-7739.280000000001,2
-Pharmaci/Pfizer,2017,above_average,37849.99999999998,2
-Pharmaci/Pfizer,2017,at_average,0,38
-Pharmaci/Pfizer,2017,below_average,-34315.700000000004,2
-Genzyme,2013,at_average,0,6
-Genzyme,2014,at_average,0,6
-Genzyme,2015,at_average,0,7
-Genzyme,2016,at_average,0,7
-Genzyme,2017,at_average,0,8
-"Genentech, Inc.",2013,above_average,1530590,2
-"Genentech, Inc.",2013,at_average,0,18
-"Genentech, Inc.",2014,above_average,1233909,2
-"Genentech, Inc.",2014,at_average,0,19
-"Genentech, Inc.",2015,above_average,792352,2
-"Genentech, Inc.",2015,at_average,0,20
-"Genentech, Inc.",2016,above_average,349135,2
-"Genentech, Inc.",2016,at_average,0,20
-"Genentech, Inc.",2017,above_average,507046,2
-"Genentech, Inc.",2017,at_average,0,24
-"Cipla USA, Inc.",2015,above_average,279326.3299999995,3
-"Cipla USA, Inc.",2015,below_average,-904838.6499999998,7
-"Cipla USA, Inc.",2016,above_average,6902361.65,5
-"Cipla USA, Inc.",2016,below_average,-2117349.4599999995,5
-"Cipla USA, Inc.",2017,above_average,17006510.76,15
-"Cipla USA, Inc.",2017,at_average,0,1
-"Cipla USA, Inc.",2017,below_average,-26939454.48,22
-Impax Generics,2017,above_average,11965154.91,6
-Impax Generics,2017,below_average,-2507702,5
 Jubilant Cadist,2013,above_average,3209543.4800000004,4
 Jubilant Cadist,2013,at_average,0,1
 Jubilant Cadist,2013,below_average,-10693708.589999998,12
@@ -1115,17 +915,6 @@ Sun Pharma Glob,2016,below_average,-15039980.14,19
 Sun Pharma Glob,2017,above_average,18729947.1,11
 Sun Pharma Glob,2017,at_average,0,1
 Sun Pharma Glob,2017,below_average,-7616885.360000001,22
-Sun Pharmaceuti,2013,above_average,670677.4,6
-Sun Pharmaceuti,2013,below_average,-50791132.269999996,26
-Sun Pharmaceuti,2014,above_average,964162.9600000003,7
-Sun Pharmaceuti,2014,below_average,-48749664.989999995,26
-Sun Pharmaceuti,2015,above_average,7180459.340000002,9
-Sun Pharmaceuti,2015,below_average,-48743874.510000005,29
-Sun Pharmaceuti,2016,above_average,7579347.96,9
-Sun Pharmaceuti,2016,below_average,-85097971.41,29
-Sun Pharmaceuti,2017,above_average,22118288.609999996,13
-Sun Pharmaceuti,2017,at_average,0,2
-Sun Pharmaceuti,2017,below_average,-90966795.33,35
 Tagi Pharma,2013,above_average,253598.8,2
 Tagi Pharma,2013,below_average,-395035.20000000007,2
 Tagi Pharma,2014,above_average,438432.30000000005,2
@@ -1136,26 +925,17 @@ Tagi Pharma,2016,above_average,1137486.72,3
 Tagi Pharma,2016,below_average,-34249.29999999998,2
 Tagi Pharma,2017,above_average,1598033.9000000001,4
 Tagi Pharma,2017,below_average,-17730145.7,3
-Citron Pharma L,2013,above_average,3325.2000000000003,1
-Citron Pharma L,2013,below_average,-537636,1
-Citron Pharma L,2014,above_average,1421164.7000000002,6
-Citron Pharma L,2014,below_average,-17036647.99,10
-Citron Pharma L,2015,above_average,2529702.68,10
-Citron Pharma L,2015,below_average,-26483035.08,15
-Citron Pharma L,2016,above_average,5247197.95,8
-Citron Pharma L,2016,below_average,-40029585.599999994,17
-Citron Pharma L,2017,above_average,5678325.750000001,13
-Citron Pharma L,2017,below_average,-40786854.930000015,27
-Exelan Pharmace,2013,above_average,464.00000000000017,1
-Exelan Pharmace,2013,below_average,-96102.79000000001,10
-Exelan Pharmace,2014,above_average,2608.2,3
-Exelan Pharmace,2014,below_average,-292659.63,12
-Exelan Pharmace,2015,above_average,65360.03000000001,6
-Exelan Pharmace,2015,below_average,-471611.7899999999,12
-Exelan Pharmace,2016,above_average,169408.17999999996,6
-Exelan Pharmace,2016,below_average,-593195.94,12
-Exelan Pharmace,2017,above_average,233626.06999999995,6
-Exelan Pharmace,2017,below_average,-845643.2999999999,14
+Camber Pharmace,2013,above_average,16959955.65,12
+Camber Pharmace,2013,below_average,-34991946.699999996,18
+Camber Pharmace,2014,above_average,9467102.52,8
+Camber Pharmace,2014,below_average,-33073917.360000003,31
+Camber Pharmace,2015,above_average,32782993.82,18
+Camber Pharmace,2015,below_average,-38881393.970000006,31
+Camber Pharmace,2016,above_average,49412926.19,19
+Camber Pharmace,2016,below_average,-32872912.80000001,30
+Camber Pharmace,2017,above_average,23126652.419999983,15
+Camber Pharmace,2017,at_average,0,1
+Camber Pharmace,2017,below_average,-22299852.299999997,47
 Torrent Pharmac,2013,above_average,9721439.04,11
 Torrent Pharmac,2013,below_average,-19601949.020000007,16
 Torrent Pharmac,2014,above_average,19034129.239999995,11
@@ -1168,15 +948,6 @@ Torrent Pharmac,2016,below_average,-41722337.96,25
 Torrent Pharmac,2017,above_average,8355786.639999994,12
 Torrent Pharmac,2017,at_average,0,1
 Torrent Pharmac,2017,below_average,-24990975.68,29
-Lupin Pharma,2013,at_average,0,1
-Lupin Pharma,2014,at_average,0,2
-Lupin Pharma,2014,below_average,-9785,1
-Lupin Pharma,2015,at_average,0,2
-Lupin Pharma,2015,below_average,-2781,1
-Lupin Pharma,2016,at_average,0,2
-Lupin Pharma,2016,below_average,-11560,1
-Lupin Pharma,2017,at_average,0,3
-Lupin Pharma,2017,below_average,-23220,1
 Romark Laborato,2013,at_average,0,1
 Romark Laborato,2014,above_average,10474,1
 Romark Laborato,2015,at_average,0,1
@@ -1187,21 +958,6 @@ Apopharma USA I,2014,at_average,0,2
 Apopharma USA I,2015,at_average,0,2
 Apopharma USA I,2016,at_average,0,2
 Apopharma USA I,2017,at_average,0,2
-Accord Healthca,2013,above_average,9773313.449999996,5
-Accord Healthca,2013,at_average,0,2
-Accord Healthca,2013,below_average,-5981282.089999993,16
-Accord Healthca,2014,above_average,13283427.600000003,5
-Accord Healthca,2014,at_average,0,2
-Accord Healthca,2014,below_average,-13084886.569999998,19
-Accord Healthca,2015,above_average,15169906.949999997,11
-Accord Healthca,2015,at_average,0,3
-Accord Healthca,2015,below_average,-24103104.790000007,16
-Accord Healthca,2016,above_average,27023754.24000001,14
-Accord Healthca,2016,at_average,0,3
-Accord Healthca,2016,below_average,-15952691.1,13
-Accord Healthca,2017,above_average,29926617.099999998,14
-Accord Healthca,2017,at_average,0,2
-Accord Healthca,2017,below_average,-17331477.33,17
 Dr.Reddy'S Lab,2013,above_average,102702734.77999999,32
 Dr.Reddy'S Lab,2013,at_average,0,5
 Dr.Reddy'S Lab,2013,below_average,-59864770.40999999,30
@@ -1217,36 +973,6 @@ Dr.Reddy'S Lab,2016,below_average,-61168253.37000001,45
 Dr.Reddy'S Lab,2017,above_average,67002846.72000002,30
 Dr.Reddy'S Lab,2017,at_average,0,7
 Dr.Reddy'S Lab,2017,below_average,-77876671.58999999,55
-Ingenus Pharmac,2013,below_average,-2325228.4500000007,3
-Ingenus Pharmac,2014,above_average,65541.12,1
-Ingenus Pharmac,2014,below_average,-3039314.54,4
-Ingenus Pharmac,2015,above_average,2818797.2,3
-Ingenus Pharmac,2015,below_average,-1112382.85,3
-Ingenus Pharmac,2016,above_average,6606790.96,3
-Ingenus Pharmac,2016,below_average,-301502.32000000007,3
-Ingenus Pharmac,2017,above_average,5742040.02,2
-Ingenus Pharmac,2017,below_average,-2790850.1700000004,5
-Skylar Laborato,2017,at_average,0,1
-Ajanta Pharma L,2014,below_average,-100691.80000000003,1
-Ajanta Pharma L,2015,below_average,-2020873.1000000006,1
-Ajanta Pharma L,2016,below_average,-2773873.199999999,1
-Ajanta Pharma L,2017,above_average,6525435,4
-Ajanta Pharma L,2017,below_average,-3629765.1900000004,4
-Patriot Pharmac,2013,above_average,1028688.4,3
-Patriot Pharmac,2013,at_average,0,1
-Patriot Pharmac,2013,below_average,-5074540.7,6
-Patriot Pharmac,2014,above_average,762785,3
-Patriot Pharmac,2014,at_average,0,1
-Patriot Pharmac,2014,below_average,-5307386.5,6
-Patriot Pharmac,2015,above_average,539080,3
-Patriot Pharmac,2015,at_average,0,2
-Patriot Pharmac,2015,below_average,-7928172.9,8
-Patriot Pharmac,2016,above_average,606108.7999999998,4
-Patriot Pharmac,2016,at_average,0,2
-Patriot Pharmac,2016,below_average,-10735062,7
-Patriot Pharmac,2017,above_average,242671.19999999987,1
-Patriot Pharmac,2017,at_average,0,1
-Patriot Pharmac,2017,below_average,-13976444.9,11
 Alcon/Novartis,2013,at_average,0,28
 Alcon/Novartis,2014,at_average,0,28
 Alcon/Novartis,2015,at_average,0,29
@@ -1267,10 +993,6 @@ Actavis Pharma,2016,below_average,-24628398.5,13
 Actavis Pharma,2017,above_average,735416,3
 Actavis Pharma,2017,at_average,0,1
 Actavis Pharma,2017,below_average,-1377844.04,21
-Bionpharma Inc.,2015,below_average,-3390,1
-Bionpharma Inc.,2016,below_average,-816606.9000000003,1
-Bionpharma Inc.,2017,above_average,125009.6,2
-Bionpharma Inc.,2017,below_average,-2362570.1799999997,8
 Boca Pharmacal/,2013,above_average,19531692,1
 Boca Pharmacal/,2013,below_average,-885311.8800000001,3
 Boca Pharmacal/,2014,above_average,44514887.39999999,2
@@ -1334,14 +1056,6 @@ Shionogi/Covis,2014,at_average,0,2
 Shionogi/Covis,2015,at_average,0,2
 Shionogi/Covis,2016,at_average,0,2
 Shionogi/Covis,2017,at_average,0,2
-Sunovion/Covis,2017,at_average,0,3
-Banner Life Sci,2014,below_average,-1390905,1
-Banner Life Sci,2015,above_average,275786.33,3
-Banner Life Sci,2015,below_average,-1816236,2
-Banner Life Sci,2016,above_average,1140566.199999999,3
-Banner Life Sci,2016,below_average,-252182.00000000006,2
-Banner Life Sci,2017,above_average,206533.09999999995,4
-Banner Life Sci,2017,below_average,-109291.52999999997,3
 Banner Pharmaca,2013,above_average,181135,1
 Banner Pharmaca,2014,above_average,1319175,1
 Banner Pharmaca,2014,below_average,-64878,1
@@ -1350,9 +1064,6 @@ Banner Pharmaca,2015,below_average,-132369.60000000018,1
 Banner Pharmaca,2016,above_average,24543,1
 Banner Pharmaca,2016,below_average,-56317.20000000001,1
 Banner Pharmaca,2017,below_average,-56888.90000000002,2
-Upsher Smith La,2017,above_average,11846020.999999998,5
-Upsher Smith La,2017,at_average,0,4
-Upsher Smith La,2017,below_average,-10267454.299999995,10
 Sanofi-Aventis,2013,at_average,0,16
 Sanofi-Aventis,2014,above_average,153144,1
 Sanofi-Aventis,2014,at_average,0,17
@@ -1373,24 +1084,6 @@ Astellas Pharma,2017,at_average,0,8
 "Watson Pharma,",2016,at_average,0,6
 "Watson Pharma,",2017,at_average,0,3
 "Watson Pharma,",2017,below_average,-41108.899999999994,6
-Clover Pharmace,2015,at_average,0,1
-Clover Pharmace,2016,at_average,0,1
-Clover Pharmace,2017,at_average,0,1
-Sagent Pharmace,2013,above_average,264803.3,8
-Sagent Pharmace,2013,at_average,0,2
-Sagent Pharmace,2013,below_average,-5919860.9,15
-Sagent Pharmace,2014,above_average,418972,9
-Sagent Pharmace,2014,at_average,0,1
-Sagent Pharmace,2014,below_average,-6113878.4,17
-Sagent Pharmace,2015,above_average,764574.36,9
-Sagent Pharmace,2015,at_average,0,2
-Sagent Pharmace,2015,below_average,-6241634.699999999,20
-Sagent Pharmace,2016,above_average,613012.9,10
-Sagent Pharmace,2016,at_average,0,2
-Sagent Pharmace,2016,below_average,-5053738.8,19
-Sagent Pharmace,2017,above_average,514386.30000000005,16
-Sagent Pharmace,2017,at_average,0,1
-Sagent Pharmace,2017,below_average,-3416708.6,19
 Teva Parenteral,2013,above_average,170058.25000000003,8
 Teva Parenteral,2013,at_average,0,3
 Teva Parenteral,2013,below_average,-852951.6,3
@@ -1406,21 +1099,6 @@ Teva Parenteral,2016,below_average,-30899197.5,9
 Teva Parenteral,2017,above_average,197093.43000000005,11
 Teva Parenteral,2017,at_average,0,1
 Teva Parenteral,2017,below_average,-21983478.4,9
-"West-Ward, Inc.",2013,above_average,13063628.430000003,30
-"West-Ward, Inc.",2013,at_average,0,10
-"West-Ward, Inc.",2013,below_average,-23421222.980000004,52
-"West-Ward, Inc.",2014,above_average,13010087.500000007,28
-"West-Ward, Inc.",2014,at_average,0,10
-"West-Ward, Inc.",2014,below_average,-24228772.080000002,55
-"West-Ward, Inc.",2015,above_average,12503134.399999999,28
-"West-Ward, Inc.",2015,at_average,0,10
-"West-Ward, Inc.",2015,below_average,-20170482.11,60
-"West-Ward, Inc.",2016,above_average,11974952.559999999,29
-"West-Ward, Inc.",2016,at_average,0,10
-"West-Ward, Inc.",2016,below_average,-22073161.22,59
-"West-Ward, Inc.",2017,above_average,16158811.81,31
-"West-Ward, Inc.",2017,at_average,0,9
-"West-Ward, Inc.",2017,below_average,-22569942.529999997,65
 Rising Pharm,2013,above_average,8487898.580000004,17
 Rising Pharm,2013,at_average,0,7
 Rising Pharm,2013,below_average,-1291618.42,8
@@ -1488,6 +1166,16 @@ Epic Pharma LLC,2016,at_average,0,1
 Epic Pharma LLC,2016,below_average,-1976933.5900000012,10
 Epic Pharma LLC,2017,above_average,5384222.550000001,9
 Epic Pharma LLC,2017,below_average,-879952.8999999994,8
+Exelan Pharmace,2013,above_average,464.00000000000017,1
+Exelan Pharmace,2013,below_average,-96102.79000000001,10
+Exelan Pharmace,2014,above_average,2608.2,3
+Exelan Pharmace,2014,below_average,-292659.63,12
+Exelan Pharmace,2015,above_average,65360.03000000001,6
+Exelan Pharmace,2015,below_average,-471611.7899999999,12
+Exelan Pharmace,2016,above_average,169408.17999999996,6
+Exelan Pharmace,2016,below_average,-593195.94,12
+Exelan Pharmace,2017,above_average,233626.06999999995,6
+Exelan Pharmace,2017,below_average,-845643.2999999999,14
 Legacy Pharmace,2013,above_average,171439.40000000014,2
 Legacy Pharmace,2013,below_average,-33150663.340000007,19
 Legacy Pharmace,2014,above_average,53253.59999999981,1
@@ -1497,27 +1185,21 @@ Legacy Pharmace,2016,above_average,163867.3,2
 Legacy Pharmace,2016,below_average,-34024024.88999999,23
 Legacy Pharmace,2017,above_average,948.0000000000005,1
 Legacy Pharmace,2017,below_average,-23018786.34,26
-Macleods Pharma,2013,above_average,140057.10000000015,1
-Macleods Pharma,2013,below_average,-542349.9,5
-Macleods Pharma,2014,above_average,4540880.100000001,3
-Macleods Pharma,2014,below_average,-1075961.7,8
-Macleods Pharma,2015,above_average,15375761.7,6
-Macleods Pharma,2015,below_average,-6414551.67,16
-Macleods Pharma,2016,above_average,12616133.700000005,9
-Macleods Pharma,2016,below_average,-11244370.580000006,13
-Macleods Pharma,2017,above_average,13438368.02,9
-Macleods Pharma,2017,at_average,0,1
-Macleods Pharma,2017,below_average,-11578045.62,17
-Unichem Pharmac,2013,above_average,2943138.42,4
-Unichem Pharmac,2013,below_average,-821364.7,3
-Unichem Pharmac,2014,above_average,3903458.780000001,5
-Unichem Pharmac,2014,below_average,-2947672.1999999993,5
-Unichem Pharmac,2015,above_average,4697274.310000002,5
-Unichem Pharmac,2015,below_average,-8849291.64,7
-Unichem Pharmac,2016,above_average,12215193.080000002,6
-Unichem Pharmac,2016,below_average,-19455346,6
-Unichem Pharmac,2017,above_average,16413564.809999999,8
-Unichem Pharmac,2017,below_average,-22443812.629999995,6
+"West-Ward, Inc.",2013,above_average,13063628.430000003,30
+"West-Ward, Inc.",2013,at_average,0,10
+"West-Ward, Inc.",2013,below_average,-23421222.980000004,52
+"West-Ward, Inc.",2014,above_average,13010087.500000007,28
+"West-Ward, Inc.",2014,at_average,0,10
+"West-Ward, Inc.",2014,below_average,-24228772.080000002,55
+"West-Ward, Inc.",2015,above_average,12503134.399999999,28
+"West-Ward, Inc.",2015,at_average,0,10
+"West-Ward, Inc.",2015,below_average,-20170482.11,60
+"West-Ward, Inc.",2016,above_average,11974952.559999999,29
+"West-Ward, Inc.",2016,at_average,0,10
+"West-Ward, Inc.",2016,below_average,-22073161.22,59
+"West-Ward, Inc.",2017,above_average,16158811.81,31
+"West-Ward, Inc.",2017,at_average,0,9
+"West-Ward, Inc.",2017,below_average,-22569942.529999997,65
 Wockhardt USA L,2013,above_average,2631121.699999999,3
 Wockhardt USA L,2013,below_average,-41633663.11,13
 Wockhardt USA L,2014,above_average,123362.34999999995,3
@@ -1529,48 +1211,19 @@ Wockhardt USA L,2016,below_average,-7024615.289999996,16
 Wockhardt USA L,2017,above_average,730554.7000000001,4
 Wockhardt USA L,2017,at_average,0,1
 Wockhardt USA L,2017,below_average,-5684080.950000001,13
-Bluepoint Labor,2013,above_average,651209.6000000001,4
-Bluepoint Labor,2013,below_average,-216096.7000000001,3
-Bluepoint Labor,2014,above_average,5992915.1,7
-Bluepoint Labor,2014,below_average,-27197878.71,42
-Bluepoint Labor,2015,above_average,5507819.9,4
-Bluepoint Labor,2015,at_average,0,1
-Bluepoint Labor,2015,below_average,-32727805.740000002,44
-Bluepoint Labor,2016,above_average,3709605.5999999996,9
-Bluepoint Labor,2016,below_average,-30716132.490000002,40
-Bluepoint Labor,2017,above_average,4804896.399999999,6
-Bluepoint Labor,2017,at_average,0,1
-Bluepoint Labor,2017,below_average,-32176240.01,42
-Gavis/Lupin,2013,above_average,108965.80000000031,3
-Gavis/Lupin,2013,at_average,0,7
-Gavis/Lupin,2013,below_average,-264419.9,4
-Gavis/Lupin,2014,above_average,242979.1,5
-Gavis/Lupin,2014,at_average,0,6
-Gavis/Lupin,2014,below_average,-141906.39999999997,4
-Gavis/Lupin,2015,above_average,891872.7999999997,9
-Gavis/Lupin,2015,at_average,0,6
-Gavis/Lupin,2015,below_average,-169562.49999999997,4
-Gavis/Lupin,2016,above_average,1976458.4,9
-Gavis/Lupin,2016,at_average,0,7
-Gavis/Lupin,2016,below_average,-260704.69999999992,3
-Gavis/Lupin,2017,above_average,3596376.6999999997,12
-Gavis/Lupin,2017,at_average,0,4
-Gavis/Lupin,2017,below_average,-583117.5,8
-Trigen Laborato,2013,at_average,0,7
-Trigen Laborato,2013,below_average,-211992.79000000004,3
-Trigen Laborato,2014,above_average,7368.400000000007,1
-Trigen Laborato,2014,at_average,0,7
-Trigen Laborato,2014,below_average,-1476127.7,3
-Trigen Laborato,2015,above_average,7265925.2,4
-Trigen Laborato,2015,at_average,0,8
-Trigen Laborato,2015,below_average,-2603752.94,6
-Trigen Laborato,2016,above_average,2660523,2
-Trigen Laborato,2016,at_average,0,8
-Trigen Laborato,2016,below_average,-19568441.22,8
-Trigen Laborato,2017,above_average,31678180.799999997,2
-Trigen Laborato,2017,at_average,0,15
-Trigen Laborato,2017,below_average,-9927643.9,10
-Bi-Coastal Phar,2017,below_average,-775032.3300000001,4
+Virtus Pharmace,2013,above_average,1880.9999999999995,1
+Virtus Pharmace,2013,below_average,-276237.2199999999,3
+Virtus Pharmace,2014,above_average,2862184.2,3
+Virtus Pharmace,2014,below_average,-2439654.94,8
+Virtus Pharmace,2015,above_average,8006230.1,3
+Virtus Pharmace,2015,at_average,0,2
+Virtus Pharmace,2015,below_average,-4415727.53,7
+Virtus Pharmace,2016,above_average,8062116.4,3
+Virtus Pharmace,2016,at_average,0,1
+Virtus Pharmace,2016,below_average,-2552272.1499999994,8
+Virtus Pharmace,2017,above_average,2149543.8999999994,5
+Virtus Pharmace,2017,at_average,0,6
+Virtus Pharmace,2017,below_average,-2681288.0100000002,9
 X-Gen Pharmaceu,2013,above_average,2288422.5,3
 X-Gen Pharmaceu,2013,at_average,0,5
 X-Gen Pharmaceu,2013,below_average,-8590.300000000008,2
@@ -1586,6 +1239,31 @@ X-Gen Pharmaceu,2016,below_average,-30479.699999999986,2
 X-Gen Pharmaceu,2017,above_average,8155406.5,5
 X-Gen Pharmaceu,2017,at_average,0,4
 X-Gen Pharmaceu,2017,below_average,-25997.90000000001,3
+Auromedics Phar,2013,above_average,182342.7,7
+Auromedics Phar,2013,below_average,-81898,2
+Auromedics Phar,2014,above_average,313291.2,4
+Auromedics Phar,2014,below_average,-306469.10000000003,7
+Auromedics Phar,2015,above_average,537713,8
+Auromedics Phar,2015,below_average,-142514.2,4
+Auromedics Phar,2016,above_average,1386008.8,7
+Auromedics Phar,2016,below_average,-145456,5
+Auromedics Phar,2017,above_average,1322237.82,12
+Auromedics Phar,2017,below_average,-419653.75999999995,5
+Sagent Pharmace,2013,above_average,264803.3,8
+Sagent Pharmace,2013,at_average,0,2
+Sagent Pharmace,2013,below_average,-5919860.9,15
+Sagent Pharmace,2014,above_average,418972,9
+Sagent Pharmace,2014,at_average,0,1
+Sagent Pharmace,2014,below_average,-6113878.4,17
+Sagent Pharmace,2015,above_average,764574.36,9
+Sagent Pharmace,2015,at_average,0,2
+Sagent Pharmace,2015,below_average,-6241634.699999999,20
+Sagent Pharmace,2016,above_average,613012.9,10
+Sagent Pharmace,2016,at_average,0,2
+Sagent Pharmace,2016,below_average,-5053738.8,19
+Sagent Pharmace,2017,above_average,514386.30000000005,16
+Sagent Pharmace,2017,at_average,0,1
+Sagent Pharmace,2017,below_average,-3416708.6,19
 Sandoz/Novaplus,2013,above_average,38420,1
 Sandoz/Novaplus,2013,below_average,-223298.1,2
 Sandoz/Novaplus,2014,above_average,35893.20000000001,2
@@ -1596,7 +1274,6 @@ Sandoz/Novaplus,2016,above_average,13676,1
 Sandoz/Novaplus,2016,below_average,-124531,2
 Sandoz/Novaplus,2017,above_average,133200,2
 Sandoz/Novaplus,2017,below_average,-52670.6,2
-Sandoz/Premier,2017,above_average,85379.90000000001,2
 WG Critical Car,2013,below_average,-212069.8,6
 WG Critical Car,2014,above_average,7276,1
 WG Critical Car,2014,below_average,-644025.6,8
@@ -1611,14 +1288,26 @@ Acorda Therapeu,2014,at_average,0,1
 Acorda Therapeu,2015,at_average,0,1
 Acorda Therapeu,2016,at_average,0,1
 Acorda Therapeu,2017,at_average,0,1
-Sebela Pharmace*,2015,at_average,0,1
-Sebela Pharmace*,2016,at_average,0,1
-Sebela Pharmace*,2017,at_average,0,1
 B.F Ascher & Co,2013,at_average,0,1
 B.F Ascher & Co,2014,at_average,0,1
 B.F Ascher & Co,2015,at_average,0,1
 B.F Ascher & Co,2016,at_average,0,1
 B.F Ascher & Co,2017,at_average,0,1
+Accord Healthca,2013,above_average,9773313.449999996,5
+Accord Healthca,2013,at_average,0,2
+Accord Healthca,2013,below_average,-5981282.089999993,16
+Accord Healthca,2014,above_average,13283427.600000003,5
+Accord Healthca,2014,at_average,0,2
+Accord Healthca,2014,below_average,-13084886.569999998,19
+Accord Healthca,2015,above_average,15169906.949999997,11
+Accord Healthca,2015,at_average,0,3
+Accord Healthca,2015,below_average,-24103104.790000007,16
+Accord Healthca,2016,above_average,27023754.24000001,14
+Accord Healthca,2016,at_average,0,3
+Accord Healthca,2016,below_average,-15952691.1,13
+Accord Healthca,2017,above_average,29926617.099999998,14
+Accord Healthca,2017,at_average,0,2
+Accord Healthca,2017,below_average,-17331477.33,17
 Breckenridge,2013,above_average,5746116.100000001,13
 Breckenridge,2013,at_average,0,4
 Breckenridge,2013,below_average,-3992366.5999999978,9
@@ -1634,27 +1323,23 @@ Breckenridge,2016,below_average,-35145075.6,14
 Breckenridge,2017,above_average,5850356.8100000005,16
 Breckenridge,2017,at_average,0,2
 Breckenridge,2017,below_average,-33278348.369999997,15
+Sun Pharmaceuti,2013,above_average,670677.4,6
+Sun Pharmaceuti,2013,below_average,-50791132.269999996,26
+Sun Pharmaceuti,2014,above_average,964162.9600000003,7
+Sun Pharmaceuti,2014,below_average,-48749664.989999995,26
+Sun Pharmaceuti,2015,above_average,7180459.340000002,9
+Sun Pharmaceuti,2015,below_average,-48743874.510000005,29
+Sun Pharmaceuti,2016,above_average,7579347.96,9
+Sun Pharmaceuti,2016,below_average,-85097971.41,29
+Sun Pharmaceuti,2017,above_average,22118288.609999996,13
+Sun Pharmaceuti,2017,at_average,0,2
+Sun Pharmaceuti,2017,below_average,-90966795.33,35
 Abbvie US LLC,2013,at_average,0,30
 Abbvie US LLC,2014,at_average,0,30
 Abbvie US LLC,2015,at_average,0,31
 Abbvie US LLC,2016,at_average,0,31
 Abbvie US LLC,2017,at_average,0,34
 Abbvie US LLC,2017,below_average,-60372,1
-G & W Labs.,2013,above_average,1164613,3
-G & W Labs.,2013,at_average,0,2
-G & W Labs.,2013,below_average,-3675260.5,5
-G & W Labs.,2014,above_average,2684566.6,4
-G & W Labs.,2014,at_average,0,2
-G & W Labs.,2014,below_average,-5297779.2,5
-G & W Labs.,2015,above_average,4515056.2,6
-G & W Labs.,2015,at_average,0,2
-G & W Labs.,2015,below_average,-5862328.6,7
-G & W Labs.,2016,above_average,6581159.799999999,7
-G & W Labs.,2016,at_average,0,2
-G & W Labs.,2016,below_average,-5352171.4,6
-G & W Labs.,2017,above_average,14131750.899999999,8
-G & W Labs.,2017,at_average,0,3
-G & W Labs.,2017,below_average,-23733857.4,15
 Salix Pharmaceu,2013,at_average,0,8
 Salix Pharmaceu,2014,at_average,0,8
 Salix Pharmaceu,2015,at_average,0,8
@@ -1667,16 +1352,6 @@ US Worldmeds,2015,at_average,0,1
 US Worldmeds,2016,at_average,0,1
 US Worldmeds,2017,above_average,8355,1
 US Worldmeds,2017,at_average,0,1
-Sunovion Pharma,2013,at_average,0,4
-Sunovion Pharma,2014,at_average,0,5
-Sunovion Pharma,2015,at_average,0,5
-Sunovion Pharma,2016,at_average,0,5
-Sunovion Pharma,2017,at_average,0,5
-Baxalta US Inc.,2013,at_average,0,3
-Baxalta US Inc.,2014,at_average,0,5
-Baxalta US Inc.,2015,at_average,0,5
-Baxalta US Inc.,2016,at_average,0,5
-Baxalta US Inc.,2017,at_average,0,5
 Amgen,2013,at_average,0,10
 Amgen,2014,at_average,0,10
 Amgen,2015,at_average,0,12
@@ -1705,20 +1380,6 @@ Astrazeneca,2016,above_average,1546854,2
 Astrazeneca,2016,at_average,0,30
 Astrazeneca,2017,above_average,475973,2
 Astrazeneca,2017,at_average,0,30
-"Gsms, Inc.",2013,below_average,-138721.78999999998,7
-"Gsms, Inc.",2014,below_average,-146855.81,12
-"Gsms, Inc.",2015,below_average,-400355.49,21
-"Gsms, Inc.",2016,above_average,846.1999999999997,2
-"Gsms, Inc.",2016,below_average,-217729.8,20
-"Gsms, Inc.",2017,above_average,406,1
-"Gsms, Inc.",2017,below_average,-216760.28999999998,29
-Silarx/Lannett,2017,above_average,2729836.14,11
-Silarx/Lannett,2017,below_average,-1720044.43,4
-Alkermes Inc,2013,at_average,0,1
-Alkermes Inc,2014,at_average,0,1
-Alkermes Inc,2015,at_average,0,2
-Alkermes Inc,2016,at_average,0,2
-Alkermes Inc,2017,at_average,0,2
 Forest/Allergan,2013,at_average,0,7
 Forest/Allergan,2014,at_average,0,7
 Forest/Allergan,2014,below_average,-1996947,1
@@ -1730,9 +1391,6 @@ Merck Sharp & D,2014,at_average,0,55
 Merck Sharp & D,2015,at_average,0,59
 Merck Sharp & D,2016,at_average,0,59
 Merck Sharp & D,2017,at_average,0,62
-Arkray USA,2014,at_average,0,1
-Arkray USA,2015,at_average,0,1
-Arkray USA,2016,at_average,0,1
 Avkare,2013,above_average,1203.2900000000002,2
 Avkare,2013,below_average,-69851.2,9
 Avkare,2014,above_average,46750.44000000001,9
@@ -1743,13 +1401,15 @@ Avkare,2016,above_average,80674.97000000002,9
 Avkare,2016,below_average,-1504549.3799999997,22
 Avkare,2017,above_average,117420.93,17
 Avkare,2017,below_average,-1216427.6500000001,32
-International L,2013,below_average,-45275390.47,12
-International L,2014,above_average,128842.1999999998,1
-International L,2014,below_average,-50365559.37,14
-International L,2015,below_average,-43268784.26,17
-International L,2016,above_average,778626.7999999998,1
-International L,2016,below_average,-39621801.11,16
-International L,2017,below_average,-19288459.36,17
+Ingenus Pharmac,2013,below_average,-2325228.4500000007,3
+Ingenus Pharmac,2014,above_average,65541.12,1
+Ingenus Pharmac,2014,below_average,-3039314.54,4
+Ingenus Pharmac,2015,above_average,2818797.2,3
+Ingenus Pharmac,2015,below_average,-1112382.85,3
+Ingenus Pharmac,2016,above_average,6606790.96,3
+Ingenus Pharmac,2016,below_average,-301502.32000000007,3
+Ingenus Pharmac,2017,above_average,5742040.02,2
+Ingenus Pharmac,2017,below_average,-2790850.1700000004,5
 Kremers Urban,2013,above_average,8898237.200000003,6
 Kremers Urban,2013,at_average,0,3
 Kremers Urban,2013,below_average,-10454940.599999985,8
@@ -1765,21 +1425,11 @@ Kremers Urban,2016,below_average,-12966194.999999994,10
 Kremers Urban,2017,above_average,12962386.499999998,4
 Kremers Urban,2017,at_average,0,2
 Kremers Urban,2017,below_average,-19930588.499999996,14
-New Horizon Rx,2014,below_average,-9592.800000000001,4
-New Horizon Rx,2015,above_average,4408.5999999999995,1
-New Horizon Rx,2015,below_average,-1753.2,3
-New Horizon Rx,2016,below_average,-7872.3,4
-New Horizon Rx,2017,below_average,-3553.66,4
-Ohm/Sun Pharmac,2017,below_average,-39528.939999999995,1
 Watson Labs,2013,below_average,-3694836.6000000024,1
 Watson Labs,2014,below_average,-849055.5,1
 Watson Labs,2015,below_average,-82611.8,1
 Watson Labs,2016,below_average,-12942.899999999998,1
 Watson Labs,2017,below_average,-3205.3999999999996,1
-BMS/Gilead,2017,at_average,0,1
-Keryx Biopharma,2015,at_average,0,1
-Keryx Biopharma,2016,at_average,0,1
-Keryx Biopharma,2017,at_average,0,1
 Bd Diabetes,2013,above_average,7100738.700000001,4
 Bd Diabetes,2013,at_average,0,4
 Bd Diabetes,2014,above_average,6587014.500000002,4
@@ -1790,24 +1440,21 @@ Bd Diabetes,2016,above_average,6035896.799999997,4
 Bd Diabetes,2016,at_average,0,4
 Bd Diabetes,2017,above_average,5001328.200000007,5
 Bd Diabetes,2017,at_average,0,10
-Endo Pharm Inc.,2013,at_average,0,7
-Endo Pharm Inc.,2014,at_average,0,8
-Endo Pharm Inc.,2015,at_average,0,9
-Endo Pharm Inc.,2016,at_average,0,9
-Endo Pharm Inc.,2017,at_average,0,10
-Biogen-Idec,2013,at_average,0,2
-Biogen-Idec,2014,at_average,0,3
-Biogen-Idec,2015,at_average,0,7
-Biogen-Idec,2016,at_average,0,7
-Biogen-Idec,2017,at_average,0,7
+"Genentech, Inc.",2013,above_average,1530590,2
+"Genentech, Inc.",2013,at_average,0,18
+"Genentech, Inc.",2014,above_average,1233909,2
+"Genentech, Inc.",2014,at_average,0,19
+"Genentech, Inc.",2015,above_average,792352,2
+"Genentech, Inc.",2015,at_average,0,20
+"Genentech, Inc.",2016,above_average,349135,2
+"Genentech, Inc.",2016,at_average,0,20
+"Genentech, Inc.",2017,above_average,507046,2
+"Genentech, Inc.",2017,at_average,0,24
 Janssen Pharm.,2013,at_average,0,29
 Janssen Pharm.,2014,at_average,0,30
 Janssen Pharm.,2015,at_average,0,32
 Janssen Pharm.,2016,at_average,0,32
 Janssen Pharm.,2017,at_average,0,33
-Teva Women's He,2015,at_average,0,1
-Teva Women's He,2016,at_average,0,1
-Teva Women's He,2017,at_average,0,8
 BMS Primarycare,2013,at_average,0,16
 BMS Primarycare,2014,at_average,0,16
 BMS Primarycare,2015,at_average,0,19
@@ -1841,23 +1488,6 @@ Teva Neuroscien,2014,at_average,0,2
 Teva Neuroscien,2015,at_average,0,2
 Teva Neuroscien,2016,at_average,0,2
 Teva Neuroscien,2017,at_average,0,2
-App/Novaplus,2013,below_average,-134848,2
-App/Novaplus,2014,above_average,754.8000000000002,1
-App/Novaplus,2014,below_average,-204362.6,3
-App/Novaplus,2015,above_average,1004.4999999999998,2
-App/Novaplus,2015,below_average,-499201.1,6
-App/Novaplus,2016,above_average,4681.2,2
-App/Novaplus,2016,below_average,-1288102.28,6
-App/Novaplus,2017,above_average,8065.92,2
-App/Novaplus,2017,below_average,-1127541.36,6
-App/Premierpro,2014,above_average,154746.9,1
-App/Premierpro,2014,below_average,-64262,3
-App/Premierpro,2015,above_average,102466.89000000001,2
-App/Premierpro,2015,below_average,-797265.8,6
-App/Premierpro,2016,above_average,160157.91999999998,3
-App/Premierpro,2016,below_average,-4243170.8,5
-App/Premierpro,2017,above_average,164358.12,3
-App/Premierpro,2017,below_average,-5107199.15,12
 "Daiichi Sankyo,",2013,at_average,0,6
 "Daiichi Sankyo,",2014,at_average,0,6
 "Daiichi Sankyo,",2015,at_average,0,7
@@ -1883,10 +1513,6 @@ Organon Pharm.,2014,at_average,0,5
 Organon Pharm.,2015,at_average,0,5
 Organon Pharm.,2016,at_average,0,5
 Organon Pharm.,2017,at_average,0,6
-Marlex Pharm.,2015,below_average,-12642.7,2
-Marlex Pharm.,2016,below_average,-136464,2
-Marlex Pharm.,2017,above_average,7353.9000000000005,3
-Marlex Pharm.,2017,below_average,-99223.2,4
 Qualitest,2013,above_average,988974.9999999999,1
 Qualitest,2013,below_average,-3935,1
 Qualitest,2014,above_average,890615.5,1
@@ -1897,63 +1523,32 @@ Qualitest,2016,above_average,1221152.8,1
 Qualitest,2016,below_average,-11534.399999999998,1
 Qualitest,2017,above_average,1028448.0000000001,1
 Qualitest,2017,below_average,-2713.2,1
-Caraco Pharma I,2013,at_average,0,1
-Caraco Pharma I,2014,at_average,0,2
-Caraco Pharma I,2015,at_average,0,2
-Caraco Pharma I,2016,at_average,0,2
-Caraco Pharma I,2017,at_average,0,2
-Oceanside Pharm,2013,above_average,14165732.799999999,2
-Oceanside Pharm,2013,at_average,0,1
-Oceanside Pharm,2013,below_average,-409096.39999999985,2
-Oceanside Pharm,2014,above_average,32451358.500000004,5
-Oceanside Pharm,2014,at_average,0,2
-Oceanside Pharm,2014,below_average,-373717.4000000001,3
-Oceanside Pharm,2015,above_average,18605398.6,11
-Oceanside Pharm,2015,below_average,-6049881.9,8
-Oceanside Pharm,2016,above_average,17662479.2,11
-Oceanside Pharm,2016,below_average,-17776532.2,8
-Oceanside Pharm,2017,above_average,33836224.6,15
-Oceanside Pharm,2017,at_average,0,1
-Oceanside Pharm,2017,below_average,-27032184.69999999,14
-J&J Cons Prod,2017,at_average,0,1
-Endo Pharma/Bio,2017,at_average,0,1
-Solco Healthcar,2013,above_average,889287.7,4
-Solco Healthcar,2013,below_average,-11494111.299999999,4
-Solco Healthcar,2014,above_average,539541.7699999991,3
-Solco Healthcar,2014,below_average,-38468655.8,8
-Solco Healthcar,2015,above_average,1161520.2800000003,3
-Solco Healthcar,2015,below_average,-56164104.910000004,15
-Solco Healthcar,2016,above_average,3756326.4399999995,5
-Solco Healthcar,2016,at_average,0,2
-Solco Healthcar,2016,below_average,-42736918.40999999,11
-Solco Healthcar,2017,above_average,8604498.099999996,6
-Solco Healthcar,2017,below_average,-32717819.919999987,15
-"Cephalon,Inc.-T",2013,above_average,216079,1
-"Cephalon,Inc.-T",2013,at_average,0,6
-"Cephalon,Inc.-T",2013,below_average,-11464163,1
-"Cephalon,Inc.-T",2014,above_average,67137,1
-"Cephalon,Inc.-T",2014,at_average,0,7
-"Cephalon,Inc.-T",2014,below_average,-4568346,1
-"Cephalon,Inc.-T",2015,above_average,62754,1
-"Cephalon,Inc.-T",2015,at_average,0,7
-"Cephalon,Inc.-T",2015,below_average,-2252344,1
-"Cephalon,Inc.-T",2016,above_average,69845,1
-"Cephalon,Inc.-T",2016,at_average,0,7
-"Cephalon,Inc.-T",2016,below_average,-1268680,1
-"Cephalon,Inc.-T",2017,at_average,0,8
-"Cephalon,Inc.-T",2017,below_average,-1076326,2
+International L,2013,below_average,-45275390.47,12
+International L,2014,above_average,128842.1999999998,1
+International L,2014,below_average,-50365559.37,14
+International L,2015,below_average,-43268784.26,17
+International L,2016,above_average,778626.7999999998,1
+International L,2016,below_average,-39621801.11,16
+International L,2017,below_average,-19288459.36,17
+Trigen Laborato,2013,at_average,0,7
+Trigen Laborato,2013,below_average,-211992.79000000004,3
+Trigen Laborato,2014,above_average,7368.400000000007,1
+Trigen Laborato,2014,at_average,0,7
+Trigen Laborato,2014,below_average,-1476127.7,3
+Trigen Laborato,2015,above_average,7265925.2,4
+Trigen Laborato,2015,at_average,0,8
+Trigen Laborato,2015,below_average,-2603752.94,6
+Trigen Laborato,2016,above_average,2660523,2
+Trigen Laborato,2016,at_average,0,8
+Trigen Laborato,2016,below_average,-19568441.22,8
+Trigen Laborato,2017,above_average,31678180.799999997,2
+Trigen Laborato,2017,at_average,0,15
+Trigen Laborato,2017,below_average,-9927643.9,10
 Aptalis/Allerga,2013,at_average,0,7
 Aptalis/Allerga,2014,at_average,0,7
 Aptalis/Allerga,2015,at_average,0,8
 Aptalis/Allerga,2016,at_average,0,8
 Aptalis/Allerga,2017,at_average,0,8
-Bayshore Pharma,2014,below_average,-83886.38999999998,2
-Bayshore Pharma,2015,above_average,14000,1
-Bayshore Pharma,2015,below_average,-257104.4400000001,1
-Bayshore Pharma,2016,above_average,20657,1
-Bayshore Pharma,2016,below_average,-182586.59999999971,1
-Bayshore Pharma,2017,above_average,362587.8800000001,3
-Bayshore Pharma,2017,below_average,-458.19999999999976,1
 Excellium Pharm,2013,above_average,2261718.34,1
 Excellium Pharm,2013,below_average,-576740.8999999999,6
 Excellium Pharm,2014,above_average,1772419.54,2
@@ -1964,12 +1559,6 @@ Excellium Pharm,2016,above_average,116959.91000000009,2
 Excellium Pharm,2016,below_average,-1327561.0799999998,5
 Excellium Pharm,2017,above_average,872.4800000000008,1
 Excellium Pharm,2017,below_average,-310061.08,6
-Leading Pharma,2017,above_average,2210144.740000001,4
-Leading Pharma,2017,at_average,0,1
-Leading Pharma,2017,below_average,-3559152.0300000017,5
-Sunrise Pharmac,2015,below_average,-1314.0000000000005,1
-Sunrise Pharmac,2016,below_average,-39574,1
-Sunrise Pharmac,2017,below_average,-16702.53,1
 "CSL Behring, Ll",2013,at_average,0,1
 "CSL Behring, Ll",2014,at_average,0,1
 "CSL Behring, Ll",2015,at_average,0,1
@@ -2009,26 +1598,6 @@ Bayer/Covis,2017,at_average,0,2
 "KVK-Tech, Inc.",2016,below_average,-2638114.6400000015,3
 "KVK-Tech, Inc.",2017,above_average,1032466.9999999998,3
 "KVK-Tech, Inc.",2017,below_average,-8370760.620000003,8
-Oak Pharmaceuti,2014,at_average,0,1
-Oak Pharmaceuti,2015,at_average,0,1
-Oak Pharmaceuti,2016,at_average,0,1
-Oak Pharmaceuti,2017,at_average,0,1
-Novartis/GSK,2013,at_average,0,1
-Novartis/GSK,2014,at_average,0,1
-Novartis/GSK,2015,at_average,0,2
-Novartis/GSK,2016,at_average,0,2
-Novartis/GSK,2017,at_average,0,3
-Arbor Pharmaceu,2013,above_average,9001420.4,1
-Arbor Pharmaceu,2013,at_average,0,8
-Arbor Pharmaceu,2014,above_average,13685346.6,1
-Arbor Pharmaceu,2014,at_average,0,10
-Arbor Pharmaceu,2015,above_average,21075242,1
-Arbor Pharmaceu,2015,at_average,0,10
-Arbor Pharmaceu,2016,above_average,20465713.5,1
-Arbor Pharmaceu,2016,at_average,0,11
-Arbor Pharmaceu,2017,above_average,22394192,1
-Arbor Pharmaceu,2017,at_average,0,13
-Arbor Pharmaceu,2017,below_average,-407125,1
 Mission Pharm.,2013,above_average,843.1999999999999,1
 Mission Pharm.,2013,at_average,0,3
 Mission Pharm.,2014,above_average,3755.8,1
@@ -2039,7 +1608,16 @@ Mission Pharm.,2016,above_average,4743,1
 Mission Pharm.,2016,at_average,0,8
 Mission Pharm.,2017,above_average,9187.1,1
 Mission Pharm.,2017,at_average,0,9
-Biotest/Adma,2017,at_average,0,1
+Unichem Pharmac,2013,above_average,2943138.42,4
+Unichem Pharmac,2013,below_average,-821364.7,3
+Unichem Pharmac,2014,above_average,3903458.780000001,5
+Unichem Pharmac,2014,below_average,-2947672.1999999993,5
+Unichem Pharmac,2015,above_average,4697274.310000002,5
+Unichem Pharmac,2015,below_average,-8849291.64,7
+Unichem Pharmac,2016,above_average,12215193.080000002,6
+Unichem Pharmac,2016,below_average,-19455346,6
+Unichem Pharmac,2017,above_average,16413564.809999999,8
+Unichem Pharmac,2017,below_average,-22443812.629999995,6
 Roche Labs.,2013,at_average,0,4
 Roche Labs.,2013,below_average,-1518719,1
 Roche Labs.,2014,at_average,0,4
@@ -2060,74 +1638,35 @@ Pacific Pharma,2014,below_average,-135666.3,1
 Pacific Pharma,2015,below_average,-90997.28,1
 Pacific Pharma,2016,below_average,-31640.04,1
 Pacific Pharma,2017,below_average,-5352.759999999999,1
-Westminster Pha,2017,above_average,434661.2,1
-Westminster Pha,2017,below_average,-1256772.3499999999,2
 Noven/Sebela Ph,2013,at_average,0,2
 Noven/Sebela Ph,2014,at_average,0,2
 Noven/Sebela Ph,2015,at_average,0,2
 Noven/Sebela Ph,2016,at_average,0,2
 Noven/Sebela Ph,2017,at_average,0,2
-UCB Pharma,2013,above_average,18212775,1
-UCB Pharma,2013,at_average,0,5
-UCB Pharma,2013,below_average,-750723.5999999997,1
-UCB Pharma,2014,above_average,20917647.799999997,1
-UCB Pharma,2014,at_average,0,6
-UCB Pharma,2014,below_average,-545380.0000000001,1
-UCB Pharma,2015,above_average,30594085.599999998,1
-UCB Pharma,2015,at_average,0,6
-UCB Pharma,2015,below_average,-858532.0000000001,1
-UCB Pharma,2016,above_average,36402317.6,1
-UCB Pharma,2016,at_average,0,6
-UCB Pharma,2016,below_average,-2436274.9999999995,1
-UCB Pharma,2017,above_average,2960163.8000000003,1
-UCB Pharma,2017,at_average,0,7
-UCB Pharma,2017,below_average,-2171772.6,1
-Edenbridge Phar,2013,above_average,460616,1
-Edenbridge Phar,2013,below_average,-42461.99999999998,1
-Edenbridge Phar,2014,above_average,343224,1
-Edenbridge Phar,2014,at_average,0,1
-Edenbridge Phar,2014,below_average,-24625,1
-Edenbridge Phar,2015,above_average,772268.6,2
-Edenbridge Phar,2015,at_average,0,1
-Edenbridge Phar,2015,below_average,-47637.00000000002,1
-Edenbridge Phar,2016,above_average,2229574.200000001,2
-Edenbridge Phar,2016,at_average,0,1
-Edenbridge Phar,2016,below_average,-32175,1
-Edenbridge Phar,2017,above_average,1984525.000000001,4
-Edenbridge Phar,2017,at_average,0,1
-Edenbridge Phar,2017,below_average,-48581.60000000001,2
-"West-Ward,Inc./",2017,below_average,-1739.3999999999999,1
-Biodelivery Sci,2015,at_average,0,1
-Biodelivery Sci,2016,at_average,0,1
-Biodelivery Sci,2017,at_average,0,1
-Indivior Inc.,2013,at_average,0,1
-Indivior Inc.,2014,at_average,0,1
-Indivior Inc.,2015,at_average,0,2
-Indivior Inc.,2016,at_average,0,2
-Indivior Inc.,2017,at_average,0,2
-County Line Pha,2013,at_average,0,1
-County Line Pha,2013,below_average,-432792,1
-County Line Pha,2014,above_average,211603.49999999985,1
-County Line Pha,2014,at_average,0,1
-County Line Pha,2014,below_average,-827464,1
-County Line Pha,2015,at_average,0,2
-County Line Pha,2015,below_average,-528250.8,2
-County Line Pha,2016,above_average,88041,1
-County Line Pha,2016,at_average,0,1
-County Line Pha,2016,below_average,-2133950.6000000006,2
-County Line Pha,2017,above_average,1224706.3999999994,1
-County Line Pha,2017,at_average,0,1
-County Line Pha,2017,below_average,-6716477.2,4
-Larken Labs,2013,at_average,0,2
-Larken Labs,2013,below_average,-319954.39999999997,1
-Larken Labs,2014,at_average,0,2
-Larken Labs,2014,below_average,-291482.8,1
-Larken Labs,2015,at_average,0,2
-Larken Labs,2015,below_average,-134517.19999999998,1
-Larken Labs,2016,at_average,0,2
-Larken Labs,2016,below_average,-59061.19999999999,1
-Larken Labs,2017,above_average,48677.40000000001,3
-Larken Labs,2017,at_average,0,2
+Sunovion Pharma,2013,at_average,0,4
+Sunovion Pharma,2014,at_average,0,5
+Sunovion Pharma,2015,at_average,0,5
+Sunovion Pharma,2016,at_average,0,5
+Sunovion Pharma,2017,at_average,0,5
+Actavis Pharma/,2013,above_average,3972314.5,2
+Actavis Pharma/,2013,below_average,-846328,1
+Actavis Pharma/,2014,above_average,2286694.8,2
+Actavis Pharma/,2014,below_average,-740850.4000000004,1
+Actavis Pharma/,2015,above_average,2439065,2
+Actavis Pharma/,2015,below_average,-986346.4000000005,1
+Actavis Pharma/,2016,above_average,1660745.399999999,3
+Actavis Pharma/,2017,above_average,162673874.18,78
+Actavis Pharma/,2017,at_average,0,39
+Actavis Pharma/,2017,below_average,-144190723.21,114
+Actavis/Impax G,2013,at_average,0,1
+Actavis/Impax G,2013,below_average,-7210582.039999999,2
+Actavis/Impax G,2014,above_average,267657.65,2
+Actavis/Impax G,2014,below_average,-6475945.8,2
+Actavis/Impax G,2015,above_average,746166,2
+Actavis/Impax G,2015,below_average,-4508846.299999999,4
+Actavis/Impax G,2016,below_average,-3812292.0200000005,6
+Actavis/Impax G,2017,above_average,1630186.5000000002,2
+Actavis/Impax G,2017,below_average,-2445216.35,12
 "Mikart, Inc",2013,below_average,-12312,1
 "Mikart, Inc",2014,below_average,-632722.8000000003,1
 "Mikart, Inc",2015,below_average,-836751.5,1
@@ -2148,34 +1687,21 @@ Actavis U.S. Br,2016,at_average,0,1
 Actavis U.S. Br,2016,below_average,-1755419,3
 Actavis U.S. Br,2017,at_average,0,2
 Actavis U.S. Br,2017,below_average,-762192,4
-Centurion Labs,2015,at_average,0,1
-Centurion Labs,2016,at_average,0,1
-Centurion Labs,2017,at_average,0,1
-"Exelixis, Inc.",2013,at_average,0,1
-"Exelixis, Inc.",2014,at_average,0,1
-"Exelixis, Inc.",2015,at_average,0,1
-"Exelixis, Inc.",2016,at_average,0,1
-"Exelixis, Inc.",2017,at_average,0,2
-"Depomed, Inc.",2013,at_average,0,2
-"Depomed, Inc.",2014,at_average,0,4
-"Depomed, Inc.",2015,at_average,0,4
-"Depomed, Inc.",2016,at_average,0,4
-"Depomed, Inc.",2017,at_average,0,4
-Teva/Mayne Phar,2013,above_average,1756956.5999999982,3
-Teva/Mayne Phar,2013,at_average,0,1
-Teva/Mayne Phar,2014,above_average,1553588.1999999995,3
-Teva/Mayne Phar,2014,at_average,0,1
-Teva/Mayne Phar,2015,above_average,1398733.299999996,3
-Teva/Mayne Phar,2015,at_average,0,1
-Teva/Mayne Phar,2016,above_average,626712.5999999993,2
-Teva/Mayne Phar,2016,at_average,0,2
-Teva/Mayne Phar,2017,above_average,1506,1
-Teva/Mayne Phar,2017,at_average,0,1
-Teva/Mayne Phar,2017,below_average,-1029085.2,7
-Magna Pharm,2014,at_average,0,1
-Magna Pharm,2015,at_average,0,1
-Magna Pharm,2016,at_average,0,1
-Magna Pharm,2017,at_average,0,1
+G & W Labs.,2013,above_average,1164613,3
+G & W Labs.,2013,at_average,0,2
+G & W Labs.,2013,below_average,-3675260.5,5
+G & W Labs.,2014,above_average,2684566.6,4
+G & W Labs.,2014,at_average,0,2
+G & W Labs.,2014,below_average,-5297779.2,5
+G & W Labs.,2015,above_average,4515056.2,6
+G & W Labs.,2015,at_average,0,2
+G & W Labs.,2015,below_average,-5862328.6,7
+G & W Labs.,2016,above_average,6581159.799999999,7
+G & W Labs.,2016,at_average,0,2
+G & W Labs.,2016,below_average,-5352171.4,6
+G & W Labs.,2017,above_average,14131750.899999999,8
+G & W Labs.,2017,at_average,0,3
+G & W Labs.,2017,below_average,-23733857.4,15
 Galderma Labora,2013,at_average,0,10
 Galderma Labora,2014,at_average,0,10
 Galderma Labora,2015,at_average,0,12
@@ -2196,35 +1722,22 @@ Nostrum/Mylan,2016,above_average,243042.5,2
 Nostrum/Mylan,2016,below_average,-2617736.6,2
 Nostrum/Mylan,2017,above_average,4545.800000000065,1
 Nostrum/Mylan,2017,below_average,-715322.4,3
-Amerigen Pharma,2014,at_average,0,1
-Amerigen Pharma,2015,above_average,90390,1
-Amerigen Pharma,2016,above_average,368400,1
-Amerigen Pharma,2017,below_average,-415198,1
-"Biocomp Pharma,",2013,at_average,0,2
-"Biocomp Pharma,",2014,at_average,0,2
-"Biocomp Pharma,",2014,below_average,-192137.2,2
-"Biocomp Pharma,",2015,at_average,0,2
-"Biocomp Pharma,",2015,below_average,-401087.2,3
-"Biocomp Pharma,",2016,at_average,0,2
-"Biocomp Pharma,",2016,below_average,-442646,3
-"Biocomp Pharma,",2017,at_average,0,3
-"Biocomp Pharma,",2017,below_average,-14141.200000000004,2
-Facet Technolog,2015,at_average,0,1
-Facet Technolog,2016,at_average,0,1
-Facet Technolog,2017,at_average,0,1
+Teva/Mayne Phar,2013,above_average,1756956.5999999982,3
+Teva/Mayne Phar,2013,at_average,0,1
+Teva/Mayne Phar,2014,above_average,1553588.1999999995,3
+Teva/Mayne Phar,2014,at_average,0,1
+Teva/Mayne Phar,2015,above_average,1398733.299999996,3
+Teva/Mayne Phar,2015,at_average,0,1
+Teva/Mayne Phar,2016,above_average,626712.5999999993,2
+Teva/Mayne Phar,2016,at_average,0,2
+Teva/Mayne Phar,2017,above_average,1506,1
+Teva/Mayne Phar,2017,at_average,0,1
+Teva/Mayne Phar,2017,below_average,-1029085.2,7
 CSL Behring LLC,2013,at_average,0,5
 CSL Behring LLC,2014,at_average,0,5
 CSL Behring LLC,2015,at_average,0,5
 CSL Behring LLC,2016,at_average,0,5
 CSL Behring LLC,2017,at_average,0,5
-Vensun Pharmace,2014,above_average,4290,1
-Vensun Pharmace,2014,below_average,-17152.399999999994,1
-Vensun Pharmace,2015,above_average,1067686.7999999998,1
-Vensun Pharmace,2015,below_average,-464182.34,6
-Vensun Pharmace,2016,above_average,2856327.8000000003,2
-Vensun Pharmace,2016,below_average,-1650477.2799999998,5
-Vensun Pharmace,2017,above_average,3270574.56,2
-Vensun Pharmace,2017,below_average,-2030593.4300000002,7
 Wallace Pharmac,2013,above_average,3141396.9999999995,1
 Wallace Pharmac,2013,at_average,0,1
 Wallace Pharmac,2013,below_average,-27328,1
@@ -2237,15 +1750,22 @@ Wallace Pharmac,2016,at_average,0,1
 Wallace Pharmac,2017,above_average,2165575.62,2
 Wallace Pharmac,2017,at_average,0,1
 Wallace Pharmac,2017,below_average,-22116,1
-Sigma-Tau/Leadi*,2017,at_average,0,1
-Acetris Health,2017,below_average,-2647363.39,18
+Solco Healthcar,2013,above_average,889287.7,4
+Solco Healthcar,2013,below_average,-11494111.299999999,4
+Solco Healthcar,2014,above_average,539541.7699999991,3
+Solco Healthcar,2014,below_average,-38468655.8,8
+Solco Healthcar,2015,above_average,1161520.2800000003,3
+Solco Healthcar,2015,below_average,-56164104.910000004,15
+Solco Healthcar,2016,above_average,3756326.4399999995,5
+Solco Healthcar,2016,at_average,0,2
+Solco Healthcar,2016,below_average,-42736918.40999999,11
+Solco Healthcar,2017,above_average,8604498.099999996,6
+Solco Healthcar,2017,below_average,-32717819.919999987,15
 Gilead Sciences,2013,at_average,0,9
 Gilead Sciences,2014,at_average,0,12
 Gilead Sciences,2015,at_average,0,12
 Gilead Sciences,2016,at_average,0,12
 Gilead Sciences,2017,at_average,0,18
-"Orchidpharma, I",2017,above_average,39094.90000000001,3
-"Orchidpharma, I",2017,below_average,-784077.7900000003,5
 Apotex/Novaplus,2013,above_average,192248.2,2
 Apotex/Novaplus,2013,below_average,-6309,1
 Apotex/Novaplus,2014,above_average,480360.10000000003,3
@@ -2257,15 +1777,6 @@ Apotex/Novaplus,2016,below_average,-167206.39999999997,3
 Apotex/Novaplus,2017,above_average,368949.60000000003,3
 Apotex/Novaplus,2017,at_average,0,1
 Apotex/Novaplus,2017,below_average,-10982,1
-Hospira/Pfizer*,2017,at_average,0,1
-Hospira/Pfizer*,2017,below_average,-3749069.3,5
-Sagent/Premierp,2014,below_average,-5324.8,1
-Sagent/Premierp,2015,at_average,0,1
-Sagent/Premierp,2015,below_average,-170886.3,5
-Sagent/Premierp,2016,above_average,12136,1
-Sagent/Premierp,2016,below_average,-620738.5,5
-Sagent/Premierp,2017,above_average,11952.100000000008,1
-Sagent/Premierp,2017,below_average,-516692.5999999999,6
 Macoven Pharmac,2013,at_average,0,1
 Macoven Pharmac,2014,above_average,69258,1
 Macoven Pharmac,2014,at_average,0,1
@@ -2275,27 +1786,16 @@ Macoven Pharmac,2016,above_average,67452,1
 Macoven Pharmac,2016,at_average,0,1
 Macoven Pharmac,2017,above_average,201690,1
 Macoven Pharmac,2017,at_average,0,1
-Alembic Pharmac,2015,below_average,-27295.800000000003,1
-Alembic Pharmac,2016,below_average,-710487.8000000002,1
-Alembic Pharmac,2017,above_average,4410279.499999999,5
-Alembic Pharmac,2017,below_average,-8031851.310000002,15
-Recordati Rare,2014,at_average,0,4
-Recordati Rare,2015,at_average,0,4
-Recordati Rare,2016,at_average,0,4
-Recordati Rare,2017,at_average,0,4
-"Retrophin, Inc.",2013,at_average,0,1
-"Retrophin, Inc.",2014,at_average,0,1
-"Retrophin, Inc.",2015,at_average,0,1
-"Retrophin, Inc.",2016,at_average,0,1
-"Retrophin, Inc.",2017,at_average,0,2
+Genzyme,2013,at_average,0,6
+Genzyme,2014,at_average,0,6
+Genzyme,2015,at_average,0,7
+Genzyme,2016,at_average,0,7
+Genzyme,2017,at_average,0,8
 Xttrium Labs.,2013,below_average,-362846.39999999997,1
 Xttrium Labs.,2014,below_average,-333978.59999999986,1
 Xttrium Labs.,2015,below_average,-288251.76000000024,1
 Xttrium Labs.,2016,below_average,-44874.69000000037,1
 Xttrium Labs.,2017,at_average,0,1
-Upsher-Smith La,2017,above_average,487778,2
-Upsher-Smith La,2017,at_average,0,8
-Upsher-Smith La,2017,below_average,-794090.7000000011,4
 Medimetriks Pha,2013,at_average,0,3
 Medimetriks Pha,2014,at_average,0,5
 Medimetriks Pha,2015,at_average,0,5
@@ -2316,6 +1816,21 @@ Fougera,2014,below_average,-21831,1
 Fougera,2015,below_average,-14628,1
 Fougera,2016,above_average,5756.900000000011,1
 Fougera,2017,above_average,2823.399999999998,1
+UCB Pharma,2013,above_average,18212775,1
+UCB Pharma,2013,at_average,0,5
+UCB Pharma,2013,below_average,-750723.5999999997,1
+UCB Pharma,2014,above_average,20917647.799999997,1
+UCB Pharma,2014,at_average,0,6
+UCB Pharma,2014,below_average,-545380.0000000001,1
+UCB Pharma,2015,above_average,30594085.599999998,1
+UCB Pharma,2015,at_average,0,6
+UCB Pharma,2015,below_average,-858532.0000000001,1
+UCB Pharma,2016,above_average,36402317.6,1
+UCB Pharma,2016,at_average,0,6
+UCB Pharma,2016,below_average,-2436274.9999999995,1
+UCB Pharma,2017,above_average,2960163.8000000003,1
+UCB Pharma,2017,at_average,0,7
+UCB Pharma,2017,below_average,-2171772.6,1
 Viropharma/Shir,2013,at_average,0,1
 Viropharma/Shir,2014,at_average,0,1
 Viropharma/Shir,2015,at_average,0,1
@@ -2327,7 +1842,6 @@ Hi-Tech/Teva,2015,above_average,272322.39999999997,2
 Hi-Tech/Teva,2015,below_average,-34266.40000000003,1
 Hi-Tech/Teva,2016,above_average,167061.08,3
 Hi-Tech/Teva,2017,above_average,33456,3
-Puracap Laborat,2017,below_average,-93115.89000000023,6
 Rising Pharm*,2013,below_average,-2324658.859999999,2
 Rising Pharm*,2014,below_average,-27889156.220000006,2
 Rising Pharm*,2015,above_average,136158.5999999995,1
@@ -2336,16 +1850,33 @@ Rising Pharm*,2016,above_average,488825.03999999946,1
 Rising Pharm*,2016,below_average,-87455857,1
 Rising Pharm*,2017,above_average,548832.1599999997,1
 Rising Pharm*,2017,below_average,-59092286.4,1
-Claris/Baxter,2017,above_average,89760.32,4
-Claris/Baxter,2017,below_average,-12096.800000000003,2
-Hospira-Novaplu,2017,above_average,3924.8799999999997,1
-Hospira-Novaplu,2017,below_average,-154923.86,5
+Xspire Pharma,2013,above_average,1339.32,1
+Xspire Pharma,2014,above_average,128395.89,1
+Xspire Pharma,2014,at_average,0,1
+Xspire Pharma,2015,above_average,346793.6,1
+Xspire Pharma,2015,at_average,0,1
+Xspire Pharma,2015,below_average,-3630,1
+Xspire Pharma,2016,above_average,382506.4600000001,2
+Xspire Pharma,2016,at_average,0,1
+Xspire Pharma,2017,above_average,446892,1
+Xspire Pharma,2017,at_average,0,2
+Xspire Pharma,2017,below_average,-13920,1
 Caraco Pharm,2013,below_average,-253672.70000000013,2
 Caraco Pharm,2014,above_average,885.6800000000597,1
 Caraco Pharm,2014,below_average,-133675.09999999998,1
 Caraco Pharm,2015,below_average,-137554.63999999998,3
 Caraco Pharm,2016,below_average,-63849.96,3
 Caraco Pharm,2017,below_average,-18799.399999999998,3
+Perrigo Diabete,2013,at_average,0,4
+Perrigo Diabete,2013,below_average,-548002.3000000004,8
+Perrigo Diabete,2014,at_average,0,4
+Perrigo Diabete,2014,below_average,-469360.80000000016,8
+Perrigo Diabete,2015,at_average,0,4
+Perrigo Diabete,2015,below_average,-689447.7999999998,9
+Perrigo Diabete,2016,at_average,0,4
+Perrigo Diabete,2016,below_average,-965462.7599999997,9
+Perrigo Diabete,2017,at_average,0,5
+Perrigo Diabete,2017,below_average,-764892.2999999999,9
 Fougera/Sandoz*,2013,below_average,-27555.5,1
 Fougera/Sandoz*,2014,above_average,277645,1
 Fougera/Sandoz*,2015,above_average,337671.50000000023,1
@@ -2377,7 +1908,6 @@ Versapharm/Akor,2016,below_average,-451401.9000000001,5
 Versapharm/Akor,2017,above_average,180155.2,6
 Versapharm/Akor,2017,at_average,0,1
 Versapharm/Akor,2017,below_average,-387835.2,5
-3M Espe Dental,2017,at_average,0,1
 Promius Pharma,2013,at_average,0,1
 Promius Pharma,2014,at_average,0,1
 Promius Pharma,2015,at_average,0,2
@@ -2389,42 +1919,58 @@ Richmond Pharm,2014,below_average,-3537.5000000000005,2
 Richmond Pharm,2015,below_average,-1786.7100000000007,2
 Richmond Pharm,2016,below_average,-1531.58,2
 Richmond Pharm,2017,below_average,-212.96999999999997,2
+"Gsms, Inc.",2013,below_average,-138721.78999999998,7
+"Gsms, Inc.",2014,below_average,-146855.81,12
+"Gsms, Inc.",2015,below_average,-400355.49,21
+"Gsms, Inc.",2016,above_average,846.1999999999997,2
+"Gsms, Inc.",2016,below_average,-217729.8,20
+"Gsms, Inc.",2017,above_average,406,1
+"Gsms, Inc.",2017,below_average,-216760.28999999998,29
 Novartis/HLS Th,2013,at_average,0,1
 Novartis/HLS Th,2014,at_average,0,1
 Novartis/HLS Th,2015,at_average,0,1
 Novartis/HLS Th,2016,at_average,0,1
 Novartis/HLS Th,2017,at_average,0,1
-Noven Therapeut,2013,at_average,0,2
-Noven Therapeut,2014,at_average,0,3
-Noven Therapeut,2015,at_average,0,3
-Noven Therapeut,2016,at_average,0,3
-Noven Therapeut,2017,at_average,0,3
 Viiv Healthcare,2013,at_average,0,10
 Viiv Healthcare,2014,at_average,0,11
 Viiv Healthcare,2015,at_average,0,11
 Viiv Healthcare,2016,at_average,0,11
 Viiv Healthcare,2017,at_average,0,11
+"Exelixis, Inc.",2013,at_average,0,1
+"Exelixis, Inc.",2014,at_average,0,1
+"Exelixis, Inc.",2015,at_average,0,1
+"Exelixis, Inc.",2016,at_average,0,1
+"Exelixis, Inc.",2017,at_average,0,2
 US Pharmaceutic,2013,at_average,0,1
 US Pharmaceutic,2014,at_average,0,1
 US Pharmaceutic,2015,at_average,0,1
 US Pharmaceutic,2016,at_average,0,1
 US Pharmaceutic,2017,at_average,0,1
-Vertical Pharm,2013,at_average,0,2
-Vertical Pharm,2014,at_average,0,4
-Vertical Pharm,2015,at_average,0,4
-Vertical Pharm,2016,at_average,0,4
-Vertical Pharm,2017,above_average,6034199.399999999,1
-Vertical Pharm,2017,at_average,0,7
 Pfizer/US World,2013,at_average,0,1
 Pfizer/US World,2014,at_average,0,1
 Pfizer/US World,2015,at_average,0,1
 Pfizer/US World,2016,at_average,0,1
 Pfizer/US World,2017,below_average,-8284,1
+Par Pharmaceuti,2013,at_average,0,6
+Par Pharmaceuti,2013,below_average,-13251,1
+Par Pharmaceuti,2014,at_average,0,7
+Par Pharmaceuti,2014,below_average,-5700,1
+Par Pharmaceuti,2015,at_average,0,7
+Par Pharmaceuti,2015,below_average,-4952,1
+Par Pharmaceuti,2016,at_average,0,8
+Par Pharmaceuti,2016,below_average,-3315,1
+Par Pharmaceuti,2017,at_average,0,8
+Par Pharmaceuti,2017,below_average,-5058,1
 BMS,2013,at_average,0,2
 BMS,2014,at_average,0,2
 BMS,2015,at_average,0,2
 BMS,2016,at_average,0,2
 BMS,2017,at_average,0,2
+Beiersdorf-Futu,2013,below_average,-199.68,1
+Beiersdorf-Futu,2014,below_average,-348.47999999999996,1
+Beiersdorf-Futu,2015,below_average,-272.5,1
+Beiersdorf-Futu,2016,below_average,-389.3399999999999,1
+Beiersdorf-Futu,2017,below_average,-133.65999999999997,1
 Covidien/Kendal,2013,above_average,210.9699999999999,1
 Covidien/Kendal,2013,at_average,0,3
 Covidien/Kendal,2014,above_average,354.96000000000004,1
@@ -2435,27 +1981,11 @@ Covidien/Kendal,2016,above_average,395.75,1
 Covidien/Kendal,2016,at_average,0,4
 Covidien/Kendal,2017,above_average,159.65000000000015,1
 Covidien/Kendal,2017,at_average,0,5
-Beiersdorf-Futu,2013,below_average,-199.68,1
-Beiersdorf-Futu,2014,below_average,-348.47999999999996,1
-Beiersdorf-Futu,2015,below_average,-272.5,1
-Beiersdorf-Futu,2016,below_average,-389.3399999999999,1
-Beiersdorf-Futu,2017,below_average,-133.65999999999997,1
 Merz,2013,at_average,0,2
 Merz,2014,at_average,0,2
 Merz,2015,at_average,0,2
 Merz,2016,at_average,0,2
 Merz,2017,at_average,0,2
-Somerset Therap,2017,above_average,7933.899999999997,1
-"SA3, LLC",2015,above_average,284977.8,1
-"SA3, LLC",2016,above_average,890854.5499999999,1
-"SA3, LLC",2017,above_average,946284.6000000001,1
-Baxter/Premierp,2015,below_average,-5883,2
-Baxter/Premierp,2016,below_average,-7574.0999999999995,2
-Baxter/Premierp,2017,below_average,-8898.6,2
-The Chao Center,2014,at_average,0,1
-The Chao Center,2015,at_average,0,1
-The Chao Center,2016,at_average,0,1
-The Chao Center,2017,at_average,0,1
 Santarus Inc/Sa,2013,at_average,0,5
 Santarus Inc/Sa,2014,at_average,0,5
 Santarus Inc/Sa,2015,at_average,0,6
@@ -2475,77 +2005,21 @@ Actavis/Mayne P,2016,below_average,-4874371.399999999,1
 Actavis/Mayne P,2017,above_average,2965,1
 Actavis/Mayne P,2017,at_average,0,1
 Actavis/Mayne P,2017,below_average,-1290995.8,8
-Corepharma LLC,2013,above_average,572121.5999999996,3
-Corepharma LLC,2013,below_average,-6635.200000000001,1
-Corepharma LLC,2014,above_average,2174175.4999999995,4
-Corepharma LLC,2014,below_average,-6632.000000000001,2
-Corepharma LLC,2015,above_average,1235412.9000000013,4
-Corepharma LLC,2015,at_average,0,1
-Corepharma LLC,2015,below_average,-270566.99999999994,3
-Corepharma LLC,2016,above_average,886693.4999999992,4
-Corepharma LLC,2016,below_average,-315812.2999999996,4
-Corepharma LLC,2017,above_average,808163.9000000003,3
-Corepharma LLC,2017,at_average,0,1
-Corepharma LLC,2017,below_average,-1148251.6999999993,6
-"Afaxys, Inc.",2015,at_average,0,1
-"Afaxys, Inc.",2016,at_average,0,1
-"Afaxys, Inc.",2017,at_average,0,2
 Rare Disease,2013,at_average,0,1
 Rare Disease,2014,at_average,0,1
 Rare Disease,2015,at_average,0,1
 Rare Disease,2016,at_average,0,1
 Rare Disease,2017,at_average,0,1
-Forest Pharmace,2015,above_average,8740,1
-Forest Pharmace,2016,below_average,-5220,1
-Forest Pharmace,2017,below_average,-7221,1
-Durata/Allergan,2015,at_average,0,1
-Durata/Allergan,2016,at_average,0,1
-Durata/Allergan,2017,at_average,0,1
 Jacobus Pharm.,2013,at_average,0,1
 Jacobus Pharm.,2014,at_average,0,1
 Jacobus Pharm.,2015,at_average,0,1
 Jacobus Pharm.,2016,at_average,0,1
 Jacobus Pharm.,2017,below_average,-235866,1
-Seton Pharmaceu,2013,above_average,715545.4,6
-Seton Pharmaceu,2013,at_average,0,2
-Seton Pharmaceu,2014,above_average,1210035.6,6
-Seton Pharmaceu,2014,at_average,0,2
-Seton Pharmaceu,2015,above_average,1102057,6
-Seton Pharmaceu,2015,at_average,0,2
-Seton Pharmaceu,2016,above_average,516373.7,6
-Seton Pharmaceu,2016,at_average,0,2
-Seton Pharmaceu,2016,below_average,-19565,1
-Seton Pharmaceu,2017,above_average,307128.5999999999,8
-Seton Pharmaceu,2017,at_average,0,2
-Seton Pharmaceu,2017,below_average,-3317,1
-Fresenius Kabi,2013,at_average,0,1
-Fresenius Kabi,2013,below_average,-5167.799999999999,1
-Fresenius Kabi,2014,at_average,0,1
-Fresenius Kabi,2014,below_average,-6025.800000000001,1
-Fresenius Kabi,2015,at_average,0,1
-Fresenius Kabi,2015,below_average,-7615.579999999999,1
-Fresenius Kabi,2016,at_average,0,1
-Fresenius Kabi,2016,below_average,-8504.76,1
-Fresenius Kabi,2017,above_average,781924.57,6
-Fresenius Kabi,2017,at_average,0,1
-Fresenius Kabi,2017,below_average,-122497.24999999999,3
-Vyera Pharmaceu,2017,at_average,0,1
-Janssen Biotech,2013,at_average,0,4
-Janssen Biotech,2014,at_average,0,4
-Janssen Biotech,2015,at_average,0,4
-Janssen Biotech,2016,at_average,0,4
-Janssen Biotech,2017,at_average,0,5
-Ferring Ph Inc,2013,at_average,0,3
-Ferring Ph Inc,2013,below_average,-79932.6,1
-Ferring Ph Inc,2014,at_average,0,3
-Ferring Ph Inc,2014,below_average,-45705.6,1
-Ferring Ph Inc,2015,at_average,0,4
-Ferring Ph Inc,2015,below_average,-22725,1
-Ferring Ph Inc,2016,at_average,0,4
-Ferring Ph Inc,2016,below_average,-8365,1
-Ferring Ph Inc,2017,at_average,0,4
-Ferring Ph Inc,2017,below_average,-1876.1999999999998,1
-Ferring Ph Inc*,2017,at_average,0,1
+Noven Therapeut,2013,at_average,0,2
+Noven Therapeut,2014,at_average,0,3
+Noven Therapeut,2015,at_average,0,3
+Noven Therapeut,2016,at_average,0,3
+Noven Therapeut,2017,at_average,0,3
 Barr,2013,above_average,423441.2999999999,2
 Barr,2013,at_average,0,1
 Barr,2013,below_average,-222301,1
@@ -2555,12 +2029,6 @@ Barr,2016,above_average,181805.09999999998,3
 Barr,2016,below_average,-33706.79999999998,1
 Barr,2017,above_average,38590.05,2
 Barr,2017,below_average,-15240,2
-Validus Pharmac,2013,at_average,0,3
-Validus Pharmac,2014,at_average,0,4
-Validus Pharmac,2015,at_average,0,4
-Validus Pharmac,2016,at_average,0,4
-Validus Pharmac,2017,above_average,181886,2
-Validus Pharmac,2017,at_average,0,6
 Prestium/Mylan,2013,at_average,0,1
 Prestium/Mylan,2014,at_average,0,4
 Prestium/Mylan,2014,below_average,-1254,1
@@ -2583,18 +2051,16 @@ Pfizer/Novaplus,2016,at_average,0,3
 Pfizer/Novaplus,2016,below_average,-7429.5,1
 Pfizer/Novaplus,2017,above_average,5058,1
 Pfizer/Novaplus,2017,below_average,-10682.200000000003,4
-Amring Pharmace,2017,above_average,57351,2
-Amring Pharmace*,2017,below_average,-857626,1
-"IGI Labs, Inc./",2013,above_average,309442,1
-"IGI Labs, Inc./",2013,below_average,-51622.90000000004,1
-"IGI Labs, Inc./",2014,above_average,836393.9999999997,1
-"IGI Labs, Inc./",2014,below_average,-829087.4,2
-"IGI Labs, Inc./",2015,above_average,218917.90000000002,2
-"IGI Labs, Inc./",2015,below_average,-2251341,2
-"IGI Labs, Inc./",2016,above_average,4384263.6,3
-"IGI Labs, Inc./",2016,below_average,-1009825,1
-"IGI Labs, Inc./",2017,above_average,14617218.8,6
-"IGI Labs, Inc./",2017,below_average,-1106354.7000000002,1
+Ferring Ph Inc,2013,at_average,0,3
+Ferring Ph Inc,2013,below_average,-79932.6,1
+Ferring Ph Inc,2014,at_average,0,3
+Ferring Ph Inc,2014,below_average,-45705.6,1
+Ferring Ph Inc,2015,at_average,0,4
+Ferring Ph Inc,2015,below_average,-22725,1
+Ferring Ph Inc,2016,at_average,0,4
+Ferring Ph Inc,2016,below_average,-8365,1
+Ferring Ph Inc,2017,at_average,0,4
+Ferring Ph Inc,2017,below_average,-1876.1999999999998,1
 Wilshire Pharma,2013,above_average,46102,1
 Wilshire Pharma,2014,above_average,122112,1
 Wilshire Pharma,2014,below_average,-22196,1
@@ -2618,25 +2084,23 @@ Teva/Prasco Lab,2014,at_average,0,1
 Teva/Prasco Lab,2015,below_average,-312462,1
 Teva/Prasco Lab,2016,below_average,-585465,1
 Teva/Prasco Lab,2017,below_average,-186080,1
+Corepharma LLC,2013,above_average,572121.5999999996,3
+Corepharma LLC,2013,below_average,-6635.200000000001,1
+Corepharma LLC,2014,above_average,2174175.4999999995,4
+Corepharma LLC,2014,below_average,-6632.000000000001,2
+Corepharma LLC,2015,above_average,1235412.9000000013,4
+Corepharma LLC,2015,at_average,0,1
+Corepharma LLC,2015,below_average,-270566.99999999994,3
+Corepharma LLC,2016,above_average,886693.4999999992,4
+Corepharma LLC,2016,below_average,-315812.2999999996,4
+Corepharma LLC,2017,above_average,808163.9000000003,3
+Corepharma LLC,2017,at_average,0,1
+Corepharma LLC,2017,below_average,-1148251.6999999993,6
 Teva USA*,2013,above_average,4044106.1799999983,2
 Teva USA*,2014,above_average,6274232.55,2
 Teva USA*,2015,above_average,7781522.200000002,2
 Teva USA*,2016,above_average,4694010.819999998,2
 Teva USA*,2017,above_average,3738435.0599999996,2
-Pharmaceutica N,2015,above_average,3064174.7,2
-Pharmaceutica N,2016,above_average,69190106.6,2
-Pharmaceutica N,2017,above_average,30847764.1,3
-Puretek Corpora,2013,above_average,25276.2,1
-Puretek Corpora,2013,below_average,-41510.5,1
-Puretek Corpora,2014,above_average,6581.9,1
-Puretek Corpora,2014,below_average,-32562.2,1
-Puretek Corpora,2015,above_average,12614.400000000001,1
-Puretek Corpora,2015,below_average,-32987.5,1
-Puretek Corpora,2016,above_average,7925.000000000001,1
-Puretek Corpora,2016,below_average,-3270.3999999999996,1
-Puretek Corpora,2017,above_average,190794.3,2
-Puretek Corpora,2017,at_average,0,1
-Puretek Corpora,2017,below_average,-2981.2199999999993,2
 Sandoz*,2013,above_average,3284584.2,3
 Sandoz*,2013,below_average,-1260350,2
 Sandoz*,2014,above_average,33529864.1,3
@@ -2647,11 +2111,6 @@ Sandoz*,2016,above_average,7119164.8,3
 Sandoz*,2016,below_average,-6916027.200000001,3
 Sandoz*,2017,above_average,8111490.2,2
 Sandoz*,2017,below_average,-8794978.9,4
-Sircle Laborato,2017,above_average,1363802.4000000001,1
-"Solubiomix, LLC",2017,above_average,18908.100000000002,1
-Eagle Pharmaceu,2015,above_average,43589,1
-Eagle Pharmaceu,2016,below_average,-38810,1
-Eagle Pharmaceu,2017,below_average,-169000,1
 "West-Ward, Inc.*",2013,above_average,1549496.4,1
 "West-Ward, Inc.*",2013,below_average,-4092927.0399999996,2
 "West-Ward, Inc.*",2014,above_average,1400626.4000000004,1
@@ -2662,6 +2121,19 @@ Eagle Pharmaceu,2017,below_average,-169000,1
 "West-Ward, Inc.*",2016,below_average,-2841707.9999999995,1
 "West-Ward, Inc.*",2017,above_average,3969464.299999999,2
 "West-Ward, Inc.*",2017,below_average,-2797880.200000001,1
+Oceanside Pharm,2013,above_average,14165732.799999999,2
+Oceanside Pharm,2013,at_average,0,1
+Oceanside Pharm,2013,below_average,-409096.39999999985,2
+Oceanside Pharm,2014,above_average,32451358.500000004,5
+Oceanside Pharm,2014,at_average,0,2
+Oceanside Pharm,2014,below_average,-373717.4000000001,3
+Oceanside Pharm,2015,above_average,18605398.6,11
+Oceanside Pharm,2015,below_average,-6049881.9,8
+Oceanside Pharm,2016,above_average,17662479.2,11
+Oceanside Pharm,2016,below_average,-17776532.2,8
+Oceanside Pharm,2017,above_average,33836224.6,15
+Oceanside Pharm,2017,at_average,0,1
+Oceanside Pharm,2017,below_average,-27032184.69999999,14
 Auxilium/Endo P,2013,at_average,0,6
 Auxilium/Endo P,2013,below_average,-40502,1
 Auxilium/Endo P,2014,at_average,0,7
@@ -2670,6 +2142,18 @@ Auxilium/Endo P,2015,at_average,0,8
 Auxilium/Endo P,2015,below_average,-116380,1
 Auxilium/Endo P,2016,at_average,0,8
 Auxilium/Endo P,2017,at_average,0,8
+Bluepoint Labor,2013,above_average,651209.6000000001,4
+Bluepoint Labor,2013,below_average,-216096.7000000001,3
+Bluepoint Labor,2014,above_average,5992915.1,7
+Bluepoint Labor,2014,below_average,-27197878.71,42
+Bluepoint Labor,2015,above_average,5507819.9,4
+Bluepoint Labor,2015,at_average,0,1
+Bluepoint Labor,2015,below_average,-32727805.740000002,44
+Bluepoint Labor,2016,above_average,3709605.5999999996,9
+Bluepoint Labor,2016,below_average,-30716132.490000002,40
+Bluepoint Labor,2017,above_average,4804896.399999999,6
+Bluepoint Labor,2017,at_average,0,1
+Bluepoint Labor,2017,below_average,-32176240.01,42
 Winthrop US,2013,above_average,43676847,4
 Winthrop US,2013,at_average,0,1
 Winthrop US,2013,below_average,-166603.51999999842,2
@@ -2684,12 +2168,17 @@ Winthrop US,2016,at_average,0,1
 Winthrop US,2016,below_average,-2915690.6,5
 Winthrop US,2017,above_average,26637147.900000002,5
 Winthrop US,2017,below_average,-5016901,4
-TWI Pharmaceuti,2015,above_average,4411851.3,2
-TWI Pharmaceuti,2015,below_average,-781042.5,1
-TWI Pharmaceuti,2016,above_average,12098425.5,2
-TWI Pharmaceuti,2016,below_average,-1218452.4000000025,1
-TWI Pharmaceuti,2017,above_average,9997647,2
-TWI Pharmaceuti,2017,below_average,-974181.2999999992,1
+Macleods Pharma,2013,above_average,140057.10000000015,1
+Macleods Pharma,2013,below_average,-542349.9,5
+Macleods Pharma,2014,above_average,4540880.100000001,3
+Macleods Pharma,2014,below_average,-1075961.7,8
+Macleods Pharma,2015,above_average,15375761.7,6
+Macleods Pharma,2015,below_average,-6414551.67,16
+Macleods Pharma,2016,above_average,12616133.700000005,9
+Macleods Pharma,2016,below_average,-11244370.580000006,13
+Macleods Pharma,2017,above_average,13438368.02,9
+Macleods Pharma,2017,at_average,0,1
+Macleods Pharma,2017,below_average,-11578045.62,17
 Shionogi Pharma,2013,at_average,0,2
 Shionogi Pharma,2014,at_average,0,2
 Shionogi Pharma,2015,at_average,0,2
@@ -2700,25 +2189,31 @@ Leo Pharma Inc.,2014,at_average,0,3
 Leo Pharma Inc.,2015,at_average,0,3
 Leo Pharma Inc.,2016,at_average,0,3
 Leo Pharma Inc.,2017,at_average,0,4
-"Mhc Pharma, LLC",2015,above_average,43315.199999999844,1
-"Mhc Pharma, LLC",2016,above_average,56580.0000000003,1
-"Mhc Pharma, LLC",2017,at_average,0,1
+Larken Labs,2013,at_average,0,2
+Larken Labs,2013,below_average,-319954.39999999997,1
+Larken Labs,2014,at_average,0,2
+Larken Labs,2014,below_average,-291482.8,1
+Larken Labs,2015,at_average,0,2
+Larken Labs,2015,below_average,-134517.19999999998,1
+Larken Labs,2016,at_average,0,2
+Larken Labs,2016,below_average,-59061.19999999999,1
+Larken Labs,2017,above_average,48677.40000000001,3
+Larken Labs,2017,at_average,0,2
 BMS Onco/Immun,2013,at_average,0,5
 BMS Onco/Immun,2014,at_average,0,5
 BMS Onco/Immun,2015,at_average,0,5
 BMS Onco/Immun,2016,at_average,0,5
 BMS Onco/Immun,2017,at_average,0,4
-Wyeth/Pfizer,2017,above_average,1292,1
-Wyeth/Pfizer,2017,at_average,0,14
-New Haven Pharm,2017,at_average,0,1
-Concordia Pharm,2013,at_average,0,1
-Concordia Pharm,2014,at_average,0,1
-Concordia Pharm,2015,above_average,1218,1
-Concordia Pharm,2015,at_average,0,3
-Concordia Pharm,2016,above_average,445602,1
-Concordia Pharm,2016,at_average,0,3
-Concordia Pharm,2017,above_average,706777,3
-Concordia Pharm,2017,at_average,0,4
+Citron Pharma L,2013,above_average,3325.2000000000003,1
+Citron Pharma L,2013,below_average,-537636,1
+Citron Pharma L,2014,above_average,1421164.7000000002,6
+Citron Pharma L,2014,below_average,-17036647.99,10
+Citron Pharma L,2015,above_average,2529702.68,10
+Citron Pharma L,2015,below_average,-26483035.08,15
+Citron Pharma L,2016,above_average,5247197.95,8
+Citron Pharma L,2016,below_average,-40029585.599999994,17
+Citron Pharma L,2017,above_average,5678325.750000001,13
+Citron Pharma L,2017,below_average,-40786854.930000015,27
 Covis/Concordia,2013,above_average,10372.200000000148,1
 Covis/Concordia,2013,at_average,0,2
 Covis/Concordia,2014,above_average,115960.00000000038,1
@@ -2734,12 +2229,33 @@ Ipsen Biopharma,2014,at_average,0,1
 Ipsen Biopharma,2015,at_average,0,2
 Ipsen Biopharma,2016,at_average,0,2
 Ipsen Biopharma,2017,at_average,0,2
+Arbor Pharmaceu,2013,above_average,9001420.4,1
+Arbor Pharmaceu,2013,at_average,0,8
+Arbor Pharmaceu,2014,above_average,13685346.6,1
+Arbor Pharmaceu,2014,at_average,0,10
+Arbor Pharmaceu,2015,above_average,21075242,1
+Arbor Pharmaceu,2015,at_average,0,10
+Arbor Pharmaceu,2016,above_average,20465713.5,1
+Arbor Pharmaceu,2016,at_average,0,11
+Arbor Pharmaceu,2017,above_average,22394192,1
+Arbor Pharmaceu,2017,at_average,0,13
+Arbor Pharmaceu,2017,below_average,-407125,1
 Mhc Medical Pro,2013,at_average,0,10
 Mhc Medical Pro,2014,at_average,0,11
 Mhc Medical Pro,2015,at_average,0,11
 Mhc Medical Pro,2016,at_average,0,11
 Mhc Medical Pro,2017,above_average,2622.600000000037,1
 Mhc Medical Pro,2017,at_average,0,11
+"IGI Labs, Inc./",2013,above_average,309442,1
+"IGI Labs, Inc./",2013,below_average,-51622.90000000004,1
+"IGI Labs, Inc./",2014,above_average,836393.9999999997,1
+"IGI Labs, Inc./",2014,below_average,-829087.4,2
+"IGI Labs, Inc./",2015,above_average,218917.90000000002,2
+"IGI Labs, Inc./",2015,below_average,-2251341,2
+"IGI Labs, Inc./",2016,above_average,4384263.6,3
+"IGI Labs, Inc./",2016,below_average,-1009825,1
+"IGI Labs, Inc./",2017,above_average,14617218.8,6
+"IGI Labs, Inc./",2017,below_average,-1106354.7000000002,1
 Janssen Product,2013,at_average,0,5
 Janssen Product,2014,at_average,0,5
 Janssen Product,2015,at_average,0,6
@@ -2750,13 +2266,6 @@ Nomax Inc,2014,at_average,0,1
 Nomax Inc,2015,at_average,0,1
 Nomax Inc,2016,at_average,0,1
 Nomax Inc,2017,at_average,0,1
-Theratechnologi,2014,at_average,0,1
-Theratechnologi,2015,at_average,0,1
-Theratechnologi,2016,at_average,0,1
-Theratechnologi,2017,at_average,0,1
-Tolmar Pharmace,2015,at_average,0,1
-Tolmar Pharmace,2016,at_average,0,1
-Tolmar Pharmace,2017,at_average,0,1
 Hawthorn Pharm,2013,at_average,0,1
 Hawthorn Pharm,2014,at_average,0,1
 Hawthorn Pharm,2015,at_average,0,1
@@ -2783,7 +2292,6 @@ Mylan Specialty,2015,at_average,0,4
 Mylan Specialty,2016,at_average,0,4
 Mylan Specialty,2017,above_average,838710,1
 Mylan Specialty,2017,at_average,0,4
-Jaymac Pharma,2017,at_average,0,1
 Amphastar Pharm,2013,below_average,-5229432,1
 Amphastar Pharm,2014,below_average,-3634250,1
 Amphastar Pharm,2015,below_average,-872355,1
@@ -2794,35 +2302,17 @@ Astrazeneca Lp/,2014,at_average,0,1
 Astrazeneca Lp/,2015,at_average,0,1
 Astrazeneca Lp/,2016,at_average,0,1
 Astrazeneca Lp/,2017,at_average,0,2
-Veloxis Pharmac,2017,at_average,0,1
-Silvergate Phar,2014,at_average,0,1
-Silvergate Phar,2015,at_average,0,1
-Silvergate Phar,2016,at_average,0,1
-Silvergate Phar,2017,at_average,0,1
-Ani Pharmaceuti,2013,above_average,144102.15000000002,1
-Ani Pharmaceuti,2013,at_average,0,1
-Ani Pharmaceuti,2013,below_average,-625841.2000000002,2
-Ani Pharmaceuti,2014,above_average,159425.24000000005,2
-Ani Pharmaceuti,2014,at_average,0,2
-Ani Pharmaceuti,2014,below_average,-557377.7999999998,2
-Ani Pharmaceuti,2015,above_average,802547.76,5
-Ani Pharmaceuti,2015,at_average,0,3
-Ani Pharmaceuti,2015,below_average,-810580.2999999998,3
-Ani Pharmaceuti,2016,above_average,4321139.9799999995,5
-Ani Pharmaceuti,2016,at_average,0,3
-Ani Pharmaceuti,2016,below_average,-1007090.1999999994,3
-Ani Pharmaceuti,2017,above_average,12128343.08,8
-Ani Pharmaceuti,2017,at_average,0,4
-Ani Pharmaceuti,2017,below_average,-3036194.6,5
+Validus Pharmac,2013,at_average,0,3
+Validus Pharmac,2014,at_average,0,4
+Validus Pharmac,2015,at_average,0,4
+Validus Pharmac,2016,at_average,0,4
+Validus Pharmac,2017,above_average,181886,2
+Validus Pharmac,2017,at_average,0,6
 Actavis/Allerga*,2013,at_average,0,1
 Actavis/Allerga*,2014,at_average,0,1
 Actavis/Allerga*,2015,at_average,0,1
 Actavis/Allerga*,2016,at_average,0,1
 Actavis/Allerga*,2017,at_average,0,1
-"Kaleo, Inc.",2014,at_average,0,1
-"Kaleo, Inc.",2015,at_average,0,1
-"Kaleo, Inc.",2016,at_average,0,1
-"Kaleo, Inc.",2017,at_average,0,1
 Mallinckrodt Br,2013,at_average,0,2
 Mallinckrodt Br,2014,at_average,0,3
 Mallinckrodt Br,2015,at_average,0,3
@@ -2847,18 +2337,11 @@ Vanda Pharmaceu,2016,at_average,0,1
 Vanda Pharmaceu,2016,below_average,-2401960,1
 Vanda Pharmaceu,2017,at_average,0,1
 Vanda Pharmaceu,2017,below_average,-1274070,1
-"Kyowa Kirin, In",2017,at_average,0,2
 Jazz Pharmaceut,2013,at_average,0,2
 Jazz Pharmaceut,2014,at_average,0,2
 Jazz Pharmaceut,2015,at_average,0,2
 Jazz Pharmaceut,2016,at_average,0,2
 Jazz Pharmaceut,2017,at_average,0,2
-Mylan/Alvogen,2017,below_average,-23382,1
-H2 Pharma LLC,2014,above_average,516327.6,1
-H2 Pharma LLC,2015,above_average,1742910,1
-H2 Pharma LLC,2016,above_average,1018952.1,1
-H2 Pharma LLC,2017,above_average,86789.8,1
-Halton Laborato,2017,below_average,-159735,1
 Mutual Pharmace,2013,below_average,-498575,1
 Mutual Pharmace,2014,below_average,-570273.6,1
 Mutual Pharmace,2015,below_average,-347166.39999999997,1
@@ -2869,12 +2352,37 @@ Par Pharm/Mayne,2014,below_average,-182453,1
 Par Pharm/Mayne,2015,below_average,-396603,1
 Par Pharm/Mayne,2016,above_average,388595,1
 Par Pharm/Mayne,2017,above_average,295632,1
+"Cephalon,Inc.-T",2013,above_average,216079,1
+"Cephalon,Inc.-T",2013,at_average,0,6
+"Cephalon,Inc.-T",2013,below_average,-11464163,1
+"Cephalon,Inc.-T",2014,above_average,67137,1
+"Cephalon,Inc.-T",2014,at_average,0,7
+"Cephalon,Inc.-T",2014,below_average,-4568346,1
+"Cephalon,Inc.-T",2015,above_average,62754,1
+"Cephalon,Inc.-T",2015,at_average,0,7
+"Cephalon,Inc.-T",2015,below_average,-2252344,1
+"Cephalon,Inc.-T",2016,above_average,69845,1
+"Cephalon,Inc.-T",2016,at_average,0,7
+"Cephalon,Inc.-T",2016,below_average,-1268680,1
+"Cephalon,Inc.-T",2017,at_average,0,8
+"Cephalon,Inc.-T",2017,below_average,-1076326,2
 Grifols,2013,at_average,0,1
 Grifols,2014,at_average,0,1
 Grifols,2015,at_average,0,1
 Grifols,2016,at_average,0,1
 Grifols,2017,at_average,0,1
-Claris/Renaissa,2017,below_average,-7546.899999999999,1
+Seton Pharmaceu,2013,above_average,715545.4,6
+Seton Pharmaceu,2013,at_average,0,2
+Seton Pharmaceu,2014,above_average,1210035.6,6
+Seton Pharmaceu,2014,at_average,0,2
+Seton Pharmaceu,2015,above_average,1102057,6
+Seton Pharmaceu,2015,at_average,0,2
+Seton Pharmaceu,2016,above_average,516373.7,6
+Seton Pharmaceu,2016,at_average,0,2
+Seton Pharmaceu,2016,below_average,-19565,1
+Seton Pharmaceu,2017,above_average,307128.5999999999,8
+Seton Pharmaceu,2017,at_average,0,2
+Seton Pharmaceu,2017,below_average,-3317,1
 Pacific/Greenst,2013,above_average,11868.000000000011,1
 Pacific/Greenst,2013,at_average,0,1
 Pacific/Greenst,2013,below_average,-5491701.920000001,6
@@ -2909,15 +2417,31 @@ Edgemont/Almati,2016,above_average,6894003.199999999,1
 Edgemont/Almati,2016,at_average,0,1
 Edgemont/Almati,2017,above_average,8481024.2,1
 Edgemont/Almati,2017,at_average,0,1
-Cintex Services,2017,below_average,-25800,1
-Method Pharmace,2015,above_average,7.26000000000006,1
-Method Pharmace,2016,above_average,932.5800000000008,1
-Method Pharmace,2017,above_average,42827.16,3
+Ani Pharmaceuti,2013,above_average,144102.15000000002,1
+Ani Pharmaceuti,2013,at_average,0,1
+Ani Pharmaceuti,2013,below_average,-625841.2000000002,2
+Ani Pharmaceuti,2014,above_average,159425.24000000005,2
+Ani Pharmaceuti,2014,at_average,0,2
+Ani Pharmaceuti,2014,below_average,-557377.7999999998,2
+Ani Pharmaceuti,2015,above_average,802547.76,5
+Ani Pharmaceuti,2015,at_average,0,3
+Ani Pharmaceuti,2015,below_average,-810580.2999999998,3
+Ani Pharmaceuti,2016,above_average,4321139.9799999995,5
+Ani Pharmaceuti,2016,at_average,0,3
+Ani Pharmaceuti,2016,below_average,-1007090.1999999994,3
+Ani Pharmaceuti,2017,above_average,12128343.08,8
+Ani Pharmaceuti,2017,at_average,0,4
+Ani Pharmaceuti,2017,below_average,-3036194.6,5
 Covis/Teligent,2013,at_average,0,1
 Covis/Teligent,2014,at_average,0,1
 Covis/Teligent,2015,at_average,0,1
 Covis/Teligent,2016,at_average,0,1
 Covis/Teligent,2017,at_average,0,1
+Endo Pharm Inc.,2013,at_average,0,7
+Endo Pharm Inc.,2014,at_average,0,8
+Endo Pharm Inc.,2015,at_average,0,9
+Endo Pharm Inc.,2016,at_average,0,9
+Endo Pharm Inc.,2017,at_average,0,10
 Spectrum Pharma,2013,at_average,0,1
 Spectrum Pharma,2014,at_average,0,1
 Spectrum Pharma,2015,at_average,0,1
@@ -2936,8 +2460,21 @@ Acella Pharmace,2016,below_average,-80640,2
 Acella Pharmace,2017,above_average,30201.000000000022,2
 Acella Pharmace,2017,at_average,0,4
 Acella Pharmace,2017,below_average,-65970.9,2
-Time-Cap Labs,2017,below_average,-2418418.85,3
-Mallinckrodt/Pi,2017,at_average,0,1
+Patriot Pharmac,2013,above_average,1028688.4,3
+Patriot Pharmac,2013,at_average,0,1
+Patriot Pharmac,2013,below_average,-5074540.7,6
+Patriot Pharmac,2014,above_average,762785,3
+Patriot Pharmac,2014,at_average,0,1
+Patriot Pharmac,2014,below_average,-5307386.5,6
+Patriot Pharmac,2015,above_average,539080,3
+Patriot Pharmac,2015,at_average,0,2
+Patriot Pharmac,2015,below_average,-7928172.9,8
+Patriot Pharmac,2016,above_average,606108.7999999998,4
+Patriot Pharmac,2016,at_average,0,2
+Patriot Pharmac,2016,below_average,-10735062,7
+Patriot Pharmac,2017,above_average,242671.19999999987,1
+Patriot Pharmac,2017,at_average,0,1
+Patriot Pharmac,2017,below_average,-13976444.9,11
 Grifols Therape,2013,at_average,0,3
 Grifols Therape,2014,at_average,0,3
 Grifols Therape,2015,above_average,348.5000000000001,1
@@ -2946,6 +2483,11 @@ Grifols Therape,2016,at_average,0,3
 Grifols Therape,2016,below_average,-20682.20000000001,1
 Grifols Therape,2017,at_average,0,3
 Grifols Therape,2017,below_average,-7303.199999999931,1
+Baxalta US Inc.,2013,at_average,0,3
+Baxalta US Inc.,2014,at_average,0,5
+Baxalta US Inc.,2015,at_average,0,5
+Baxalta US Inc.,2016,at_average,0,5
+Baxalta US Inc.,2017,at_average,0,5
 Kedrion Biophar,2013,at_average,0,1
 Kedrion Biophar,2014,at_average,0,1
 Kedrion Biophar,2015,at_average,0,1
@@ -2961,19 +2503,42 @@ Nps Pharmaceuti,2014,at_average,0,1
 Nps Pharmaceuti,2015,at_average,0,1
 Nps Pharmaceuti,2016,at_average,0,1
 Nps Pharmaceuti,2017,at_average,0,1
+Gavis/Lupin,2013,above_average,108965.80000000031,3
+Gavis/Lupin,2013,at_average,0,7
+Gavis/Lupin,2013,below_average,-264419.9,4
+Gavis/Lupin,2014,above_average,242979.1,5
+Gavis/Lupin,2014,at_average,0,6
+Gavis/Lupin,2014,below_average,-141906.39999999997,4
+Gavis/Lupin,2015,above_average,891872.7999999997,9
+Gavis/Lupin,2015,at_average,0,6
+Gavis/Lupin,2015,below_average,-169562.49999999997,4
+Gavis/Lupin,2016,above_average,1976458.4,9
+Gavis/Lupin,2016,at_average,0,7
+Gavis/Lupin,2016,below_average,-260704.69999999992,3
+Gavis/Lupin,2017,above_average,3596376.6999999997,12
+Gavis/Lupin,2017,at_average,0,4
+Gavis/Lupin,2017,below_average,-583117.5,8
 Blu Pharmaceuti,2013,below_average,-5144,1
 Blu Pharmaceuti,2014,below_average,-58.5,1
 Blu Pharmaceuti,2015,above_average,676.5000000000002,1
 Blu Pharmaceuti,2016,above_average,352.4999999999998,1
 Blu Pharmaceuti,2017,at_average,0,1
+Fresenius Kabi,2013,at_average,0,1
+Fresenius Kabi,2013,below_average,-5167.799999999999,1
+Fresenius Kabi,2014,at_average,0,1
+Fresenius Kabi,2014,below_average,-6025.800000000001,1
+Fresenius Kabi,2015,at_average,0,1
+Fresenius Kabi,2015,below_average,-7615.579999999999,1
+Fresenius Kabi,2016,at_average,0,1
+Fresenius Kabi,2016,below_average,-8504.76,1
+Fresenius Kabi,2017,above_average,781924.57,6
+Fresenius Kabi,2017,at_average,0,1
+Fresenius Kabi,2017,below_average,-122497.24999999999,3
 Perrigo Co.*,2013,above_average,680613.8999999996,3
 Perrigo Co.*,2014,above_average,2832869.2,3
 Perrigo Co.*,2015,above_average,3571991.5,3
 Perrigo Co.*,2016,above_average,5117339.800000001,3
 Perrigo Co.*,2017,above_average,5459355.499999998,3
-Nextsource Biot,2015,at_average,0,1
-Nextsource Biot,2016,at_average,0,1
-Nextsource Biot,2017,at_average,0,1
 "Micro Labs USA,",2013,above_average,7548,1
 "Micro Labs USA,",2013,below_average,-3844.8000000000015,1
 "Micro Labs USA,",2014,below_average,-469880.3599999995,3
@@ -2992,12 +2557,16 @@ Novo Nordisk,2016,above_average,54784010,3
 Novo Nordisk,2016,at_average,0,20
 Novo Nordisk,2017,above_average,66094891,3
 Novo Nordisk,2017,at_average,0,20
-"Trupharma, LLC.",2017,below_average,-3326.399999999998,1
 Braintree Labs.,2013,at_average,0,3
 Braintree Labs.,2014,at_average,0,3
 Braintree Labs.,2015,at_average,0,3
 Braintree Labs.,2016,at_average,0,3
 Braintree Labs.,2017,at_average,0,3
+"Depomed, Inc.",2013,at_average,0,2
+"Depomed, Inc.",2014,at_average,0,4
+"Depomed, Inc.",2015,at_average,0,4
+"Depomed, Inc.",2016,at_average,0,4
+"Depomed, Inc.",2017,at_average,0,4
 Sandoz Inc.,2013,below_average,-21546,1
 Sandoz Inc.,2014,below_average,-44335.600000000006,1
 Sandoz Inc.,2015,at_average,0,1
@@ -3011,40 +2580,30 @@ Questcor,2014,at_average,0,1
 Questcor,2015,at_average,0,1
 Questcor,2016,at_average,0,1
 Questcor,2017,at_average,0,1
-Ocusoft,2014,at_average,0,1
-Ocusoft,2015,at_average,0,1
-Ocusoft,2016,at_average,0,1
-Ocusoft,2017,at_average,0,1
+App/Novaplus,2013,below_average,-134848,2
+App/Novaplus,2014,above_average,754.8000000000002,1
+App/Novaplus,2014,below_average,-204362.6,3
+App/Novaplus,2015,above_average,1004.4999999999998,2
+App/Novaplus,2015,below_average,-499201.1,6
+App/Novaplus,2016,above_average,4681.2,2
+App/Novaplus,2016,below_average,-1288102.28,6
+App/Novaplus,2017,above_average,8065.92,2
+App/Novaplus,2017,below_average,-1127541.36,6
 Xenoport/Arbor,2013,at_average,0,1
 Xenoport/Arbor,2014,at_average,0,1
 Xenoport/Arbor,2015,at_average,0,1
 Xenoport/Arbor,2016,at_average,0,1
 Xenoport/Arbor,2017,at_average,0,1
-Rhodes Pharmace,2013,above_average,656542.799999999,1
-Rhodes Pharmace,2013,below_average,-475534.80000000546,2
-Rhodes Pharmace,2014,above_average,1031931.1999999846,3
-Rhodes Pharmace,2014,below_average,-252926.99999999997,2
-Rhodes Pharmace,2015,above_average,2544419.7,2
-Rhodes Pharmace,2015,below_average,-3080882,3
-Rhodes Pharmace,2016,below_average,-8971278.000000002,5
-Rhodes Pharmace,2017,above_average,223260.79999999978,1
-Rhodes Pharmace,2017,below_average,-17629176.100000005,5
-Tris Pharma Inc,2014,below_average,-7303.799999999845,1
-Tris Pharma Inc,2015,above_average,285962.7999999979,2
-Tris Pharma Inc,2016,above_average,323215.2,1
-Tris Pharma Inc,2016,below_average,-89753.10000000127,1
-Tris Pharma Inc,2017,above_average,395171.1,3
-Tris Pharma Inc,2017,below_average,-320723.10000000073,1
-"Cmp Pharma, Inc",2013,above_average,131393.2,2
-"Cmp Pharma, Inc",2013,at_average,0,1
-"Cmp Pharma, Inc",2014,above_average,97955.3,2
-"Cmp Pharma, Inc",2014,at_average,0,1
-"Cmp Pharma, Inc",2015,above_average,42596.15000000001,2
-"Cmp Pharma, Inc",2015,at_average,0,1
-"Cmp Pharma, Inc",2016,above_average,83994.60999999996,2
-"Cmp Pharma, Inc",2016,at_average,0,1
-"Cmp Pharma, Inc",2017,above_average,135171.44000000003,2
-"Cmp Pharma, Inc",2017,at_average,0,2
+Vistapharm,2013,above_average,4479411.5,7
+Vistapharm,2013,below_average,-394.1000000000056,1
+Vistapharm,2014,above_average,4612719.7,7
+Vistapharm,2014,below_average,-22378.5,1
+Vistapharm,2015,above_average,3920195.8000000003,7
+Vistapharm,2015,below_average,-96436.79999999994,1
+Vistapharm,2016,above_average,2391577.4,7
+Vistapharm,2016,below_average,-37391.5,1
+Vistapharm,2017,above_average,3467795.3,10
+Vistapharm,2017,below_average,-22609.2,1
 Rouses Point Ph,2013,below_average,-237732.19999999995,2
 Rouses Point Ph,2014,below_average,-546415,1
 Rouses Point Ph,2015,below_average,-411314,2
@@ -3056,15 +2615,33 @@ Ani Pharmaceuti*,2014,above_average,735802.2,1
 Ani Pharmaceuti*,2015,above_average,729985.2000000001,1
 Ani Pharmaceuti*,2016,above_average,1325226.0000000002,1
 Ani Pharmaceuti*,2017,above_average,2340256.5999999996,1
-Qualitest/Par P*,2017,above_average,4016552.8000000003,1
-Qualitest/Par P*,2017,below_average,-541717.8000000003,1
-Acella Pharmace*,2017,below_average,-61613.7,1
+Rhodes Pharmace,2013,above_average,656542.799999999,1
+Rhodes Pharmace,2013,below_average,-475534.80000000546,2
+Rhodes Pharmace,2014,above_average,1031931.1999999846,3
+Rhodes Pharmace,2014,below_average,-252926.99999999997,2
+Rhodes Pharmace,2015,above_average,2544419.7,2
+Rhodes Pharmace,2015,below_average,-3080882,3
+Rhodes Pharmace,2016,below_average,-8971278.000000002,5
+Rhodes Pharmace,2017,above_average,223260.79999999978,1
+Rhodes Pharmace,2017,below_average,-17629176.100000005,5
+County Line Pha,2013,at_average,0,1
+County Line Pha,2013,below_average,-432792,1
+County Line Pha,2014,above_average,211603.49999999985,1
+County Line Pha,2014,at_average,0,1
+County Line Pha,2014,below_average,-827464,1
+County Line Pha,2015,at_average,0,2
+County Line Pha,2015,below_average,-528250.8,2
+County Line Pha,2016,above_average,88041,1
+County Line Pha,2016,at_average,0,1
+County Line Pha,2016,below_average,-2133950.6000000006,2
+County Line Pha,2017,above_average,1224706.3999999994,1
+County Line Pha,2017,at_average,0,1
+County Line Pha,2017,below_average,-6716477.2,4
 County Line Pha*,2013,below_average,-12077.799999999927,1
 County Line Pha*,2014,above_average,41548,1
 County Line Pha*,2015,above_average,39330.89999999989,1
 County Line Pha*,2016,above_average,55630,1
 County Line Pha*,2017,above_average,27671.199999999903,1
-Kmr Pharmaceuti*,2017,below_average,-3855.5999999999995,1
 Patrin Pharma,2013,below_average,-5667.399999999996,1
 Patrin Pharma,2014,below_average,-5388.199999999997,1
 Patrin Pharma,2015,above_average,864.8999999999986,1
@@ -3092,7 +2669,6 @@ Polygen Pharmac,2014,below_average,-45532.380000000005,2
 Polygen Pharmac,2015,below_average,-16569.229999999996,2
 Polygen Pharmac,2016,below_average,-8092.26,2
 Polygen Pharmac,2017,below_average,-4273.240000000002,2
-Ariad/Takeda,2017,at_average,0,1
 "Pharmacyclics,",2013,at_average,0,1
 "Pharmacyclics,",2014,at_average,0,1
 "Pharmacyclics,",2015,at_average,0,1
@@ -3123,9 +2699,6 @@ Exel Int'L Inc.,2014,at_average,0,1
 Exel Int'L Inc.,2015,at_average,0,1
 Exel Int'L Inc.,2016,at_average,0,1
 Exel Int'L Inc.,2017,at_average,0,1
-American Sales,2015,below_average,-12099.799999999997,3
-American Sales,2016,below_average,-21310.899999999998,3
-American Sales,2017,below_average,-24003,3
 Bd Medical Surg,2013,above_average,15707.999999999998,2
 Bd Medical Surg,2013,at_average,0,2
 Bd Medical Surg,2013,below_average,-3140.1000000000195,2
@@ -3141,6 +2714,22 @@ Bd Medical Surg,2016,below_average,-2019.600000000005,2
 Bd Medical Surg,2017,above_average,41548,3
 Bd Medical Surg,2017,at_average,0,2
 Bd Medical Surg,2017,below_average,-1311.5999999999954,2
+Ultimed Inc,2013,at_average,0,7
+Ultimed Inc,2013,below_average,-1210088.4999999998,3
+Ultimed Inc,2014,at_average,0,7
+Ultimed Inc,2014,below_average,-362960.3999999999,3
+Ultimed Inc,2015,at_average,0,7
+Ultimed Inc,2015,below_average,-403831.1999999998,3
+Ultimed Inc,2016,at_average,0,7
+Ultimed Inc,2016,below_average,-317258,3
+Ultimed Inc,2017,above_average,58.20000000000005,1
+Ultimed Inc,2017,at_average,0,10
+Ultimed Inc,2017,below_average,-450192,3
+Wal-Mart Stores,2013,below_average,-2393641.8000000003,3
+Wal-Mart Stores,2014,below_average,-2593556.28,4
+Wal-Mart Stores,2015,below_average,-2777069.61,4
+Wal-Mart Stores,2016,below_average,-2592947.2,4
+Wal-Mart Stores,2017,below_average,-2293942.2499999995,4
 Boca Medical,2013,at_average,0,1
 Boca Medical,2013,below_average,-2713.2000000000007,1
 Boca Medical,2014,at_average,0,1
@@ -3161,7 +2750,6 @@ Rite Aid-Bd,2014,below_average,-39258.3,2
 Rite Aid-Bd,2015,below_average,-29898.699999999997,2
 Rite Aid-Bd,2016,below_average,-23730,2
 Rite Aid-Bd,2017,below_average,-19056.999999999996,2
-Univec,2017,below_average,-1090.1999999999998,1
 Med.Plastic Dev,2013,at_average,0,2
 Med.Plastic Dev,2014,at_average,0,2
 Med.Plastic Dev,2015,at_average,0,2
@@ -3172,10 +2760,16 @@ Merck Sharp & D*,2014,at_average,0,2
 Merck Sharp & D*,2015,at_average,0,2
 Merck Sharp & D*,2016,at_average,0,2
 Merck Sharp & D*,2017,at_average,0,2
-Areva Pharmaceu,2014,below_average,-29053.5,1
-Areva Pharmaceu,2015,below_average,-13827.6,1
-Areva Pharmaceu,2016,below_average,-58870,1
-Areva Pharmaceu,2017,below_average,-31119,1
+"Cmp Pharma, Inc",2013,above_average,131393.2,2
+"Cmp Pharma, Inc",2013,at_average,0,1
+"Cmp Pharma, Inc",2014,above_average,97955.3,2
+"Cmp Pharma, Inc",2014,at_average,0,1
+"Cmp Pharma, Inc",2015,above_average,42596.15000000001,2
+"Cmp Pharma, Inc",2015,at_average,0,1
+"Cmp Pharma, Inc",2016,above_average,83994.60999999996,2
+"Cmp Pharma, Inc",2016,at_average,0,1
+"Cmp Pharma, Inc",2017,above_average,135171.44000000003,2
+"Cmp Pharma, Inc",2017,at_average,0,2
 Valneva,2013,at_average,0,1
 Valneva,2014,at_average,0,1
 Valneva,2015,at_average,0,1
@@ -3201,12 +2795,6 @@ Dyax Corp./Shir,2014,at_average,0,1
 Dyax Corp./Shir,2015,at_average,0,1
 Dyax Corp./Shir,2016,at_average,0,1
 Dyax Corp./Shir,2017,at_average,0,1
-Vertex Pharmace,2015,at_average,0,2
-Vertex Pharmace,2016,at_average,0,2
-Vertex Pharmace,2017,at_average,0,2
-Pharmaderm/Sand,2015,at_average,0,1
-Pharmaderm/Sand,2016,at_average,0,1
-Pharmaderm/Sand,2017,at_average,0,2
 Taro Pharm USA*,2013,below_average,-2835027.5999999996,3
 Taro Pharm USA*,2014,above_average,2573866,2
 Taro Pharm USA*,2014,below_average,-1820807.9999999998,1
@@ -3216,12 +2804,6 @@ Taro Pharm USA*,2016,above_average,14604947.599999998,2
 Taro Pharm USA*,2016,below_average,-1492471.1999999995,1
 Taro Pharm USA*,2017,above_average,16928322.799999997,2
 Taro Pharm USA*,2017,below_average,-1706041.0000000002,1
-Tolmar Inc.,2017,below_average,-475193.50000000006,1
-App/Premierpro*,2017,below_average,-15067.800000000001,1
-Sagent Pharmace*,2014,below_average,-288.20000000000005,1
-Sagent Pharmace*,2015,below_average,-10067.2,1
-Sagent Pharmace*,2016,below_average,-38176.69,1
-Sagent Pharmace*,2017,below_average,-29642.400000000005,1
 Sobi-Swedish Or,2013,at_average,0,1
 Sobi-Swedish Or,2014,at_average,0,1
 Sobi-Swedish Or,2015,at_average,0,1
@@ -3237,10 +2819,6 @@ Cumberland Phar,2014,at_average,0,2
 Cumberland Phar,2015,at_average,0,2
 Cumberland Phar,2016,at_average,0,2
 Cumberland Phar,2017,at_average,0,2
-Crealta Pharma/,2014,at_average,0,1
-Crealta Pharma/,2015,at_average,0,1
-Crealta Pharma/,2016,at_average,0,1
-Crealta Pharma/,2017,at_average,0,2
 Biomarin Pharma,2013,at_average,0,1
 Biomarin Pharma,2014,at_average,0,1
 Biomarin Pharma,2015,at_average,0,1
@@ -3261,27 +2839,32 @@ Aspen/Prasco La,2014,at_average,0,2
 Aspen/Prasco La,2015,at_average,0,2
 Aspen/Prasco La,2016,at_average,0,2
 Aspen/Prasco La,2017,at_average,0,2
-Sanofi/Partner,2017,at_average,0,1
 Akorn Inc.*,2013,above_average,931190.3999999999,1
 Akorn Inc.*,2014,above_average,766785.5,1
 Akorn Inc.*,2015,above_average,483643.8,1
 Akorn Inc.*,2016,above_average,389807.2,1
 Akorn Inc.*,2017,above_average,416095.5,1
-Sagent/Novaplus,2017,below_average,-1182.5,1
-Sentynl Therapu,2015,at_average,0,1
-Sentynl Therapu,2016,at_average,0,1
-Sentynl Therapu,2017,at_average,0,1
 Dusa/Sun Pharma,2013,at_average,0,1
 Dusa/Sun Pharma,2014,at_average,0,1
 Dusa/Sun Pharma,2015,at_average,0,1
 Dusa/Sun Pharma,2016,at_average,0,1
 Dusa/Sun Pharma,2017,at_average,0,1
-Teva/Novaplus,2017,below_average,-123009,1
 International M*,2013,above_average,204477.1,1
 International M*,2014,above_average,232377.6,1
 International M*,2015,above_average,200998.6,1
 International M*,2016,above_average,245912.7,1
 International M*,2017,above_average,229882.5,1
+Puretek Corpora,2013,above_average,25276.2,1
+Puretek Corpora,2013,below_average,-41510.5,1
+Puretek Corpora,2014,above_average,6581.9,1
+Puretek Corpora,2014,below_average,-32562.2,1
+Puretek Corpora,2015,above_average,12614.400000000001,1
+Puretek Corpora,2015,below_average,-32987.5,1
+Puretek Corpora,2016,above_average,7925.000000000001,1
+Puretek Corpora,2016,below_average,-3270.3999999999996,1
+Puretek Corpora,2017,above_average,190794.3,2
+Puretek Corpora,2017,at_average,0,1
+Puretek Corpora,2017,below_average,-2981.2199999999993,2
 Medtronic/Saol,2013,at_average,0,1
 Medtronic/Saol,2014,at_average,0,1
 Medtronic/Saol,2015,at_average,0,1
@@ -3297,9 +2880,6 @@ West-Ward/Mylan,2014,below_average,-1766374.99,2
 West-Ward/Mylan,2015,below_average,-1330599.1800000006,2
 West-Ward/Mylan,2016,below_average,-1732315.5899999982,2
 West-Ward/Mylan,2017,below_average,-4486342.26,2
-Taiho Oncology,2015,at_average,0,1
-Taiho Oncology,2016,at_average,0,1
-Taiho Oncology,2017,at_average,0,1
 International M,2013,above_average,399.59,1
 International M,2013,at_average,0,2
 International M,2014,above_average,1018.52,2
@@ -3309,20 +2889,17 @@ International M,2015,at_average,0,1
 International M,2016,above_average,17387.75,2
 International M,2016,at_average,0,1
 International M,2017,above_average,199677.04000000004,3
-Sebela Pharmace,2015,at_average,0,1
-Sebela Pharmace,2016,at_average,0,1
-Sebela Pharmace,2017,at_average,0,2
+Vertical Pharm,2013,at_average,0,2
+Vertical Pharm,2014,at_average,0,4
+Vertical Pharm,2015,at_average,0,4
+Vertical Pharm,2016,at_average,0,4
+Vertical Pharm,2017,above_average,6034199.399999999,1
+Vertical Pharm,2017,at_average,0,7
 Sanofi/Premierp,2013,below_average,-10005,1
 Sanofi/Premierp,2014,below_average,-153750,1
 Sanofi/Premierp,2015,below_average,-57128,1
 Sanofi/Premierp,2016,below_average,-39904,1
 Sanofi/Premierp,2017,below_average,-43282,1
-Sancilio & Comp,2013,at_average,0,2
-Sancilio & Comp,2014,at_average,0,2
-Sancilio & Comp,2015,at_average,0,2
-Sancilio & Comp,2016,at_average,0,2
-Sancilio & Comp,2017,above_average,216.80000000000018,1
-Sancilio & Comp,2017,at_average,0,4
 Almatica Pharma,2013,at_average,0,2
 Almatica Pharma,2014,at_average,0,2
 Almatica Pharma,2015,at_average,0,7
@@ -3333,7 +2910,6 @@ Nephro-Tech,2014,at_average,0,1
 Nephro-Tech,2015,at_average,0,1
 Nephro-Tech,2016,at_average,0,1
 Nephro-Tech,2017,at_average,0,1
-Amag Pharmaceut,2017,below_average,-178800,1
 Lumara Health/A,2013,at_average,0,1
 Lumara Health/A,2014,at_average,0,1
 Lumara Health/A,2015,at_average,0,1
@@ -3344,49 +2920,41 @@ Delta Hi-Tech,2014,at_average,0,7
 Delta Hi-Tech,2015,at_average,0,7
 Delta Hi-Tech,2016,at_average,0,7
 Delta Hi-Tech,2017,at_average,0,7
-Amneal Bioscien,2017,below_average,-295244,1
-Upstate Pharma,2015,at_average,0,1
-Upstate Pharma,2015,below_average,-14095.199999999963,1
-Upstate Pharma,2016,at_average,0,1
-Upstate Pharma,2016,below_average,-3971.999999999986,1
-Upstate Pharma,2017,at_average,0,1
-Upstate Pharma,2017,below_average,-15698,1
-Aphena Pharma S,2013,above_average,1672.8000000000002,1
-Aphena Pharma S,2015,above_average,2184,1
-Aphena Pharma S,2016,above_average,2643.2,1
-Aphena Pharma S,2017,above_average,1309.0000000000002,1
-Aphena Pharma S,2017,below_average,-52.38,1
-Pd-Rx Pharm,2017,above_average,29.5,1
-Nivagen Pharmac,2017,at_average,0,1
-Nivagen Pharmac,2017,below_average,-1444793.7,1
+Novartis/GSK,2013,at_average,0,1
+Novartis/GSK,2014,at_average,0,1
+Novartis/GSK,2015,at_average,0,2
+Novartis/GSK,2016,at_average,0,2
+Novartis/GSK,2017,at_average,0,3
+Nostrum Laborat,2013,below_average,-76467.9,1
+Nostrum Laborat,2014,below_average,-23484.839999999997,1
+Nostrum Laborat,2015,below_average,-7621.5199999999995,1
+Nostrum Laborat,2016,below_average,-5271.54,1
+Nostrum Laborat,2017,above_average,325315.00000000023,4
+Nostrum Laborat,2017,below_average,-210470.54,3
+Edenbridge Phar,2013,above_average,460616,1
+Edenbridge Phar,2013,below_average,-42461.99999999998,1
+Edenbridge Phar,2014,above_average,343224,1
+Edenbridge Phar,2014,at_average,0,1
+Edenbridge Phar,2014,below_average,-24625,1
+Edenbridge Phar,2015,above_average,772268.6,2
+Edenbridge Phar,2015,at_average,0,1
+Edenbridge Phar,2015,below_average,-47637.00000000002,1
+Edenbridge Phar,2016,above_average,2229574.200000001,2
+Edenbridge Phar,2016,at_average,0,1
+Edenbridge Phar,2016,below_average,-32175,1
+Edenbridge Phar,2017,above_average,1984525.000000001,4
+Edenbridge Phar,2017,at_average,0,1
+Edenbridge Phar,2017,below_average,-48581.60000000001,2
 Prasco Labs*,2013,below_average,-3840435.8,1
 Prasco Labs*,2014,below_average,-3127859,1
 Prasco Labs*,2015,above_average,1394820,1
 Prasco Labs*,2016,above_average,3370052,1
 Prasco Labs*,2017,above_average,10428771.6,1
-Prugen Pharmace,2013,below_average,-2289.2000000000007,1
-Prugen Pharmace,2014,below_average,-4745.000000000001,1
-Prugen Pharmace,2015,above_average,30303.6,2
-Prugen Pharmace,2016,above_average,23472.600000000002,2
-Prugen Pharmace,2017,above_average,27329.7,2
-Prugen Pharmace,2017,below_average,-7956,1
-Zylera,2014,at_average,0,1
-Zylera,2015,at_average,0,1
-Zylera,2016,at_average,0,1
-Zylera,2017,at_average,0,1
-Medicines Comp.,2017,at_average,0,2
 Ranbaxy Pharma,2013,above_average,78635.19999999992,1
 Ranbaxy Pharma,2014,below_average,-307659.5000000001,1
 Ranbaxy Pharma,2015,below_average,-518372.3999999998,1
 Ranbaxy Pharma,2016,below_average,-392975.99999999977,1
 Ranbaxy Pharma,2017,below_average,-47274,1
-"Hikma Americas,",2017,at_average,0,1
-Sherwood,2013,above_average,62531,3
-Sherwood,2014,above_average,66482.39999999997,3
-Sherwood,2015,above_average,58102.20000000003,3
-Sherwood,2016,above_average,40719.79999999992,3
-Sherwood,2017,above_average,24871.200000000023,3
-Sherwood,2017,at_average,0,1
 Can-Am/Access C,2013,above_average,158932.80000000002,3
 Can-Am/Access C,2013,below_average,-59779.500000000015,3
 Can-Am/Access C,2014,above_average,201029.39999999994,3
@@ -3397,15 +2965,18 @@ Can-Am/Access C,2016,above_average,120469.79999999996,3
 Can-Am/Access C,2016,below_average,-42484.8,3
 Can-Am/Access C,2017,above_average,98049.00000000001,3
 Can-Am/Access C,2017,below_average,-23634.600000000006,3
-Biomes Pharmace,2017,below_average,-3570.6400000000003,2
-Astellas/Novapl,2015,below_average,-19448,1
-Astellas/Novapl,2016,below_average,-580,1
-Astellas/Novapl,2017,below_average,-27000,1
-Solstice Neuros,2014,at_average,0,1
-Solstice Neuros,2015,at_average,0,1
-Solstice Neuros,2016,at_average,0,1
-Solstice Neuros,2017,at_average,0,1
-Napo Pharmaceut,2017,at_average,0,1
+Sherwood,2013,above_average,62531,3
+Sherwood,2014,above_average,66482.39999999997,3
+Sherwood,2015,above_average,58102.20000000003,3
+Sherwood,2016,above_average,40719.79999999992,3
+Sherwood,2017,above_average,24871.200000000023,3
+Sherwood,2017,at_average,0,1
+Sancilio & Comp,2013,at_average,0,2
+Sancilio & Comp,2014,at_average,0,2
+Sancilio & Comp,2015,at_average,0,2
+Sancilio & Comp,2016,at_average,0,2
+Sancilio & Comp,2017,above_average,216.80000000000018,1
+Sancilio & Comp,2017,at_average,0,4
 Teva USA/Impax,2013,above_average,201420,1
 Teva USA/Impax,2014,above_average,183872,1
 Teva USA/Impax,2015,above_average,168806.6,1
@@ -3416,30 +2987,16 @@ Merz/Sebela Pha,2014,at_average,0,2
 Merz/Sebela Pha,2015,at_average,0,2
 Merz/Sebela Pha,2016,at_average,0,2
 Merz/Sebela Pha,2017,at_average,0,2
-Palmetto Pharma,2016,above_average,574185.92,1
-Palmetto Pharma,2017,above_average,1096320.5599999998,1
-Adapt Pharma In,2017,at_average,0,1
-Endo/Aytu Biosc,2015,at_average,0,1
-Endo/Aytu Biosc,2016,at_average,0,1
-Endo/Aytu Biosc,2017,at_average,0,1
 Women's Choice,2013,at_average,0,2
 Women's Choice,2014,at_average,0,2
 Women's Choice,2015,at_average,0,2
 Women's Choice,2016,at_average,0,2
 Women's Choice,2017,at_average,0,2
-Millennium Phar,2013,at_average,0,1
-Millennium Phar,2014,at_average,0,1
-Millennium Phar,2015,at_average,0,2
-Millennium Phar,2016,at_average,0,2
-Millennium Phar,2017,at_average,0,2
 Hercon,2013,below_average,-499126.80000000016,1
 Hercon,2014,below_average,-613939.2000000001,1
 Hercon,2015,below_average,-469154.0999999998,1
 Hercon,2016,below_average,-476063.9999999999,1
 Hercon,2017,below_average,-403151.40000000014,1
-Trimarc Laborat,2015,below_average,-42444,1
-Trimarc Laborat,2016,below_average,-71571.2,1
-Trimarc Laborat,2017,above_average,4106.700000000001,1
 Wilshire/Jackso,2013,above_average,160472,1
 Wilshire/Jackso,2014,above_average,227280,1
 Wilshire/Jackso,2015,above_average,183156,1
@@ -3455,17 +3012,11 @@ Akrimax/Mist Ph,2014,at_average,0,1
 Akrimax/Mist Ph,2015,at_average,0,1
 Akrimax/Mist Ph,2016,at_average,0,1
 Akrimax/Mist Ph,2017,at_average,0,2
-Lundbeck Inc.,2013,at_average,0,3
-Lundbeck Inc.,2014,at_average,0,4
-Lundbeck Inc.,2015,at_average,0,4
-Lundbeck Inc.,2016,at_average,0,4
-Lundbeck Inc.,2017,at_average,0,4
 Novo Nordisk-Wa,2013,below_average,-22576109.099999998,3
 Novo Nordisk-Wa,2014,below_average,-34621731.7,3
 Novo Nordisk-Wa,2015,below_average,-52032963.8,3
 Novo Nordisk-Wa,2016,below_average,-54443885,3
 Novo Nordisk-Wa,2017,below_average,-65757217.6,3
-Depomed/Collegi,2017,above_average,8505,1
 Janssen Pharmac,2013,at_average,0,2
 Janssen Pharmac,2014,at_average,0,2
 Janssen Pharmac,2015,at_average,0,2
@@ -3476,27 +3027,6 @@ Avanir Pharmace,2014,at_average,0,1
 Avanir Pharmace,2015,at_average,0,1
 Avanir Pharmace,2016,at_average,0,1
 Avanir Pharmace,2017,at_average,0,2
-Acadia Pharmace,2017,at_average,0,1
-Lehigh Valley T,2013,above_average,11439.5,1
-Lehigh Valley T,2014,above_average,279844.5,1
-Lehigh Valley T,2014,below_average,-226319.99999999985,1
-Lehigh Valley T,2015,above_average,552890.3999999999,1
-Lehigh Valley T,2015,below_average,-442448.9999999998,1
-Lehigh Valley T,2016,above_average,586680,1
-Lehigh Valley T,2016,below_average,-11718.3,1
-Lehigh Valley T,2017,above_average,600657.2000000001,1
-Lehigh Valley T,2017,below_average,-152,1
-Pharmics,2017,at_average,0,1
-Intercept Pharm,2017,at_average,0,1
-Octapharma USA,2014,at_average,0,1
-Octapharma USA,2015,at_average,0,1
-Octapharma USA,2016,at_average,0,1
-Octapharma USA,2017,at_average,0,1
-Novartis/Sun Ph,2017,at_average,0,1
-Altaire Pharm,2014,below_average,-1508.6999999999998,1
-Altaire Pharm,2015,below_average,-10265.020000000002,1
-Altaire Pharm,2016,below_average,-10043.160000000002,1
-Altaire Pharm,2017,below_average,-14573.28,1
 Valeant*,2013,below_average,-44857.79999999984,1
 Valeant*,2014,at_average,0,1
 Valeant*,2014,below_average,-69989.79999999976,1
@@ -3506,33 +3036,40 @@ Valeant*,2016,above_average,3608969.0999999996,1
 Valeant*,2016,at_average,0,1
 Valeant*,2017,above_average,4532341.600000001,1
 Valeant*,2017,at_average,0,1
-Insulet Corpora,2017,at_average,0,1
+Aphena Pharma S,2013,above_average,1672.8000000000002,1
+Aphena Pharma S,2015,above_average,2184,1
+Aphena Pharma S,2016,above_average,2643.2,1
+Aphena Pharma S,2017,above_average,1309.0000000000002,1
+Aphena Pharma S,2017,below_average,-52.38,1
+Lundbeck Inc.,2013,at_average,0,3
+Lundbeck Inc.,2014,at_average,0,4
+Lundbeck Inc.,2015,at_average,0,4
+Lundbeck Inc.,2016,at_average,0,4
+Lundbeck Inc.,2017,at_average,0,4
 Actelion Pharma,2013,at_average,0,4
 Actelion Pharma,2014,at_average,0,4
 Actelion Pharma,2015,at_average,0,4
 Actelion Pharma,2016,at_average,0,4
 Actelion Pharma,2017,at_average,0,6
-Greer Laborator,2017,at_average,0,1
 Gate Pharm,2013,at_average,0,1
 Gate Pharm,2014,at_average,0,1
 Gate Pharm,2015,at_average,0,1
 Gate Pharm,2016,at_average,0,1
 Gate Pharm,2017,at_average,0,1
-Midatech Pharma,2017,at_average,0,1
-United Therap,2013,at_average,0,2
-United Therap,2014,at_average,0,3
-United Therap,2015,at_average,0,3
-United Therap,2016,at_average,0,3
-United Therap,2017,at_average,0,3
-Antares Pharma,2014,at_average,0,1
-Antares Pharma,2015,at_average,0,1
-Antares Pharma,2016,at_average,0,1
-Antares Pharma,2017,at_average,0,1
 Supernus Pharma,2013,at_average,0,2
 Supernus Pharma,2014,at_average,0,2
 Supernus Pharma,2015,at_average,0,2
 Supernus Pharma,2016,at_average,0,2
 Supernus Pharma,2017,at_average,0,2
+Lehigh Valley T,2013,above_average,11439.5,1
+Lehigh Valley T,2014,above_average,279844.5,1
+Lehigh Valley T,2014,below_average,-226319.99999999985,1
+Lehigh Valley T,2015,above_average,552890.3999999999,1
+Lehigh Valley T,2015,below_average,-442448.9999999998,1
+Lehigh Valley T,2016,above_average,586680,1
+Lehigh Valley T,2016,below_average,-11718.3,1
+Lehigh Valley T,2017,above_average,600657.2000000001,1
+Lehigh Valley T,2017,below_average,-152,1
 Affordable Phar,2013,above_average,75537.70000000003,1
 Affordable Phar,2013,at_average,0,2
 Affordable Phar,2014,above_average,635028.2000000001,1
@@ -3558,18 +3095,24 @@ Colgate Oral Ph,2014,at_average,0,3
 Colgate Oral Ph,2015,at_average,0,3
 Colgate Oral Ph,2016,at_average,0,3
 Colgate Oral Ph,2017,at_average,0,6
+Renaissance/Myl,2013,above_average,58590,1
+Renaissance/Myl,2014,above_average,1455429,3
+Renaissance/Myl,2014,at_average,0,1
+Renaissance/Myl,2014,below_average,-61993.19999999995,1
+Renaissance/Myl,2015,above_average,4427980.6,4
+Renaissance/Myl,2015,at_average,0,2
+Renaissance/Myl,2015,below_average,-97321,1
+Renaissance/Myl,2016,above_average,3508025.8,4
+Renaissance/Myl,2016,at_average,0,2
+Renaissance/Myl,2016,below_average,-241356,1
+Renaissance/Myl,2017,above_average,212391117.3,5
+Renaissance/Myl,2017,at_average,0,1
+Renaissance/Myl,2017,below_average,-160433.20000000004,2
 Digestive Care,2013,at_average,0,1
 Digestive Care,2014,at_average,0,1
 Digestive Care,2015,at_average,0,1
 Digestive Care,2016,at_average,0,1
 Digestive Care,2017,at_average,0,1
-Burel Pharmaceu,2017,below_average,-1637.7000000000003,1
-Eci Pharmaceuti,2014,above_average,47428,2
-Eci Pharmaceuti,2015,above_average,95627.0000000004,1
-Eci Pharmaceuti,2015,below_average,-719781.6,2
-Eci Pharmaceuti,2016,above_average,179894.40000000008,2
-Eci Pharmaceuti,2016,below_average,-6053.999999999871,1
-Eci Pharmaceuti,2017,above_average,598123.4000000003,3
 Nationwide Labo,2013,at_average,0,2
 Nationwide Labo,2014,above_average,9232,1
 Nationwide Labo,2014,below_average,-46893.2,1
@@ -3578,30 +3121,25 @@ Nationwide Labo,2015,below_average,-148486.8,1
 Nationwide Labo,2016,above_average,889,1
 Nationwide Labo,2016,below_average,-57919.999999999985,1
 Nationwide Labo,2017,below_average,-17423.159999999996,3
-Winder Laborato,2017,below_average,-17738.39999999999,1
-Valeant/Paragon,2017,above_average,3559.9999999999995,1
-Corepharma/Impa,2017,above_average,42159.60000000001,1
 Fresenius Med,2013,at_average,0,1
 Fresenius Med,2014,at_average,0,2
 Fresenius Med,2015,at_average,0,2
 Fresenius Med,2016,at_average,0,2
 Fresenius Med,2017,at_average,0,2
+"Biocomp Pharma,",2013,at_average,0,2
+"Biocomp Pharma,",2014,at_average,0,2
+"Biocomp Pharma,",2014,below_average,-192137.2,2
+"Biocomp Pharma,",2015,at_average,0,2
+"Biocomp Pharma,",2015,below_average,-401087.2,3
+"Biocomp Pharma,",2016,at_average,0,2
+"Biocomp Pharma,",2016,below_average,-442646,3
+"Biocomp Pharma,",2017,at_average,0,3
+"Biocomp Pharma,",2017,below_average,-14141.200000000004,2
 Abbott Diabetes,2013,at_average,0,1
 Abbott Diabetes,2014,at_average,0,1
 Abbott Diabetes,2015,at_average,0,1
 Abbott Diabetes,2016,at_average,0,1
 Abbott Diabetes,2017,at_average,0,1
-Wyeth/Pfizer*,2017,at_average,0,1
-Nnodum Corp,2013,at_average,0,1
-Nnodum Corp,2014,at_average,0,1
-Nnodum Corp,2015,at_average,0,1
-Nnodum Corp,2016,at_average,0,1
-Nnodum Corp,2017,at_average,0,1
-Nnodum Corp,2017,below_average,-15061.199999999999,1
-Avion Pharmaceu,2015,at_average,0,1
-Avion Pharmaceu,2016,at_average,0,1
-Avion Pharmaceu,2017,at_average,0,5
-Akrimax Pharmac,2017,at_average,0,1
 Teva Specialty,2013,at_average,0,3
 Teva Specialty,2014,at_average,0,4
 Teva Specialty,2015,at_average,0,6
@@ -3637,51 +3175,53 @@ Dista Labs,2014,at_average,0,1
 Dista Labs,2015,at_average,0,1
 Dista Labs,2016,at_average,0,1
 Dista Labs,2017,at_average,0,1
-"Medac Pharma, I",2015,at_average,0,1
-"Medac Pharma, I",2016,at_average,0,1
-"Medac Pharma, I",2017,at_average,0,1
 "Emd Serono, Inc",2013,at_average,0,4
 "Emd Serono, Inc",2014,at_average,0,4
 "Emd Serono, Inc",2015,at_average,0,4
 "Emd Serono, Inc",2016,at_average,0,4
 "Emd Serono, Inc",2017,at_average,0,4
-Novotec Pharma,2017,at_average,0,1
 Salix Pharmaceu*,2013,at_average,0,1
 Salix Pharmaceu*,2014,at_average,0,1
 Salix Pharmaceu*,2015,at_average,0,1
 Salix Pharmaceu*,2016,at_average,0,1
 Salix Pharmaceu*,2017,at_average,0,1
-Cypress Pharm.,2013,at_average,0,1
-Cypress Pharm.,2014,at_average,0,1
-Cypress Pharm.,2015,at_average,0,1
-Cypress Pharm.,2016,at_average,0,1
-Cypress Pharm.,2017,at_average,0,4
+Janssen Biotech,2013,at_average,0,4
+Janssen Biotech,2014,at_average,0,4
+Janssen Biotech,2015,at_average,0,4
+Janssen Biotech,2016,at_average,0,4
+Janssen Biotech,2017,at_average,0,5
+United Therap,2013,at_average,0,2
+United Therap,2014,at_average,0,3
+United Therap,2015,at_average,0,3
+United Therap,2016,at_average,0,3
+United Therap,2017,at_average,0,3
 Guardian Chem.,2013,at_average,0,1
 Guardian Chem.,2014,at_average,0,1
 Guardian Chem.,2015,at_average,0,1
 Guardian Chem.,2016,at_average,0,1
 Guardian Chem.,2017,at_average,0,1
+Cypress Pharm.,2013,at_average,0,1
+Cypress Pharm.,2014,at_average,0,1
+Cypress Pharm.,2015,at_average,0,1
+Cypress Pharm.,2016,at_average,0,1
+Cypress Pharm.,2017,at_average,0,4
+Nnodum Corp,2013,at_average,0,1
+Nnodum Corp,2014,at_average,0,1
+Nnodum Corp,2015,at_average,0,1
+Nnodum Corp,2016,at_average,0,1
+Nnodum Corp,2017,at_average,0,1
+Nnodum Corp,2017,below_average,-15061.199999999999,1
 Kadmon Pharmace,2013,at_average,0,2
 Kadmon Pharmace,2014,at_average,0,2
 Kadmon Pharmace,2015,at_average,0,2
 Kadmon Pharmace,2016,at_average,0,2
 Kadmon Pharmace,2017,at_average,0,2
-Actavis/Greenst,2013,below_average,-485718.7999999995,1
-Actavis/Greenst,2014,below_average,-1546109.7999999993,2
-Actavis/Greenst,2015,above_average,299739,1
-Actavis/Greenst,2015,below_average,-1959545.6000000003,2
-Actavis/Greenst,2016,above_average,434322,1
-Actavis/Greenst,2016,below_average,-1131137,2
-Actavis/Greenst,2017,above_average,209620,1
-Actavis/Greenst,2017,below_average,-693015,2
-Impax Pharmaceu,2013,at_average,0,1
-Impax Pharmaceu,2014,at_average,0,1
-Impax Pharmaceu,2015,at_average,0,2
-Impax Pharmaceu,2016,at_average,0,2
-Impax Pharmaceu,2017,at_average,0,2
-"Andapharm, LLC",2015,below_average,-36888,1
-"Andapharm, LLC",2016,below_average,-1156,1
-"Andapharm, LLC",2017,below_average,-11900,1
+Prugen Pharmace,2013,below_average,-2289.2000000000007,1
+Prugen Pharmace,2014,below_average,-4745.000000000001,1
+Prugen Pharmace,2015,above_average,30303.6,2
+Prugen Pharmace,2016,above_average,23472.600000000002,2
+Prugen Pharmace,2017,above_average,27329.7,2
+Prugen Pharmace,2017,below_average,-7956,1
 Novartis*,2013,at_average,0,1
 Novartis*,2014,at_average,0,1
 Novartis*,2015,at_average,0,1
@@ -3692,10 +3232,6 @@ Healthpoint Med,2014,at_average,0,1
 Healthpoint Med,2015,at_average,0,1
 Healthpoint Med,2016,at_average,0,1
 Healthpoint Med,2017,below_average,-580277,1
-"Exeltis USA, In",2014,at_average,0,3
-"Exeltis USA, In",2015,at_average,0,3
-"Exeltis USA, In",2016,at_average,0,3
-"Exeltis USA, In",2017,at_average,0,5
 Rochester Pharm,2013,above_average,261641.4,1
 Rochester Pharm,2014,above_average,314906.3,1
 Rochester Pharm,2015,above_average,244387.5,1
@@ -3721,7 +3257,6 @@ Alexion Pharmac,2014,at_average,0,1
 Alexion Pharmac,2015,at_average,0,1
 Alexion Pharmac,2016,at_average,0,1
 Alexion Pharmac,2017,at_average,0,2
-Oncogenerix/Mid,2017,at_average,0,1
 Pfizer US Pharm*,2013,at_average,0,1
 Pfizer US Pharm*,2014,above_average,5515,1
 Pfizer US Pharm*,2015,above_average,5445,1
@@ -3737,7 +3272,6 @@ Stiefel/Mayne P,2014,at_average,0,1
 Stiefel/Mayne P,2015,at_average,0,1
 Stiefel/Mayne P,2016,at_average,0,1
 Stiefel/Mayne P,2017,at_average,0,1
-Aprecia Pharmac,2017,at_average,0,1
 "Cmp Pharma, Inc*",2013,at_average,0,1
 "Cmp Pharma, Inc*",2014,at_average,0,1
 "Cmp Pharma, Inc*",2015,at_average,0,1
@@ -3748,15 +3282,24 @@ Janssen Biotech*,2014,at_average,0,1
 Janssen Biotech*,2015,at_average,0,1
 Janssen Biotech*,2016,at_average,0,1
 Janssen Biotech*,2017,at_average,0,1
+Indivior Inc.,2013,at_average,0,1
+Indivior Inc.,2014,at_average,0,1
+Indivior Inc.,2015,at_average,0,2
+Indivior Inc.,2016,at_average,0,2
+Indivior Inc.,2017,at_average,0,2
 Insys Therapeut,2013,at_average,0,1
 Insys Therapeut,2014,at_average,0,1
 Insys Therapeut,2015,at_average,0,1
 Insys Therapeut,2016,at_average,0,1
 Insys Therapeut,2017,at_average,0,1
-Qol Medical,2014,at_average,0,1
-Qol Medical,2015,at_average,0,1
-Qol Medical,2016,at_average,0,1
-Qol Medical,2017,at_average,0,1
+Actavis/Greenst,2013,below_average,-485718.7999999995,1
+Actavis/Greenst,2014,below_average,-1546109.7999999993,2
+Actavis/Greenst,2015,above_average,299739,1
+Actavis/Greenst,2015,below_average,-1959545.6000000003,2
+Actavis/Greenst,2016,above_average,434322,1
+Actavis/Greenst,2016,below_average,-1131137,2
+Actavis/Greenst,2017,above_average,209620,1
+Actavis/Greenst,2017,below_average,-693015,2
 Vista Pharmaceu,2013,below_average,-14448.319999999972,1
 Vista Pharmaceu,2014,below_average,-27532.800000000025,1
 Vista Pharmaceu,2015,below_average,-117729.95000000007,1
@@ -3767,53 +3310,55 @@ Dr.Reddy'S Lab*,2014,below_average,-9908593.200000001,1
 Dr.Reddy'S Lab*,2015,below_average,-7785632.800000001,1
 Dr.Reddy'S Lab*,2016,below_average,-3625633.2000000016,1
 Dr.Reddy'S Lab*,2017,below_average,-8244335.000000001,1
+Lupin Pharma,2013,at_average,0,1
+Lupin Pharma,2014,at_average,0,2
+Lupin Pharma,2014,below_average,-9785,1
+Lupin Pharma,2015,at_average,0,2
+Lupin Pharma,2015,below_average,-2781,1
+Lupin Pharma,2016,at_average,0,2
+Lupin Pharma,2016,below_average,-11560,1
+Lupin Pharma,2017,at_average,0,3
+Lupin Pharma,2017,below_average,-23220,1
 Allison Medical,2013,at_average,0,5
 Allison Medical,2014,at_average,0,5
 Allison Medical,2015,at_average,0,5
 Allison Medical,2016,at_average,0,5
 Allison Medical,2017,at_average,0,5
-Galen US Incorp,2014,at_average,0,1
-Galen US Incorp,2015,at_average,0,1
-Galen US Incorp,2016,at_average,0,1
-Galen US Incorp,2017,at_average,0,1
+Caraco Pharma I,2013,at_average,0,1
+Caraco Pharma I,2014,at_average,0,2
+Caraco Pharma I,2015,at_average,0,2
+Caraco Pharma I,2016,at_average,0,2
+Caraco Pharma I,2017,at_average,0,2
+Biogen-Idec,2013,at_average,0,2
+Biogen-Idec,2014,at_average,0,3
+Biogen-Idec,2015,at_average,0,7
+Biogen-Idec,2016,at_average,0,7
+Biogen-Idec,2017,at_average,0,7
 Novartis/Noden,2013,at_average,0,2
 Novartis/Noden,2014,at_average,0,2
 Novartis/Noden,2015,at_average,0,2
 Novartis/Noden,2016,at_average,0,2
 Novartis/Noden,2017,at_average,0,2
-Int'L Ethical,2014,at_average,0,1
-Int'L Ethical,2015,at_average,0,1
-Int'L Ethical,2016,at_average,0,1
-Int'L Ethical,2017,at_average,0,1
 Terumo,2013,at_average,0,1
 Terumo,2014,at_average,0,1
 Terumo,2015,at_average,0,1
 Terumo,2016,at_average,0,1
 Terumo,2017,at_average,0,1
-Iroko Pharmaceu,2014,at_average,0,1
-Iroko Pharmaceu,2015,at_average,0,2
-Iroko Pharmaceu,2016,at_average,0,2
-Iroko Pharmaceu,2017,at_average,0,3
-X-Gen/Premierpr,2015,above_average,7520,1
-X-Gen/Premierpr,2016,above_average,432,1
-X-Gen/Premierpr,2017,above_average,621300,1
-Hill Derm/Pierr,2017,at_average,0,1
+"Retrophin, Inc.",2013,at_average,0,1
+"Retrophin, Inc.",2014,at_average,0,1
+"Retrophin, Inc.",2015,at_average,0,1
+"Retrophin, Inc.",2016,at_average,0,1
+"Retrophin, Inc.",2017,at_average,0,2
 Novartis Consum,2013,below_average,-1250489.4000000004,1
 Novartis Consum,2014,below_average,-1524560.8000000003,1
 Novartis Consum,2015,below_average,-2292112,1
 Novartis Consum,2016,below_average,-2500608,1
 Novartis Consum,2017,below_average,-456291,1
-Rouses/Perrigo,2017,below_average,-1768761,1
-Wraser Pharma,2015,at_average,0,1
-Wraser Pharma,2016,at_average,0,1
-Wraser Pharma,2017,at_average,0,1
-Medecor Pharma,2017,at_average,0,1
 Shionogi US/Cas,2013,at_average,0,1
 Shionogi US/Cas,2014,at_average,0,1
 Shionogi US/Cas,2015,at_average,0,1
 Shionogi US/Cas,2016,at_average,0,1
 Shionogi US/Cas,2017,at_average,0,1
-Carwin Associat,2017,at_average,0,1
 Nipro Diag/Triv,2013,at_average,0,3
 Nipro Diag/Triv,2014,at_average,0,3
 Nipro Diag/Triv,2015,at_average,0,3
@@ -3825,10 +3370,6 @@ Aurora Health.,2015,below_average,-8155.4000000000005,2
 Aurora Health.,2016,below_average,-7062,2
 Aurora Health.,2017,above_average,577.1999999999999,1
 Aurora Health.,2017,below_average,-1131.3000000000027,1
-Trinity Pharmac,2014,at_average,0,1
-Trinity Pharmac,2015,at_average,0,1
-Trinity Pharmac,2016,at_average,0,1
-Trinity Pharmac,2017,at_average,0,1
 Llorens Pharm,2013,at_average,0,1
 Llorens Pharm,2014,at_average,0,1
 Llorens Pharm,2015,at_average,0,1
@@ -3850,30 +3391,26 @@ Precision Dose,2014,above_average,5523,1
 Precision Dose,2015,above_average,7128,1
 Precision Dose,2016,above_average,5977.000000000001,1
 Precision Dose,2017,above_average,3695.2,1
-G.M. Pharm,2017,at_average,0,1
-Mylan Inst-Nova,2015,below_average,-1844132.4,1
-Mylan Inst-Nova,2016,below_average,-2275586,1
-Mylan Inst-Nova,2017,below_average,-110484,1
 Retractable Tec,2013,at_average,0,1
 Retractable Tec,2014,at_average,0,1
 Retractable Tec,2015,at_average,0,1
 Retractable Tec,2016,at_average,0,1
 Retractable Tec,2017,at_average,0,2
-"Tesaro, Inc.",2015,at_average,0,1
-"Tesaro, Inc.",2016,at_average,0,1
-"Tesaro, Inc.",2017,at_average,0,1
 Amarin Pharma I,2013,at_average,0,1
 Amarin Pharma I,2014,at_average,0,1
 Amarin Pharma I,2015,at_average,0,1
 Amarin Pharma I,2016,at_average,0,1
 Amarin Pharma I,2017,at_average,0,1
-"Relypsa, Inc.",2017,at_average,0,1
+Millennium Phar,2013,at_average,0,1
+Millennium Phar,2014,at_average,0,1
+Millennium Phar,2015,at_average,0,2
+Millennium Phar,2016,at_average,0,2
+Millennium Phar,2017,at_average,0,2
 Doak Derm.,2013,at_average,0,1
 Doak Derm.,2014,at_average,0,1
 Doak Derm.,2015,at_average,0,1
 Doak Derm.,2016,at_average,0,1
 Doak Derm.,2017,at_average,0,1
-Jazz/Trupharma,2017,at_average,0,1
 Alcon Labs.,2013,at_average,0,1
 Alcon Labs.,2014,at_average,0,1
 Alcon Labs.,2015,at_average,0,1
@@ -3894,30 +3431,493 @@ Paddock Labs.,2014,above_average,23358.6,1
 Paddock Labs.,2015,above_average,6227.399999999999,1
 Paddock Labs.,2016,above_average,987.2799999999999,1
 Paddock Labs.,2017,above_average,225.68000000000004,1
-Collegium Pharm,2017,at_average,0,1
-Acorda/Covis Ph,2017,at_average,0,1
-Astrazeneca/Ter,2017,at_average,0,1
+Alkermes Inc,2013,at_average,0,1
+Alkermes Inc,2014,at_average,0,1
+Alkermes Inc,2015,at_average,0,2
+Alkermes Inc,2016,at_average,0,2
+Alkermes Inc,2017,at_average,0,2
+Impax Pharmaceu,2013,at_average,0,1
+Impax Pharmaceu,2014,at_average,0,1
+Impax Pharmaceu,2015,at_average,0,2
+Impax Pharmaceu,2016,at_average,0,2
+Impax Pharmaceu,2017,at_average,0,2
 Impax Pharmaceu*,2013,at_average,0,1
 Impax Pharmaceu*,2014,at_average,0,1
 Impax Pharmaceu*,2015,at_average,0,1
 Impax Pharmaceu*,2016,at_average,0,1
 Impax Pharmaceu*,2017,at_average,0,1
+Concordia Pharm,2013,at_average,0,1
+Concordia Pharm,2014,at_average,0,1
+Concordia Pharm,2015,above_average,1218,1
+Concordia Pharm,2015,at_average,0,3
+Concordia Pharm,2016,above_average,445602,1
+Concordia Pharm,2016,at_average,0,3
+Concordia Pharm,2017,above_average,706777,3
+Concordia Pharm,2017,at_average,0,4
 "Orexo US, Inc.",2013,at_average,0,1
 "Orexo US, Inc.",2014,at_average,0,1
 "Orexo US, Inc.",2015,at_average,0,1
 "Orexo US, Inc.",2016,at_average,0,1
 "Orexo US, Inc.",2017,at_average,0,1
-Galena Biopharm,2017,at_average,0,1
 "Chiesi USA, Inc",2013,at_average,0,2
 "Chiesi USA, Inc",2014,at_average,0,2
 "Chiesi USA, Inc",2015,at_average,0,2
 "Chiesi USA, Inc",2016,at_average,0,2
 "Chiesi USA, Inc",2017,at_average,0,2
-Prometh/Casper,2017,at_average,0,1
 Eli Lilly & Co.*,2013,at_average,0,1
 Eli Lilly & Co.*,2014,at_average,0,1
 Eli Lilly & Co.*,2015,at_average,0,1
 Eli Lilly & Co.*,2016,at_average,0,1
 Eli Lilly & Co.*,2017,at_average,0,1
+Strides Pharma,2014,above_average,4729.6,1
+Strides Pharma,2014,at_average,0,1
+Strides Pharma,2014,below_average,-91415.20000000001,5
+Strides Pharma,2015,above_average,978238.8,5
+Strides Pharma,2015,at_average,0,1
+Strides Pharma,2015,below_average,-562726.2,6
+Strides Pharma,2016,above_average,11825063.9,5
+Strides Pharma,2016,below_average,-1300570.36,7
+Strides Pharma,2017,above_average,5228463.800000001,5
+Strides Pharma,2017,below_average,-4955929.340000002,9
+Kroger/Medline,2014,below_average,-543.5,1
+Kroger/Medline,2015,below_average,-6769.07,1
+Kroger/Medline,2016,below_average,-8885.550000000001,1
+Kroger/Medline,2017,below_average,-12028.499999999998,1
+Phoenix Healthc,2014,above_average,1111265.2,1
+Phoenix Healthc,2015,above_average,3842636.000000001,1
+Phoenix Healthc,2016,above_average,1876860,1
+Phoenix Healthc,2017,above_average,2730926.4000000013,1
+Arkray USA,2014,at_average,0,1
+Arkray USA,2015,at_average,0,1
+Arkray USA,2016,at_average,0,1
+New Horizon Rx,2014,below_average,-9592.800000000001,4
+New Horizon Rx,2015,above_average,4408.5999999999995,1
+New Horizon Rx,2015,below_average,-1753.2,3
+New Horizon Rx,2016,below_average,-7872.3,4
+New Horizon Rx,2017,below_average,-3553.66,4
+App/Premierpro,2014,above_average,154746.9,1
+App/Premierpro,2014,below_average,-64262,3
+App/Premierpro,2015,above_average,102466.89000000001,2
+App/Premierpro,2015,below_average,-797265.8,6
+App/Premierpro,2016,above_average,160157.91999999998,3
+App/Premierpro,2016,below_average,-4243170.8,5
+App/Premierpro,2017,above_average,164358.12,3
+App/Premierpro,2017,below_average,-5107199.15,12
+Bayshore Pharma,2014,below_average,-83886.38999999998,2
+Bayshore Pharma,2015,above_average,14000,1
+Bayshore Pharma,2015,below_average,-257104.4400000001,1
+Bayshore Pharma,2016,above_average,20657,1
+Bayshore Pharma,2016,below_average,-182586.59999999971,1
+Bayshore Pharma,2017,above_average,362587.8800000001,3
+Bayshore Pharma,2017,below_average,-458.19999999999976,1
+Oak Pharmaceuti,2014,at_average,0,1
+Oak Pharmaceuti,2015,at_average,0,1
+Oak Pharmaceuti,2016,at_average,0,1
+Oak Pharmaceuti,2017,at_average,0,1
+Magna Pharm,2014,at_average,0,1
+Magna Pharm,2015,at_average,0,1
+Magna Pharm,2016,at_average,0,1
+Magna Pharm,2017,at_average,0,1
+Amerigen Pharma,2014,at_average,0,1
+Amerigen Pharma,2015,above_average,90390,1
+Amerigen Pharma,2016,above_average,368400,1
+Amerigen Pharma,2017,below_average,-415198,1
+Vensun Pharmace,2014,above_average,4290,1
+Vensun Pharmace,2014,below_average,-17152.399999999994,1
+Vensun Pharmace,2015,above_average,1067686.7999999998,1
+Vensun Pharmace,2015,below_average,-464182.34,6
+Vensun Pharmace,2016,above_average,2856327.8000000003,2
+Vensun Pharmace,2016,below_average,-1650477.2799999998,5
+Vensun Pharmace,2017,above_average,3270574.56,2
+Vensun Pharmace,2017,below_average,-2030593.4300000002,7
+Recordati Rare,2014,at_average,0,4
+Recordati Rare,2015,at_average,0,4
+Recordati Rare,2016,at_average,0,4
+Recordati Rare,2017,at_average,0,4
+The Chao Center,2014,at_average,0,1
+The Chao Center,2015,at_average,0,1
+The Chao Center,2016,at_average,0,1
+The Chao Center,2017,at_average,0,1
+Theratechnologi,2014,at_average,0,1
+Theratechnologi,2015,at_average,0,1
+Theratechnologi,2016,at_average,0,1
+Theratechnologi,2017,at_average,0,1
+Silvergate Phar,2014,at_average,0,1
+Silvergate Phar,2015,at_average,0,1
+Silvergate Phar,2016,at_average,0,1
+Silvergate Phar,2017,at_average,0,1
+"Kaleo, Inc.",2014,at_average,0,1
+"Kaleo, Inc.",2015,at_average,0,1
+"Kaleo, Inc.",2016,at_average,0,1
+"Kaleo, Inc.",2017,at_average,0,1
+H2 Pharma LLC,2014,above_average,516327.6,1
+H2 Pharma LLC,2015,above_average,1742910,1
+H2 Pharma LLC,2016,above_average,1018952.1,1
+H2 Pharma LLC,2017,above_average,86789.8,1
+Sagent/Premierp,2014,below_average,-5324.8,1
+Sagent/Premierp,2015,at_average,0,1
+Sagent/Premierp,2015,below_average,-170886.3,5
+Sagent/Premierp,2016,above_average,12136,1
+Sagent/Premierp,2016,below_average,-620738.5,5
+Sagent/Premierp,2017,above_average,11952.100000000008,1
+Sagent/Premierp,2017,below_average,-516692.5999999999,6
+Ocusoft,2014,at_average,0,1
+Ocusoft,2015,at_average,0,1
+Ocusoft,2016,at_average,0,1
+Ocusoft,2017,at_average,0,1
+Tris Pharma Inc,2014,below_average,-7303.799999999845,1
+Tris Pharma Inc,2015,above_average,285962.7999999979,2
+Tris Pharma Inc,2016,above_average,323215.2,1
+Tris Pharma Inc,2016,below_average,-89753.10000000127,1
+Tris Pharma Inc,2017,above_average,395171.1,3
+Tris Pharma Inc,2017,below_average,-320723.10000000073,1
+Areva Pharmaceu,2014,below_average,-29053.5,1
+Areva Pharmaceu,2015,below_average,-13827.6,1
+Areva Pharmaceu,2016,below_average,-58870,1
+Areva Pharmaceu,2017,below_average,-31119,1
+Sagent Pharmace*,2014,below_average,-288.20000000000005,1
+Sagent Pharmace*,2015,below_average,-10067.2,1
+Sagent Pharmace*,2016,below_average,-38176.69,1
+Sagent Pharmace*,2017,below_average,-29642.400000000005,1
+Crealta Pharma/,2014,at_average,0,1
+Crealta Pharma/,2015,at_average,0,1
+Crealta Pharma/,2016,at_average,0,1
+Crealta Pharma/,2017,at_average,0,2
+Zylera,2014,at_average,0,1
+Zylera,2015,at_average,0,1
+Zylera,2016,at_average,0,1
+Zylera,2017,at_average,0,1
+Solstice Neuros,2014,at_average,0,1
+Solstice Neuros,2015,at_average,0,1
+Solstice Neuros,2016,at_average,0,1
+Solstice Neuros,2017,at_average,0,1
+Octapharma USA,2014,at_average,0,1
+Octapharma USA,2015,at_average,0,1
+Octapharma USA,2016,at_average,0,1
+Octapharma USA,2017,at_average,0,1
+Altaire Pharm,2014,below_average,-1508.6999999999998,1
+Altaire Pharm,2015,below_average,-10265.020000000002,1
+Altaire Pharm,2016,below_average,-10043.160000000002,1
+Altaire Pharm,2017,below_average,-14573.28,1
+Antares Pharma,2014,at_average,0,1
+Antares Pharma,2015,at_average,0,1
+Antares Pharma,2016,at_average,0,1
+Antares Pharma,2017,at_average,0,1
+Banner Life Sci,2014,below_average,-1390905,1
+Banner Life Sci,2015,above_average,275786.33,3
+Banner Life Sci,2015,below_average,-1816236,2
+Banner Life Sci,2016,above_average,1140566.199999999,3
+Banner Life Sci,2016,below_average,-252182.00000000006,2
+Banner Life Sci,2017,above_average,206533.09999999995,4
+Banner Life Sci,2017,below_average,-109291.52999999997,3
+Eci Pharmaceuti,2014,above_average,47428,2
+Eci Pharmaceuti,2015,above_average,95627.0000000004,1
+Eci Pharmaceuti,2015,below_average,-719781.6,2
+Eci Pharmaceuti,2016,above_average,179894.40000000008,2
+Eci Pharmaceuti,2016,below_average,-6053.999999999871,1
+Eci Pharmaceuti,2017,above_average,598123.4000000003,3
+Ajanta Pharma L,2014,below_average,-100691.80000000003,1
+Ajanta Pharma L,2015,below_average,-2020873.1000000006,1
+Ajanta Pharma L,2016,below_average,-2773873.199999999,1
+Ajanta Pharma L,2017,above_average,6525435,4
+Ajanta Pharma L,2017,below_average,-3629765.1900000004,4
+"Exeltis USA, In",2014,at_average,0,3
+"Exeltis USA, In",2015,at_average,0,3
+"Exeltis USA, In",2016,at_average,0,3
+"Exeltis USA, In",2017,at_average,0,5
+Qol Medical,2014,at_average,0,1
+Qol Medical,2015,at_average,0,1
+Qol Medical,2016,at_average,0,1
+Qol Medical,2017,at_average,0,1
+Galen US Incorp,2014,at_average,0,1
+Galen US Incorp,2015,at_average,0,1
+Galen US Incorp,2016,at_average,0,1
+Galen US Incorp,2017,at_average,0,1
+Int'L Ethical,2014,at_average,0,1
+Int'L Ethical,2015,at_average,0,1
+Int'L Ethical,2016,at_average,0,1
+Int'L Ethical,2017,at_average,0,1
+Gemini Laborato,2014,at_average,0,1
+Gemini Laborato,2015,at_average,0,1
+Gemini Laborato,2016,at_average,0,1
+Gemini Laborato,2017,above_average,688864,1
+Gemini Laborato,2017,at_average,0,3
+Trinity Pharmac,2014,at_average,0,1
+Trinity Pharmac,2015,at_average,0,1
+Trinity Pharmac,2016,at_average,0,1
+Trinity Pharmac,2017,at_average,0,1
+Iroko Pharmaceu,2014,at_average,0,1
+Iroko Pharmaceu,2015,at_average,0,2
+Iroko Pharmaceu,2016,at_average,0,2
+Iroko Pharmaceu,2017,at_average,0,3
+"Cipla USA, Inc.",2015,above_average,279326.3299999995,3
+"Cipla USA, Inc.",2015,below_average,-904838.6499999998,7
+"Cipla USA, Inc.",2016,above_average,6902361.65,5
+"Cipla USA, Inc.",2016,below_average,-2117349.4599999995,5
+"Cipla USA, Inc.",2017,above_average,17006510.76,15
+"Cipla USA, Inc.",2017,at_average,0,1
+"Cipla USA, Inc.",2017,below_average,-26939454.48,22
+Clover Pharmace,2015,at_average,0,1
+Clover Pharmace,2016,at_average,0,1
+Clover Pharmace,2017,at_average,0,1
+Sebela Pharmace*,2015,at_average,0,1
+Sebela Pharmace*,2016,at_average,0,1
+Sebela Pharmace*,2017,at_average,0,1
+Keryx Biopharma,2015,at_average,0,1
+Keryx Biopharma,2016,at_average,0,1
+Keryx Biopharma,2017,at_average,0,1
+Marlex Pharm.,2015,below_average,-12642.7,2
+Marlex Pharm.,2016,below_average,-136464,2
+Marlex Pharm.,2017,above_average,7353.9000000000005,3
+Marlex Pharm.,2017,below_average,-99223.2,4
+Sunrise Pharmac,2015,below_average,-1314.0000000000005,1
+Sunrise Pharmac,2016,below_average,-39574,1
+Sunrise Pharmac,2017,below_average,-16702.53,1
+Biodelivery Sci,2015,at_average,0,1
+Biodelivery Sci,2016,at_average,0,1
+Biodelivery Sci,2017,at_average,0,1
+Centurion Labs,2015,at_average,0,1
+Centurion Labs,2016,at_average,0,1
+Centurion Labs,2017,at_average,0,1
+Facet Technolog,2015,at_average,0,1
+Facet Technolog,2016,at_average,0,1
+Facet Technolog,2017,at_average,0,1
+"SA3, LLC",2015,above_average,284977.8,1
+"SA3, LLC",2016,above_average,890854.5499999999,1
+"SA3, LLC",2017,above_average,946284.6000000001,1
+Baxter/Premierp,2015,below_average,-5883,2
+Baxter/Premierp,2016,below_average,-7574.0999999999995,2
+Baxter/Premierp,2017,below_average,-8898.6,2
+Forest Pharmace,2015,above_average,8740,1
+Forest Pharmace,2016,below_average,-5220,1
+Forest Pharmace,2017,below_average,-7221,1
+Durata/Allergan,2015,at_average,0,1
+Durata/Allergan,2016,at_average,0,1
+Durata/Allergan,2017,at_average,0,1
+Pharmaceutica N,2015,above_average,3064174.7,2
+Pharmaceutica N,2016,above_average,69190106.6,2
+Pharmaceutica N,2017,above_average,30847764.1,3
+Eagle Pharmaceu,2015,above_average,43589,1
+Eagle Pharmaceu,2016,below_average,-38810,1
+Eagle Pharmaceu,2017,below_average,-169000,1
+TWI Pharmaceuti,2015,above_average,4411851.3,2
+TWI Pharmaceuti,2015,below_average,-781042.5,1
+TWI Pharmaceuti,2016,above_average,12098425.5,2
+TWI Pharmaceuti,2016,below_average,-1218452.4000000025,1
+TWI Pharmaceuti,2017,above_average,9997647,2
+TWI Pharmaceuti,2017,below_average,-974181.2999999992,1
+"Mhc Pharma, LLC",2015,above_average,43315.199999999844,1
+"Mhc Pharma, LLC",2016,above_average,56580.0000000003,1
+"Mhc Pharma, LLC",2017,at_average,0,1
+Tolmar Pharmace,2015,at_average,0,1
+Tolmar Pharmace,2016,at_average,0,1
+Tolmar Pharmace,2017,at_average,0,1
+"Afaxys, Inc.",2015,at_average,0,1
+"Afaxys, Inc.",2016,at_average,0,1
+"Afaxys, Inc.",2017,at_average,0,2
+Method Pharmace,2015,above_average,7.26000000000006,1
+Method Pharmace,2016,above_average,932.5800000000008,1
+Method Pharmace,2017,above_average,42827.16,3
+Nextsource Biot,2015,at_average,0,1
+Nextsource Biot,2016,at_average,0,1
+Nextsource Biot,2017,at_average,0,1
+American Sales,2015,below_average,-12099.799999999997,3
+American Sales,2016,below_average,-21310.899999999998,3
+American Sales,2017,below_average,-24003,3
+Vertex Pharmace,2015,at_average,0,2
+Vertex Pharmace,2016,at_average,0,2
+Vertex Pharmace,2017,at_average,0,2
+Pharmaderm/Sand,2015,at_average,0,1
+Pharmaderm/Sand,2016,at_average,0,1
+Pharmaderm/Sand,2017,at_average,0,2
+Sentynl Therapu,2015,at_average,0,1
+Sentynl Therapu,2016,at_average,0,1
+Sentynl Therapu,2017,at_average,0,1
+Taiho Oncology,2015,at_average,0,1
+Taiho Oncology,2016,at_average,0,1
+Taiho Oncology,2017,at_average,0,1
+Alembic Pharmac,2015,below_average,-27295.800000000003,1
+Alembic Pharmac,2016,below_average,-710487.8000000002,1
+Alembic Pharmac,2017,above_average,4410279.499999999,5
+Alembic Pharmac,2017,below_average,-8031851.310000002,15
+Upstate Pharma,2015,at_average,0,1
+Upstate Pharma,2015,below_average,-14095.199999999963,1
+Upstate Pharma,2016,at_average,0,1
+Upstate Pharma,2016,below_average,-3971.999999999986,1
+Upstate Pharma,2017,at_average,0,1
+Upstate Pharma,2017,below_average,-15698,1
+Teva Women's He,2015,at_average,0,1
+Teva Women's He,2016,at_average,0,1
+Teva Women's He,2017,at_average,0,8
+Bionpharma Inc.,2015,below_average,-3390,1
+Bionpharma Inc.,2016,below_average,-816606.9000000003,1
+Bionpharma Inc.,2017,above_average,125009.6,2
+Bionpharma Inc.,2017,below_average,-2362570.1799999997,8
+Astellas/Novapl,2015,below_average,-19448,1
+Astellas/Novapl,2016,below_average,-580,1
+Astellas/Novapl,2017,below_average,-27000,1
+Endo/Aytu Biosc,2015,at_average,0,1
+Endo/Aytu Biosc,2016,at_average,0,1
+Endo/Aytu Biosc,2017,at_average,0,1
+Trimarc Laborat,2015,below_average,-42444,1
+Trimarc Laborat,2016,below_average,-71571.2,1
+Trimarc Laborat,2017,above_average,4106.700000000001,1
+Sebela Pharmace,2015,at_average,0,1
+Sebela Pharmace,2016,at_average,0,1
+Sebela Pharmace,2017,at_average,0,2
+Avion Pharmaceu,2015,at_average,0,1
+Avion Pharmaceu,2016,at_average,0,1
+Avion Pharmaceu,2017,at_average,0,5
+"Medac Pharma, I",2015,at_average,0,1
+"Medac Pharma, I",2016,at_average,0,1
+"Medac Pharma, I",2017,at_average,0,1
+"Andapharm, LLC",2015,below_average,-36888,1
+"Andapharm, LLC",2016,below_average,-1156,1
+"Andapharm, LLC",2017,below_average,-11900,1
+X-Gen/Premierpr,2015,above_average,7520,1
+X-Gen/Premierpr,2016,above_average,432,1
+X-Gen/Premierpr,2017,above_average,621300,1
+Wraser Pharma,2015,at_average,0,1
+Wraser Pharma,2016,at_average,0,1
+Wraser Pharma,2017,at_average,0,1
+Mylan Inst-Nova,2015,below_average,-1844132.4,1
+Mylan Inst-Nova,2016,below_average,-2275586,1
+Mylan Inst-Nova,2017,below_average,-110484,1
+"Tesaro, Inc.",2015,at_average,0,1
+"Tesaro, Inc.",2016,at_average,0,1
+"Tesaro, Inc.",2017,at_average,0,1
+Palmetto Pharma,2016,above_average,574185.92,1
+Palmetto Pharma,2017,above_average,1096320.5599999998,1
+Sigma-Tau/Leadi,2017,at_average,0,5
+Global/Impax,2017,above_average,9185.4,1
+Global/Impax,2017,below_average,-45067.2,2
+Qualitest/Par P,2017,above_average,144323129.89000002,42
+Qualitest/Par P,2017,at_average,0,14
+Qualitest/Par P,2017,below_average,-33794043,48
+Hospira/Icu Med,2017,above_average,120954.99999999996,7
+Hospira/Icu Med,2017,at_average,0,1
+Hospira/Icu Med,2017,below_average,-146981.19999999995,7
+Hospira/Pfizer,2017,above_average,1035141.12,15
+Hospira/Pfizer,2017,at_average,0,15
+Hospira/Pfizer,2017,below_average,-33144161.220000003,37
+Avadel Pharmace,2017,above_average,20789.699999999997,1
+Avadel Pharmace,2017,at_average,0,2
+Actavis Pharma/*,2017,above_average,4706146.9,1
+Actavis Pharma/*,2017,below_average,-5490072,1
+Quinn Pharmaceu,2017,above_average,10248.899999999903,1
+Quinn Pharmaceu,2017,below_average,-548531.7,2
+Neos Therapeuti,2017,at_average,0,1
+Meda/Mylan Spec,2017,at_average,0,20
+Mannkind Corpor,2017,at_average,0,1
+Pharmaci/Pfizer,2017,above_average,37849.99999999998,2
+Pharmaci/Pfizer,2017,at_average,0,38
+Pharmaci/Pfizer,2017,below_average,-34315.700000000004,2
+Impax Generics,2017,above_average,11965154.91,6
+Impax Generics,2017,below_average,-2507702,5
+Skylar Laborato,2017,at_average,0,1
+Sunovion/Covis,2017,at_average,0,3
+Upsher Smith La,2017,above_average,11846020.999999998,5
+Upsher Smith La,2017,at_average,0,4
+Upsher Smith La,2017,below_average,-10267454.299999995,10
+Bi-Coastal Phar,2017,below_average,-775032.3300000001,4
+Sandoz/Premier,2017,above_average,85379.90000000001,2
+Silarx/Lannett,2017,above_average,2729836.14,11
+Silarx/Lannett,2017,below_average,-1720044.43,4
+Ohm/Sun Pharmac,2017,below_average,-39528.939999999995,1
+BMS/Gilead,2017,at_average,0,1
+J&J Cons Prod,2017,at_average,0,1
+Endo Pharma/Bio,2017,at_average,0,1
+Leading Pharma,2017,above_average,2210144.740000001,4
+Leading Pharma,2017,at_average,0,1
+Leading Pharma,2017,below_average,-3559152.0300000017,5
+Biotest/Adma,2017,at_average,0,1
+Westminster Pha,2017,above_average,434661.2,1
+Westminster Pha,2017,below_average,-1256772.3499999999,2
+"West-Ward,Inc./",2017,below_average,-1739.3999999999999,1
+Sigma-Tau/Leadi*,2017,at_average,0,1
+Acetris Health,2017,below_average,-2647363.39,18
+"Orchidpharma, I",2017,above_average,39094.90000000001,3
+"Orchidpharma, I",2017,below_average,-784077.7900000003,5
+Hospira/Pfizer*,2017,at_average,0,1
+Hospira/Pfizer*,2017,below_average,-3749069.3,5
+Upsher-Smith La,2017,above_average,487778,2
+Upsher-Smith La,2017,at_average,0,8
+Upsher-Smith La,2017,below_average,-794090.7000000011,4
+Puracap Laborat,2017,below_average,-93115.89000000023,6
+Claris/Baxter,2017,above_average,89760.32,4
+Claris/Baxter,2017,below_average,-12096.800000000003,2
+Hospira-Novaplu,2017,above_average,3924.8799999999997,1
+Hospira-Novaplu,2017,below_average,-154923.86,5
+3M Espe Dental,2017,at_average,0,1
+Somerset Therap,2017,above_average,7933.899999999997,1
+Vyera Pharmaceu,2017,at_average,0,1
+Ferring Ph Inc*,2017,at_average,0,1
+Amring Pharmace,2017,above_average,57351,2
+Amring Pharmace*,2017,below_average,-857626,1
+Sircle Laborato,2017,above_average,1363802.4000000001,1
+"Solubiomix, LLC",2017,above_average,18908.100000000002,1
+Wyeth/Pfizer,2017,above_average,1292,1
+Wyeth/Pfizer,2017,at_average,0,14
+New Haven Pharm,2017,at_average,0,1
+Jaymac Pharma,2017,at_average,0,1
+Veloxis Pharmac,2017,at_average,0,1
+"Kyowa Kirin, In",2017,at_average,0,2
+Mylan/Alvogen,2017,below_average,-23382,1
+Halton Laborato,2017,below_average,-159735,1
+Claris/Renaissa,2017,below_average,-7546.899999999999,1
+Cintex Services,2017,below_average,-25800,1
+Time-Cap Labs,2017,below_average,-2418418.85,3
+Mallinckrodt/Pi,2017,at_average,0,1
+"Trupharma, LLC.",2017,below_average,-3326.399999999998,1
+Qualitest/Par P*,2017,above_average,4016552.8000000003,1
+Qualitest/Par P*,2017,below_average,-541717.8000000003,1
+Acella Pharmace*,2017,below_average,-61613.7,1
+Kmr Pharmaceuti*,2017,below_average,-3855.5999999999995,1
+Ariad/Takeda,2017,at_average,0,1
+Univec,2017,below_average,-1090.1999999999998,1
+Tolmar Inc.,2017,below_average,-475193.50000000006,1
+App/Premierpro*,2017,below_average,-15067.800000000001,1
+Sanofi/Partner,2017,at_average,0,1
+Sagent/Novaplus,2017,below_average,-1182.5,1
+Teva/Novaplus,2017,below_average,-123009,1
+Amag Pharmaceut,2017,below_average,-178800,1
+Amneal Bioscien,2017,below_average,-295244,1
+Pd-Rx Pharm,2017,above_average,29.5,1
+Nivagen Pharmac,2017,at_average,0,1
+Nivagen Pharmac,2017,below_average,-1444793.7,1
+Medicines Comp.,2017,at_average,0,2
+"Hikma Americas,",2017,at_average,0,1
+Biomes Pharmace,2017,below_average,-3570.6400000000003,2
+Napo Pharmaceut,2017,at_average,0,1
+Adapt Pharma In,2017,at_average,0,1
+Depomed/Collegi,2017,above_average,8505,1
+Acadia Pharmace,2017,at_average,0,1
+Pharmics,2017,at_average,0,1
+Intercept Pharm,2017,at_average,0,1
+Novartis/Sun Ph,2017,at_average,0,1
+Insulet Corpora,2017,at_average,0,1
+Greer Laborator,2017,at_average,0,1
+Midatech Pharma,2017,at_average,0,1
+Burel Pharmaceu,2017,below_average,-1637.7000000000003,1
+Winder Laborato,2017,below_average,-17738.39999999999,1
+Valeant/Paragon,2017,above_average,3559.9999999999995,1
+Corepharma/Impa,2017,above_average,42159.60000000001,1
+Wyeth/Pfizer*,2017,at_average,0,1
+Akrimax Pharmac,2017,at_average,0,1
+Novotec Pharma,2017,at_average,0,1
+Oncogenerix/Mid,2017,at_average,0,1
+Aprecia Pharmac,2017,at_average,0,1
+Hill Derm/Pierr,2017,at_average,0,1
+Rouses/Perrigo,2017,below_average,-1768761,1
+Medecor Pharma,2017,at_average,0,1
+Carwin Associat,2017,at_average,0,1
+G.M. Pharm,2017,at_average,0,1
+"Relypsa, Inc.",2017,at_average,0,1
+Jazz/Trupharma,2017,at_average,0,1
+Collegium Pharm,2017,at_average,0,1
+Acorda/Covis Ph,2017,at_average,0,1
+Astrazeneca/Ter,2017,at_average,0,1
+Galena Biopharm,2017,at_average,0,1
+Prometh/Casper,2017,at_average,0,1
 Phar-Prep/Pfize,2017,below_average,-112224,1
 Pharmaci/Pfizer*,2017,above_average,112140,1
