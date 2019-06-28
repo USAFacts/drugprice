@@ -68,7 +68,6 @@ inflation <- read_csv("inflation.csv")
 
 ```{r datacleaning, include = FALSE}
 partd <- partd %>%
-  mutate_at(c("Brand Name", "Generic Name", "Manufacturer"), as_factor) %>%
   na.omit(.) %>%
   left_join(inflation %>% filter(yeartype == "fiscal", baseyear == 2017), by = c("Year" = "year")) %>%
   mutate(`Inf Total Spend` = signif(`Total Spending` * inf_rate, 3))
@@ -77,13 +76,11 @@ colnames(partd)[6] <- "Total Claims"
 
 partb <- partb %>%
   mutate(`Generic Name` = ifelse(is.na(`Generic Name`), "Not Supplied", `Generic Name`)) %>%
-  mutate_at(c("Medicare Billing Code (HCPCS Code)", "Brand Name", "Generic Name"), as_factor) %>%
   na.omit(.) %>%
   left_join(inflation %>% filter(yeartype == "fiscal", baseyear == 2017), by = c("Year" = "year")) %>%
   mutate(`Inf Total Spend` = signif(`Total Spending` * inf_rate, 3))
 
 medicaid <- medicaid %>%
-  mutate_at(c("Brand Name", "Generic Name", "Manufacturer"), as_factor) %>%
   na.omit(.) %>%
   left_join(inflation %>% filter(yeartype == "fiscal", baseyear == 2017), by = c("Year" = "year")) %>%
   mutate(`Inf Total Spend` = signif(`Total Spending` * inf_rate, 3))
@@ -950,39 +947,131 @@ medicaid_manufac <- medicaid %>%
   summarise(manufacturer_diff = sum(market_diff), price_status_drugs = n()) 
 ```
 
-## Insulin
+```{r categories, include = FALSE}
+partd_cats_all <- partd %>%
+  group_by(Year, Category) %>%
+  summarise("brandlvl_spend" = sum(`Inf Total Spend`),
+            "brandlvl_claims" = sum(`Total Claims`),
+            "brandlvl_avg_spend_perclaim" = brandlvl_spend/brandlvl_claims,
+            "num_brands" = n_distinct(`Brand Name`)) %>%
+  arrange(Category) %>%
+  ungroup() %>%
+  mutate(Category = str_replace(Category, "pain reliever", "opioid"))
 
-Inspired by some of the news coverage over the past six months, I wanted to validate whether Insulin products have been becoming more expensive. Indeed, average spend per claim on Insulin related drugs in Medicare Part D has risen $220.02 since 2013.
+medicaid_cats_all <- medicaid %>%
+  group_by(Year, Category) %>%
+  summarise("brandlvl_spend" = sum(`Inf Total Spend`),
+            "brandlvl_claims" = sum(`Total Claims`),
+            "brandlvl_avg_spend_perclaim" = brandlvl_spend/brandlvl_claims,
+            "num_brands" = n_distinct(`Brand Name`)) %>%
+  arrange(Category) %>%
+  mutate(Category = str_replace(Category, "pain reliever", "opioid"))
+
+partd_cats_by_year_all <- partd %>%
+  mutate(Year = as.numeric(Year)) %>%
+  group_by(`Brand Name`) %>%
+  arrange(`Brand Name`, Year) %>%
+  summarise(num_yrs = n_distinct(Year), first_year = min(Year)) %>%
+  right_join(partd, by = "Brand Name") %>%
+  group_by(Year, Category, num_yrs, first_year) %>%
+  summarise("brandlvl_spend" = sum(`Inf Total Spend`),
+            "brandlvl_claims" = sum(`Total Claims`),
+            "brandlvl_avg_spend_perclaim" = brandlvl_spend/brandlvl_claims,
+            "num_brands" = n_distinct(`Brand Name`)) %>%
+  arrange(Category) %>%
+  ungroup() %>%
+  mutate(Category = str_replace(Category, "pain reliever", "opioid"))
+
+medicaid_cats_by_year_all <- medicaid %>%
+  mutate(Year = as.numeric(Year)) %>%
+  group_by(`Brand Name`) %>%
+  arrange(`Brand Name`, Year) %>%
+  summarise(num_yrs = n_distinct(Year), first_year = min(Year)) %>%
+  right_join(partd, by = "Brand Name") %>%
+  group_by(Year, Category, num_yrs, first_year) %>%
+  summarise("brandlvl_spend" = sum(`Inf Total Spend`),
+            "brandlvl_claims" = sum(`Total Claims`),
+            "brandlvl_avg_spend_perclaim" = brandlvl_spend/brandlvl_claims,
+            "num_brands" = n_distinct(`Brand Name`)) %>%
+  arrange(Category) %>%
+  mutate(Category = str_replace(Category, "pain reliever", "opioid"))
+```
+
+## Part D - Categories
+
+Based on either the description field provided in the original datasets or through my own research, I've assigned each brand of drug to the most appropriate category. I now want to highlight a few categories of my interest.
+
+### Insulin
+
+Inspired by some of the news coverage over the past six months, I wanted to validate whether Insulin products have been becoming more expensive. Indeed, average spend per claim on Insulin related drugs in Medicare Part D has risen \$109.23 since 2013.
 
 ```{r partd_insulin}
-partd %>% 
-  filter(str_detect(`Generic Name`, "Insulin")) %>%
-  group_by(Year) %>%
-  summarise(totalspend = sum(`Inf Total Spend`), totalclaims = sum(`Total Claims`)) %>%
-  mutate(`Average Spend Per Claim` = totalspend/totalclaims) %>%
-  ggplot(aes(x=Year, y = `Average Spend Per Claim`, color = "foo")) +
+partd_cats_all %>% 
+  filter(Category == "diabetes/insulin") %>%
+  ggplot(aes(x=Year, y = brandlvl_avg_spend_perclaim, color = "foo")) +
   geom_line(size = 1) +
-  scale_y_continuous(labels = function(x) paste0("$", x), limits = c(0,550)) +
+  scale_y_continuous(labels = function(x) paste0("$", x)) +
   scale_color_manual(values = "#00204DFF") +
-  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on Insulin related drugs\nhas grown by 78%, or $220") +
+  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on Insulin related drugs\nhas grown by 77% ($109)") +
+  expand_limits(y = 0) +
   theme_minimal() +
   theme(legend.position = "none") 
 ```
 
-```{r}
+### Cancer
 
-partd %>%
-  select(`Brand Name`, Year, Category) %>%
-  distinct() %>%
-  group_by(Category) %>%
-  summarise(num_drugs = n_distinct(`Brand Name`))
+At a baseline, Chemotherapy/Cancer drugs are some of the most expensive on a per claim basis, and their growth as a category has continued between 2013 and 2017. Average spend per claim grew \$1264 in real terms since 2013.
 
+```{r partd_cancer}
+partd_cats_all %>% 
+  filter(Category == "chemotherapy/cancer") %>%
+  ggplot(aes(x=Year, y = brandlvl_avg_spend_perclaim, color = "foo")) +
+  geom_line(size = 1) +
+  scale_y_continuous(labels = function(x) paste0("$", x)) +
+  scale_color_manual(values = "#00204DFF") +
+  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on Chemotherapy/Cancer related drugs\nhas grown by 80% ($1264)") +
+  expand_limits(y = 0) +
+  theme_minimal() +
+  theme(legend.position = "none") 
+```
+
+### HIV/AIDS
+
+The average spend per claim for HIV/AIDS prescription drugs grew \$671 between 2013 and 2017.  
+
+```{r partd_HIV}
+partd_cats_all %>% 
+  filter(Category == "HIV/AIDS") %>%
+  ggplot(aes(x=Year, y = brandlvl_avg_spend_perclaim, color = "foo")) +
+  geom_line(size = 1) +
+  scale_y_continuous(labels = function(x) paste0("$", x)) +
+  scale_color_manual(values = "#00204DFF") +
+  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on HIV/AIDS related drugs\nhas grown by 71% ($671)") +
+  expand_limits(y = 0) +
+  theme_minimal() +
+  theme(legend.position = "none") 
+```
+
+### Sterilization
+
+Perhaps a more obscure category, sterilization is comprised of materials such as alcohol wipes or other items which help provide a sterile environment. Although this is not a particulary impactful category, it is surprising to see that these items have gone up by \$25 between 2013 and 2017 in real terms, which is a 227% increase from their starting point of \$11 per claim.
+
+```{r partd_sterilization}
+partd_cats_all %>% 
+  filter(Category == "sterilization") %>%
+  ggplot(aes(x=Year, y = brandlvl_avg_spend_perclaim, color = "foo")) +
+  geom_line(size = 1) +
+  scale_y_continuous(labels = function(x) paste0("$", x)) +
+  scale_color_manual(values = "#00204DFF") +
+  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on Sterilization related drugs\nhas grown by 227% ($25)") +
+  expand_limits(y = 0) +
+  theme_minimal() +
+  theme(legend.position = "none") 
 ```
 
 # Open Areas of Inquiry
 
 1. Is there a trend that can be indentified among manufacturers across the various drugs that they produce?
-2. Beyond Insulin, are there certain categories of drugs that are changing more dramatically than others?
 
 ```{r writecsv_1, include = FALSE, eval = FALSE}
 partd_brandlvl <- partd %>%
