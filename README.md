@@ -6,3 +6,11 @@ In this repository you can find both the underlying datafiles as well as the RMD
 1. Aggregate Trends
 2. Univariate Distributional Analysis
 3. Bivariate Distributional Analysis
+
+## datacuts
+
+This folder contains various cuts of the three primary datasets in csv file format and is not necessary to replicate the notebook.
+
+## categories
+
+The only piece of this research which is not directly documented here is the hand labeling of each brand of drug to a specific category for the datasets pertaining to Medicare Part D and Medicaid.
