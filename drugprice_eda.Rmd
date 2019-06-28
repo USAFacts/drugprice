@@ -994,6 +994,7 @@ medicaid_cats_by_year_all <- medicaid %>%
             "brandlvl_avg_spend_perclaim" = brandlvl_spend/brandlvl_claims,
             "num_brands" = n_distinct(`Brand Name`)) %>%
   arrange(Category) %>%
+  ungroup() %>%
   mutate(Category = str_replace(Category, "pain reliever", "opioid"))
 ```
 

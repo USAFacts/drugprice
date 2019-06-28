@@ -1,7 +1,7 @@
 ---
 title: "Prescription Drug Price EDA"
 author: "USAFactsTyler"
-date: "12 June, 2019"
+date: "27 June, 2019"
 output: 
   html_document:
     code_folding: hide
@@ -55,54 +55,48 @@ summary(partd)
 ```
 
 ```
-##                Brand Name                            Generic Name  
-##  Insulin Syringe    :  205   Pen Needle, Diabetic          :  211  
-##  Levetiracetam*     :  131   Syringe And Needle,Insulin,1ml:  207  
-##  Amlodipine Besylate:  122   Metformin HCl                 :  188  
-##  Gabapentin         :  120   Alcohol Antiseptic Pads       :  182  
-##  Montelukast Sodium :  110   Syringe-Needle,Insulin,0.5 Ml :  179  
-##  Lisinopril         :  103   Syring-Needl,Disp,Insul,0.3 Ml:  165  
-##  (Other)            :27034   (Other)                       :26693  
-##           Manufacturer   Total Spending      Total Dosage Units 
-##  Mylan          : 1383   Min.   :5.000e+01   Min.   :2.500e+01  
-##  Sandoz         : 1192   1st Qu.:1.083e+05   1st Qu.:7.139e+04  
-##  Teva USA       : 1128   Median :1.164e+06   Median :5.946e+05  
-##  Mylan Instituti:  770   Mean   :2.213e+07   Mean   :1.541e+07  
-##  AHP            :  769   3rd Qu.:7.244e+06   3rd Qu.:5.485e+06  
-##  Apotex Corp    :  541   Max.   :7.031e+09   Max.   :1.665e+09  
-##  (Other)        :22042                                          
-##   Total Claims      Total Beneficiaries
-##  Min.   :      11   Min.   :     11    
-##  1st Qu.:    1488   1st Qu.:    542    
-##  Median :   11020   Median :   3817    
-##  Mean   :  228747   Mean   :  71155    
-##  3rd Qu.:   97029   3rd Qu.:  33925    
-##  Max.   :22488587   Max.   :5273526    
-##                                        
-##  Average Spending Per Dosage Unit (Weighted) Average Spending Per Claim
-##  Min.   :    0.00                            Min.   :     0.42         
-##  1st Qu.:    0.31                            1st Qu.:    18.48         
-##  Median :    1.07                            Median :    55.90         
-##  Mean   :   74.05                            Mean   :   600.94         
-##  3rd Qu.:    5.12                            3rd Qu.:   222.06         
-##  Max.   :39026.76                            Max.   :119126.15         
-##                                                                        
-##  Average Spending Per Beneficiary      Year      Description       
-##  Min.   :      0.0                Min.   :2013   Length:27825      
-##  1st Qu.:     48.5                1st Qu.:2014   Class :character  
-##  Median :    151.1                Median :2015   Mode  :character  
-##  Mean   :   3298.0                Mean   :2015                     
-##  3rd Qu.:    659.3                3rd Qu.:2017                     
-##  Max.   :1218965.3                Max.   :2017                     
-##                                                                    
-##     inf_rate        baseyear      yeartype         Inf Total Spend    
-##  Min.   :1.000   Min.   :2017   Length:27825       Min.   :5.200e+01  
-##  1st Qu.:1.000   1st Qu.:2017   Class :character   1st Qu.:1.100e+05  
-##  Median :1.030   Median :2017   Mode  :character   Median :1.190e+06  
-##  Mean   :1.024   Mean   :2017                      Mean   :2.266e+07  
-##  3rd Qu.:1.033   3rd Qu.:2017                      3rd Qu.:7.410e+06  
-##  Max.   :1.050   Max.   :2017                      Max.   :7.240e+09  
-## 
+##   Brand Name        Generic Name       Manufacturer      
+##  Length:27825       Length:27825       Length:27825      
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+##  Total Spending      Total Dosage Units   Total Claims     
+##  Min.   :5.000e+01   Min.   :2.500e+01   Min.   :      11  
+##  1st Qu.:1.083e+05   1st Qu.:7.139e+04   1st Qu.:    1488  
+##  Median :1.164e+06   Median :5.946e+05   Median :   11020  
+##  Mean   :2.213e+07   Mean   :1.541e+07   Mean   :  228747  
+##  3rd Qu.:7.244e+06   3rd Qu.:5.485e+06   3rd Qu.:   97029  
+##  Max.   :7.031e+09   Max.   :1.665e+09   Max.   :22488587  
+##  Total Beneficiaries Average Spending Per Dosage Unit (Weighted)
+##  Min.   :     11     Min.   :    0.00                           
+##  1st Qu.:    542     1st Qu.:    0.31                           
+##  Median :   3817     Median :    1.07                           
+##  Mean   :  71155     Mean   :   74.05                           
+##  3rd Qu.:  33925     3rd Qu.:    5.12                           
+##  Max.   :5273526     Max.   :39026.76                           
+##  Average Spending Per Claim Average Spending Per Beneficiary
+##  Min.   :     0.42          Min.   :      0.0               
+##  1st Qu.:    18.48          1st Qu.:     48.5               
+##  Median :    55.90          Median :    151.1               
+##  Mean   :   600.94          Mean   :   3298.0               
+##  3rd Qu.:   222.06          3rd Qu.:    659.3               
+##  Max.   :119126.15          Max.   :1218965.3               
+##       Year      Description          Category            inf_rate    
+##  Min.   :2013   Length:27825       Length:27825       Min.   :1.000  
+##  1st Qu.:2014   Class :character   Class :character   1st Qu.:1.000  
+##  Median :2015   Mode  :character   Mode  :character   Median :1.030  
+##  Mean   :2015                                         Mean   :1.024  
+##  3rd Qu.:2017                                         3rd Qu.:1.033  
+##  Max.   :2017                                         Max.   :1.050  
+##     baseyear      yeartype         Inf Total Spend    
+##  Min.   :2017   Length:27825       Min.   :5.200e+01  
+##  1st Qu.:2017   Class :character   1st Qu.:1.100e+05  
+##  Median :2017   Mode  :character   Median :1.190e+06  
+##  Mean   :2017                      Mean   :2.266e+07  
+##  3rd Qu.:2017                      3rd Qu.:7.410e+06  
+##  Max.   :2017                      Max.   :7.240e+09
 ```
 
 Looking at the summary for Medicare Part D, there are four things that I want to highlight:
@@ -118,38 +112,27 @@ summary(partb)
 ```
 
 ```
-##  Medicare Billing Code (HCPCS Code) Drug Description  
-##  90371  :   5                       Length:1672       
-##  90586  :   5                       Class :character  
-##  90632  :   5                       Mode  :character  
-##  90670  :   5                                         
-##  90714  :   5                                         
-##  90715  :   5                                         
-##  (Other):1642                                         
-##                       Brand Name                        Generic Name 
-##  HyperHEP B S-D*           :   5   MethylprednIsolone Acetate*:  15  
-##  BCG (Tice Strain) (90586)*:   5   0.9 % Sodium Chloride      :  15  
-##  Havrix*                   :   5   Antihemophilic Factor/VWF  :  15  
-##  Prevnar 13                :   5   Methotrexate Sodium*       :  15  
-##  Tenivac*                  :   5   Tacrolimus                 :  11  
-##  Adacel Tdap*              :   5   BCG Live*                  :  10  
-##  (Other)                   :1642   (Other)                    :1591  
-##  Total Spending      Total Dosage Units   Total Claims    
-##  Min.   :1.100e+01   Min.   :       58   Min.   :     15  
-##  1st Qu.:2.237e+05   1st Qu.:    25693   1st Qu.:   1765  
-##  Median :2.698e+06   Median :   302986   Median :  10287  
-##  Mean   :7.029e+07   Mean   :  7141550   Mean   : 129823  
-##  3rd Qu.:3.244e+07   3rd Qu.:  2335068   3rd Qu.:  78302  
-##  Max.   :2.466e+09   Max.   :428726351   Max.   :5743305  
-##                                                           
-##  Total Beneficiaries Average Spending Per Dosage Unit
-##  Min.   :     11     Min.   :    0.01                
-##  1st Qu.:    363     1st Qu.:    2.11                
-##  Median :   2524     Median :    9.45                
-##  Mean   :  50790     Mean   :  237.40                
-##  3rd Qu.:  15896     3rd Qu.:   46.73                
-##  Max.   :5693733     Max.   :38716.24                
-##                                                      
+##  Medicare Billing Code (HCPCS Code) Drug Description    Brand Name       
+##  Length:1672                        Length:1672        Length:1672       
+##  Class :character                   Class :character   Class :character  
+##  Mode  :character                   Mode  :character   Mode  :character  
+##                                                                          
+##                                                                          
+##                                                                          
+##  Generic Name       Total Spending      Total Dosage Units 
+##  Length:1672        Min.   :1.100e+01   Min.   :       58  
+##  Class :character   1st Qu.:2.237e+05   1st Qu.:    25693  
+##  Mode  :character   Median :2.698e+06   Median :   302986  
+##                     Mean   :7.029e+07   Mean   :  7141550  
+##                     3rd Qu.:3.244e+07   3rd Qu.:  2335068  
+##                     Max.   :2.466e+09   Max.   :428726351  
+##   Total Claims     Total Beneficiaries Average Spending Per Dosage Unit
+##  Min.   :     15   Min.   :     11     Min.   :    0.01                
+##  1st Qu.:   1765   1st Qu.:    363     1st Qu.:    2.11                
+##  Median :  10287   Median :   2524     Median :    9.45                
+##  Mean   : 129823   Mean   :  50790     Mean   :  237.40                
+##  3rd Qu.:  78302   3rd Qu.:  15896     3rd Qu.:   46.73                
+##  Max.   :5743305   Max.   :5693733     Max.   :38716.24                
 ##  Average Spending Per Claim Average Spending Per Beneficiary
 ##  Min.   :    0.10           Min.   :     0.2                
 ##  1st Qu.:   21.88           1st Qu.:    76.5                
@@ -157,7 +140,6 @@ summary(partb)
 ##  Mean   : 2899.17           Mean   : 21316.1                
 ##  3rd Qu.: 2546.25           3rd Qu.: 13856.8                
 ##  Max.   :58621.51           Max.   :792223.8                
-##                                                             
 ##       Year      Description           inf_rate        baseyear   
 ##  Min.   :2013   Length:1672        Min.   :1.000   Min.   :2017  
 ##  1st Qu.:2014   Class :character   1st Qu.:1.021   1st Qu.:2017  
@@ -165,15 +147,13 @@ summary(partb)
 ##  Mean   :2015                      Mean   :1.026   Mean   :2017  
 ##  3rd Qu.:2016                      3rd Qu.:1.033   3rd Qu.:2017  
 ##  Max.   :2017                      Max.   :1.050   Max.   :2017  
-##                                                                  
 ##    yeartype         Inf Total Spend    
 ##  Length:1672        Min.   :1.200e+01  
 ##  Class :character   1st Qu.:2.298e+05  
 ##  Mode  :character   Median :2.715e+06  
 ##                     Mean   :7.202e+07  
 ##                     3rd Qu.:3.350e+07  
-##                     Max.   :2.470e+09  
-## 
+##                     Max.   :2.470e+09
 ```
 
 Looking at the summary for Medicare Part B, there are three things that I want to highlight:
@@ -189,46 +169,41 @@ summary(medicaid)
 ```
 
 ```
-##                Brand Name                Generic Name  
-##  Levetiracetam*     :  164   Levetiracetam     :  204  
-##  Ondansetron HCl*   :  127   Metformin HCl     :  170  
-##  Promethazine HCl*  :  126   Promethazine HCl  :  144  
-##  Montelukast Sodium :  114   Lamotrigine       :  141  
-##  Gabapentin         :  113   Potassium Chloride:  140  
-##  Amlodipine Besylate:  107   Diltiazem HCl     :  136  
-##  (Other)            :31203   (Other)           :31019  
-##           Manufacturer   Total Spending      Total Dosage Units 
-##  Mylan          : 1364   Min.   :0.000e+00   Min.   :9.000e+00  
-##  Teva USA       : 1285   1st Qu.:7.064e+04   1st Qu.:2.598e+04  
-##  Sandoz         : 1225   Median :4.899e+05   Median :2.252e+05  
-##  Actavis Pharma/: 1030   Mean   :8.158e+06   Mean   :5.409e+06  
-##  Mylan Instituti:  791   3rd Qu.:2.657e+06   3rd Qu.:1.949e+06  
-##  Ahp            :  686   Max.   :2.465e+09   Max.   :1.220e+09  
-##  (Other)        :25573                                          
-##   Total Claims      Average Spending Per Dosage Unit (Weighted)
-##  Min.   :      11   Min.   :    0.00                           
-##  1st Qu.:     994   1st Qu.:    0.39                           
-##  Median :    6215   Median :    1.40                           
-##  Mean   :   92913   Mean   :   69.89                           
-##  3rd Qu.:   44057   3rd Qu.:    6.89                           
-##  Max.   :10036481   Max.   :33809.93                           
-##                                                                
-##  Average Spending Per Claim      Year      Description       
-##  Min.   :    0.00           Min.   :2013   Length:31954      
-##  1st Qu.:   16.47           1st Qu.:2014   Class :character  
-##  Median :   50.32           Median :2015   Mode  :character  
-##  Mean   :  566.62           Mean   :2015                     
-##  3rd Qu.:  180.38           3rd Qu.:2016                     
-##  Max.   :99527.18           Max.   :2017                     
-##                                                              
-##     inf_rate        baseyear      yeartype         Inf Total Spend   
-##  Min.   :1.000   Min.   :2017   Length:31954       Min.   :0.00e+00  
-##  1st Qu.:1.021   1st Qu.:2017   Class :character   1st Qu.:7.23e+04  
-##  Median :1.030   Median :2017   Mode  :character   Median :5.02e+05  
-##  Mean   :1.025   Mean   :2017                      Mean   :8.35e+06  
-##  3rd Qu.:1.033   3rd Qu.:2017                      3rd Qu.:2.72e+06  
-##  Max.   :1.050   Max.   :2017                      Max.   :2.55e+09  
-## 
+##   Brand Name        Generic Name       Manufacturer      
+##  Length:34433       Length:34433       Length:34433      
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+##  Total Spending      Total Dosage Units   Total Claims     
+##  Min.   :0.000e+00   Min.   :2.000e+00   Min.   :      11  
+##  1st Qu.:5.988e+04   1st Qu.:2.205e+04   1st Qu.:     852  
+##  Median :4.272e+05   Median :1.948e+05   Median :    5234  
+##  Mean   :7.678e+06   Mean   :5.265e+06   Mean   :   86611  
+##  3rd Qu.:2.416e+06   3rd Qu.:1.757e+06   3rd Qu.:   37905  
+##  Max.   :2.465e+09   Max.   :1.220e+09   Max.   :10036481  
+##  Average Spending Per Dosage Unit (Weighted) Average Spending Per Claim
+##  Min.   :    0.00                            Min.   :    0.00          
+##  1st Qu.:    0.39                            1st Qu.:   17.20          
+##  Median :    1.45                            Median :   52.26          
+##  Mean   :   73.21                            Mean   :  596.73          
+##  3rd Qu.:    7.32                            3rd Qu.:  179.16          
+##  Max.   :33809.93                            Max.   :99527.18          
+##       Year      Description          Category            inf_rate    
+##  Min.   :2013   Length:34433       Length:34433       Min.   :1.000  
+##  1st Qu.:2014   Class :character   Class :character   1st Qu.:1.021  
+##  Median :2015   Mode  :character   Mode  :character   Median :1.030  
+##  Mean   :2015                                         Mean   :1.025  
+##  3rd Qu.:2016                                         3rd Qu.:1.033  
+##  Max.   :2017                                         Max.   :1.050  
+##     baseyear      yeartype         Inf Total Spend    
+##  Min.   :2017   Length:34433       Min.   :0.000e+00  
+##  1st Qu.:2017   Class :character   1st Qu.:6.110e+04  
+##  Median :2017   Mode  :character   Median :4.380e+05  
+##  Mean   :2017                      Mean   :7.859e+06  
+##  3rd Qu.:2017                      3rd Qu.:2.470e+06  
+##  Max.   :2017                      Max.   :2.550e+09
 ```
 
 Looking at the summary for Medicaid, there are three things I want to highlight:
@@ -1596,6 +1571,14 @@ medicaid_brandchng %>%
 <tbody>
   <tr>
    <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Carbaglu </td>
+   <td style="text-align:left;"> $34376.4 </td>
+   <td style="text-align:left;"> 98.63% </td>
+   <td style="text-align:right;"> 184 </td>
+   <td style="text-align:left;"> Drugs uses not available </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
    <td style="text-align:left;"> Provenge </td>
    <td style="text-align:left;"> $28482.64 </td>
    <td style="text-align:left;"> 104.07% </td>
@@ -1603,7 +1586,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> This medication is used to treat advanced prostate cancer. Sipuleucel-T is a type of vaccine created from your own immune system cells that works by causing your immune system to attack prostate cancer cells. This requires that you have a procedure to remove some of your white blood cells, which are used to prepare sipuleucel-T. Talk to your doctor about the risks and benefits of this treatment. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 3 </td>
    <td style="text-align:left;"> Demser </td>
    <td style="text-align:left;"> $27593.63 </td>
    <td style="text-align:left;"> 664.99% </td>
@@ -1611,7 +1594,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> This medication is used to treat high blood pressure in people with a certain adrenal gland tumor (pheochromocytoma). Metyrosine is used to prevent high blood pressure before and immediately after surgery to remove the tumor. It is also used long-term in people who cannot have the surgery. It is not used for other kinds of high blood pressure. Metyrosine prevents the tumor from making certain natural substances (catecholamines) that raise the blood pressure and make the heart beat faster. Lowering the amount of catecholamines lessens the risk of a very serious attack of high blood pressure (hypertensive crisis). </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 4 </td>
    <td style="text-align:left;"> Adagen </td>
    <td style="text-align:left;"> $27165.22 </td>
    <td style="text-align:left;"> 64.07% </td>
@@ -1619,7 +1602,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> Pegademase is used to treat a certain rare genetic immune system problem (severe combined immune deficiency disease-SCID). Pegademase replaces a certain natural substance (an enzyme called adenosine deaminase-ADA) that is missing in people with SCID. This medication increases the number of blood cells that prevent and fight infection (lymphocytes) by helping the body get rid of certain substances that kill lymphocytes. This medication does not help immune system problems due to other causes (such as AIDS, bone marrow depression). </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5 </td>
    <td style="text-align:left;"> Actimmune </td>
    <td style="text-align:left;"> $24809.64 </td>
    <td style="text-align:left;"> 113.99% </td>
@@ -1627,7 +1610,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> This medication is used to reduce the frequency and severity of serious infections due to chronic granulomatous disease, a disorder that runs in families. This drug is often used along with antibiotics to help prevent these serious infections. This medication is also used to slow the worsening of malignant osteopetrosis, another disorder that runs in families, that affects bones, nerves, and blood. This medication is the same as a protein that your body naturally produces (interferon). In the body, it is thought to work by affecting cell function/growth and the body's natural defenses (immune system) in many ways. Adding more interferon may help your body fight off serious infections. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6 </td>
    <td style="text-align:left;"> Korlym </td>
    <td style="text-align:left;"> $21681.82 </td>
    <td style="text-align:left;"> 486.73% </td>
@@ -1635,7 +1618,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> This medication is used to control high blood sugar in people who have a certain condition (Cushing's syndrome), and who have failed surgery or cannot have surgery to correct the condition. Cushing's syndrome is caused by the body producing too much of a certain hormone (cortisol) which can cause glucose intolerance or type 2 diabetes. Mifepristone works by blocking the effects of cortisol. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 7 </td>
    <td style="text-align:left;"> Cuprimine </td>
    <td style="text-align:left;"> $20565.06 </td>
    <td style="text-align:left;"> 1682.01% </td>
@@ -1643,7 +1626,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> This medication is used to treat rheumatoid arthritis, Wilson's disease (a condition in which high levels of copper in the body cause damage to the liver, brain, and other organs), and a certain disorder which causes kidney stones (cystinuria). For the treatment of rheumatoid arthritis, penicillamine is known as a disease-modifying antirheumatic drug (DMARD). It helps to decrease pain/tenderness/swelling in the joints. For the treatment of Wilson's disease, penicillamine binds to copper and helps it to be removed from the body. Decreasing copper levels helps to improve liver function and the mental/mood/nerve problems (such as confusion, difficulty speaking/walking) caused by the disease. For the treatment of cystinuria, penicillamine helps to decrease the amount of a certain substance (cystine) in the urine which can cause kidney stones. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 8 </td>
    <td style="text-align:left;"> Novoseven RT </td>
    <td style="text-align:left;"> $19452.68 </td>
    <td style="text-align:left;"> 24.34% </td>
@@ -1651,7 +1634,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> This medication is used to treat and prevent bleeding in people with certain conditions (such as hemophilia type A or B, low levels of factor VII, Glanzmann's thrombasthenia). People with these conditions are at risk for bleeding longer after an injury/surgery and for bleeding inside the body (especially into the joints and muscles). This product contains a man-made form of factor VIIa, which is a protein (clotting factor) in the blood that works with other clotting factors to help the blood clot and therefore stop bleeding. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 9 </td>
    <td style="text-align:left;"> Yervoy </td>
    <td style="text-align:left;"> $15114.47 </td>
    <td style="text-align:left;"> 59.83% </td>
@@ -1659,7 +1642,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> Ipilimumab is used to treat melanoma (skin cancer) and kidney cancer. It works by changing the action of your own immune system, directing it to attack cancer cells. Unfortunately, other body parts may also be affected (see Warning section). Ipilimumab is a type of medication called a monoclonal antibody. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:right;"> 10 </td>
    <td style="text-align:left;"> Iclusig </td>
    <td style="text-align:left;"> $13100.44 </td>
    <td style="text-align:left;"> 133.32% </td>
@@ -1667,7 +1650,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> Ponatinib is used to treat certain types of blood cancer (chronic myelogenous leukemia-CML, acute lymphoblastic leukemia-ALL). It works by slowing or stopping the growth of cancer cells. It belongs to a class of drugs known as kinase inhibitors. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 11 </td>
    <td style="text-align:left;"> Procysbi </td>
    <td style="text-align:left;"> $12425.53 </td>
    <td style="text-align:left;"> 44.38% </td>
@@ -1675,7 +1658,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> This medication is used to help preserve kidney function and manage kidney damage and other problems in people with an inherited disorder that causes build-up of a certain natural substance (cystine) in the body (nephropathic cystinosis). Cystine build-up can cause problems such as kidney problems, slow growth, weak bones, and eye problems. Cysteamine helps the body get rid of cystine. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:right;"> 12 </td>
    <td style="text-align:left;"> Proleukin </td>
    <td style="text-align:left;"> $11812.47 </td>
    <td style="text-align:left;"> 756.35% </td>
@@ -1683,7 +1666,15 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> Aldesleukin is used to treat advanced forms of kidney or skin cancer (cancer that has spread to other parts of the body). This medication is the same as a substance that your body normally makes (interleukin-2). In the body, this drug is thought to work by affecting the body's natural defenses (immune system). This effect slows or stops cancer cell growth. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:left;"> Gattex </td>
+   <td style="text-align:left;"> $11134.38 </td>
+   <td style="text-align:left;"> 43.74% </td>
+   <td style="text-align:right;"> 686 </td>
+   <td style="text-align:left;"> Drugs uses not available </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 14 </td>
    <td style="text-align:left;"> Supprelin La </td>
    <td style="text-align:left;"> $11094.56 </td>
    <td style="text-align:left;"> 65.63% </td>
@@ -1691,7 +1682,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> Histrelin is used in men to treat advanced prostate cancer. It is not a cure. Most types of prostate cancer need the male hormone testosterone to grow and spread. Histrelin works by reducing the amount of testosterone that the body makes. This helps slow or stop the growth of cancer cells and helps relieve symptoms such as painful/difficult urination. Talk to your doctor about the risks and benefits of treatment. Histrelin is also used in children to treat early puberty (central precocious puberty). It helps to slow abnormally fast bone development so that height and growth rate are near normal and to stop or reverse signs of early puberty (such as breast/pubic hair growth in girls, pubic hair growth in boys). Histrelin works by reducing the amount of testosterone in boys and estrogen in girls. This medication is used until the doctor decides it is time for puberty to resume. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:right;"> 15 </td>
    <td style="text-align:left;"> Flucytosine </td>
    <td style="text-align:left;"> $10541.67 </td>
    <td style="text-align:left;"> 190.02% </td>
@@ -1699,7 +1690,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> Flucytosine is used to treat serious fungal infections in the body. It belongs to a class of drugs known as antifungal drugs. It is often used with other medications. It works by slowing the growth of certain types of fungus. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 14 </td>
+   <td style="text-align:right;"> 16 </td>
    <td style="text-align:left;"> Oncaspar </td>
    <td style="text-align:left;"> $10444.8 </td>
    <td style="text-align:left;"> 141.52% </td>
@@ -1707,7 +1698,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> This medication is usually used with other anti-cancer (chemotherapy) drugs to treat acute lymphocytic leukemia (ALL), especially in patients who are allergic to L-asparaginase. It works by starving tumor cells of a certain amino acid (asparagine), causing the tumor cells to die. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 17 </td>
    <td style="text-align:left;"> Zavesca </td>
    <td style="text-align:left;"> $10435.89 </td>
    <td style="text-align:left;"> 45.39% </td>
@@ -1715,7 +1706,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> Miglustat is used for the long-term treatment of a certain rare genetic problem (Gaucher's disease). It works by decreasing the amount of a certain natural fatty substance (glucosylceramide) that builds up due to this condition. This can help improve symptoms of Gaucher's disease, such as tiredness, pain in the joints/bones, and a swollen liver or spleen. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:right;"> 18 </td>
    <td style="text-align:left;"> Kogenate FS </td>
    <td style="text-align:left;"> $9574.11 </td>
    <td style="text-align:left;"> 66.78% </td>
@@ -1723,7 +1714,7 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> This medication is used to control and prevent bleeding episodes in people with low levels of factor VIII (hemophilia A). It is also used in these patients before surgery to prevent bleeding. People with low factor VIII levels are at risk for bleeding longer after an injury/surgery and for bleeding inside the body (especially into the joints and muscles). This product contains a man-made form of factor VIII, also called antihemophilic factor. This product is used to temporarily replace the missing factor VIII, a protein (clotting factor) that is normally in the blood, so that the blood can clot and the bleeding can stop. This medication should not be used to treat von Willebrand disease. </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 17 </td>
+   <td style="text-align:right;"> 19 </td>
    <td style="text-align:left;"> Subsys </td>
    <td style="text-align:left;"> $9364.63 </td>
    <td style="text-align:left;"> 189.45% </td>
@@ -1731,28 +1722,12 @@ medicaid_brandchng %>%
    <td style="text-align:left;"> See also Warning section. This medication is used to help relieve sudden (breakthrough) cancer pain in people who are regularly taking moderate to large amounts of opioid pain medication. Fentanyl belongs to a class of drugs known as opioid (narcotic) analgesics. It works in the brain to change how your body feels and responds to pain. This medication should not be used to relieve mild or short-term pain (such as due to headache/migraine, dental procedures, surgery). </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 20 </td>
    <td style="text-align:left;"> Mononine </td>
    <td style="text-align:left;"> $8384.72 </td>
    <td style="text-align:left;"> 32.49% </td>
    <td style="text-align:right;"> 186 </td>
    <td style="text-align:left;"> This medication is used to prevent or control bleeding in people with little or no factor IX (due to hemophilia B, Christmas disease). Factor IX is a protein (clotting factor) in the blood that works with other clotting factors to help the blood clot and therefore stop bleeding. People with little or no factor IX are at risk for bleeding longer after an injury/surgery or bleeding suddenly (often in the joints/muscle) without an obvious cause. This medication should not be used to reverse the effects of "blood thinners" (e.g., warfarin). Most types of this medication should not be used to treat other types of factor deficiencies (e.g., factors II, VII, VIII, X) or factor problems (e.g., inhibitor to factor XIII). If you are using this medication for one of these conditions, consult your doctor or pharmacist to make sure that you are using the right product. </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 19 </td>
-   <td style="text-align:left;"> Sabril </td>
-   <td style="text-align:left;"> $7679.56 </td>
-   <td style="text-align:left;"> 116% </td>
-   <td style="text-align:right;"> 15874 </td>
-   <td style="text-align:left;"> Vigabatrin is used to treat babies, one month to 2 years old who have a condition known as infantile spasms. Vigabatrin has also been used in combination with other medications to treat seizure disorders (epilepsy). Vigabatrin decreases the number of seizures in adults and children who have not been able to control their seizures with other treatment. Vigabatrin is an anticonvulsant. It is thought to work by stopping the breakdown of a natural calming substance (GABA) in the brain. </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:left;"> Xenazine </td>
-   <td style="text-align:left;"> $7571.13 </td>
-   <td style="text-align:left;"> 115.68% </td>
-   <td style="text-align:right;"> 5300 </td>
-   <td style="text-align:left;"> Tetrabenazine is used to decrease the uncontrollable movements (chorea) caused by Huntington's disease. However, it is not a cure for the disease. Reducing the chorea will help you take part in more of your normal daily activities. This medication is thought to work by decreasing the amount of certain natural substances in the brain (monoamines such as dopamine, serotonin, and norepinephrine), which are involved with nerve and muscle function. Tetrabenazine belongs to a class of drugs called monoamine depletors. </td>
   </tr>
 </tbody>
 </table></div>
@@ -1964,33 +1939,95 @@ medicaid_brandchng %>%
 
 
 
-## Insulin
 
-Inspired by some of the news coverage over the past six months, I wanted to validate whether Insulin products have been becoming more expensive. Indeed, average spend per claim on Insulin related drugs in Medicare Part D has risen $220.02 since 2013.
+
+## Part D - Categories
+
+Based on either the description field provided in the original datasets or through my own research, I've assigned each brand of drug to the most appropriate category. I now want to highlight a few categories of my interest.
+
+### Insulin
+
+Inspired by some of the news coverage over the past six months, I wanted to validate whether Insulin products have been becoming more expensive. Indeed, average spend per claim on Insulin related drugs in Medicare Part D has risen \$109.23 since 2013.
 
 
 ```r
-partd %>% 
-  filter(str_detect(`Generic Name`, "Insulin")) %>%
-  group_by(Year) %>%
-  summarise(totalspend = sum(`Inf Total Spend`), totalclaims = sum(`Total Claims`)) %>%
-  mutate(`Average Spend Per Claim` = totalspend/totalclaims) %>%
-  ggplot(aes(x=Year, y = `Average Spend Per Claim`, color = "foo")) +
+partd_cats_all %>% 
+  filter(Category == "diabetes/insulin") %>%
+  ggplot(aes(x=Year, y = brandlvl_avg_spend_perclaim, color = "foo")) +
   geom_line(size = 1) +
-  scale_y_continuous(labels = function(x) paste0("$", x), limits = c(0,550)) +
+  scale_y_continuous(labels = function(x) paste0("$", x)) +
   scale_color_manual(values = "#00204DFF") +
-  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on Insulin related drugs\nhas grown by 78%, or $220") +
+  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on Insulin related drugs\nhas grown by 77% ($109)") +
+  expand_limits(y = 0) +
   theme_minimal() +
   theme(legend.position = "none") 
 ```
 
 ![](drugprice_eda_files/figure-html/partd_insulin-1.png)<!-- -->
 
+### Cancer
+
+At a baseline, Chemotherapy/Cancer drugs are some of the most expensive on a per claim basis, and their growth as a category has continued between 2013 and 2017. Average spend per claim grew \$1264 in real terms since 2013.
+
+
+```r
+partd_cats_all %>% 
+  filter(Category == "chemotherapy/cancer") %>%
+  ggplot(aes(x=Year, y = brandlvl_avg_spend_perclaim, color = "foo")) +
+  geom_line(size = 1) +
+  scale_y_continuous(labels = function(x) paste0("$", x)) +
+  scale_color_manual(values = "#00204DFF") +
+  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on Chemotherapy/Cancer related drugs\nhas grown by 80% ($1264)") +
+  expand_limits(y = 0) +
+  theme_minimal() +
+  theme(legend.position = "none") 
+```
+
+![](drugprice_eda_files/figure-html/partd_cancer-1.png)<!-- -->
+
+### HIV/AIDS
+
+The average spend per claim for HIV/AIDS prescription drugs grew \$671 between 2013 and 2017.  
+
+
+```r
+partd_cats_all %>% 
+  filter(Category == "HIV/AIDS") %>%
+  ggplot(aes(x=Year, y = brandlvl_avg_spend_perclaim, color = "foo")) +
+  geom_line(size = 1) +
+  scale_y_continuous(labels = function(x) paste0("$", x)) +
+  scale_color_manual(values = "#00204DFF") +
+  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on HIV/AIDS related drugs\nhas grown by 71% ($671)") +
+  expand_limits(y = 0) +
+  theme_minimal() +
+  theme(legend.position = "none") 
+```
+
+![](drugprice_eda_files/figure-html/partd_HIV-1.png)<!-- -->
+
+### Sterilization
+
+Perhaps a more obscure category, sterilization is comprised of materials such as alcohol wipes or other items which help provide a sterile environment. Although this is not a particulary impactful category, it is surprising to see that these items have gone up by \$25 between 2013 and 2017 in real terms, which is a 227% increase from their starting point of \$11 per claim.
+
+
+```r
+partd_cats_all %>% 
+  filter(Category == "sterilization") %>%
+  ggplot(aes(x=Year, y = brandlvl_avg_spend_perclaim, color = "foo")) +
+  geom_line(size = 1) +
+  scale_y_continuous(labels = function(x) paste0("$", x)) +
+  scale_color_manual(values = "#00204DFF") +
+  labs(y = "Average Spend Per Claim", title = "Average Spend Per Claim in Medicare Part D on Sterilization related drugs\nhas grown by 227% ($25)") +
+  expand_limits(y = 0) +
+  theme_minimal() +
+  theme(legend.position = "none") 
+```
+
+![](drugprice_eda_files/figure-html/partd_sterilization-1.png)<!-- -->
+
 # Open Areas of Inquiry
 
 1. Is there a trend that can be indentified among manufacturers across the various drugs that they produce?
-2. Beyond Insulin, are there certain categories of drugs that are changing more dramatically than others?
-
 
 
 
